@@ -54,6 +54,7 @@ vim.api.nvim_set_keymap('n', '<Leader>b9', ':lua require"bufferline".go_to_buffe
 vim.api.nvim_set_keymap('n','<Leader>gj',':Gitsigns next_hunk<CR>',{noremap = true, silent = true})
 vim.api.nvim_set_keymap('n','<Leader>gk',':Gitsigns prev_hunk<CR>',{noremap = true, silent = true})
 vim.api.nvim_set_keymap('n','<Leader>gh',':Gitsigns preview_hunk<CR>',{noremap = true, silent = true})
+vim.api.nvim_set_keymap('n','<Leader>gl',':LazyGit<CR>',{noremap = true, silent = true})
 
 -- better window movement
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})

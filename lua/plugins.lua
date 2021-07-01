@@ -71,6 +71,7 @@ return require('packer').startup(function()
     use 'phaazon/hop.nvim'
 	use 'mfussenegger/nvim-dap'
 	use 'jeffkreeftmeijer/vim-numbertoggle'
+	use 'kdheepak/lazygit.nvim'
 
     -- Not useful but cool stuff
     -- use 'andweeb/presence.nvim'
