@@ -11,6 +11,7 @@ vim.api.nvim_set_keymap('n', '<Leader>Fq', ':foldopen<CR>', {silent = true})
 -- toggle stuff
 vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>te', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>ta', ':AerialToggle<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>tr', ':LspTroubleToggle<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>tt', ':ToggleTerm<CR>', {noremap = true, silent = true})
 
