@@ -59,7 +59,7 @@ return require('packer').startup(function()
     use 'famiu/nvim-reload'
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
-    use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
+    use 'lukas-reineke/indent-blankline.nvim'
     use 'karb94/neoscroll.nvim'
 	use 'L3MON4D3/LuaSnip'
 	use 'rafamadriz/friendly-snippets'
