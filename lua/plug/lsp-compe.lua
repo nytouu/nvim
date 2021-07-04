@@ -25,7 +25,6 @@ require'compe'.setup {
 		spell = false,
         tags = false,
         treesitter = false,
-		ripgrep = { ignored_filetypes = {'sql'} }
     }
 }
 

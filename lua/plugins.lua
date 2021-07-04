@@ -42,9 +42,6 @@ return require('packer').startup(function()
     use 'akinsho/nvim-bufferline.lua'
     use { 'glepnir/galaxyline.nvim', branch = 'main' }
     use 'akinsho/nvim-toggleterm.lua'
-	use 'rcarriga/nvim-dap-ui'
-	use 'stevearc/aerial.nvim'
-	use 'npxbr/glow.nvim'
 	use 'sindrets/diffview.nvim'
 
     -- Telescope
@@ -64,12 +61,10 @@ return require('packer').startup(function()
     use 'windwp/nvim-autopairs'
     use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
     use 'karb94/neoscroll.nvim'
-    -- use 'norcalli/snippets.nvim'
 	use 'L3MON4D3/LuaSnip'
 	use 'rafamadriz/friendly-snippets'
     use 'lewis6991/gitsigns.nvim'
     use 'phaazon/hop.nvim'
-	use 'mfussenegger/nvim-dap'
 	use 'jeffkreeftmeijer/vim-numbertoggle'
 	use 'kdheepak/lazygit.nvim'
 
@@ -79,5 +74,4 @@ return require('packer').startup(function()
     -- use 'Xuyuanp/scrollbar.nvim'
     -- use 'dstein64/nvim-scrollview'
 	use 'folke/zen-mode.nvim'
-    use 'monaqa/dial.nvim'
 end)

@@ -27,7 +27,6 @@ local servers = {
             cmd = {DATA_PATH .. "/lspinstall/vim/node_modules/.bin/vim-language-server", "--stdio"},
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
         }
     },
@@ -37,7 +36,6 @@ local servers = {
             cmd = {DATA_PATH .. "/lspinstall/go/gopls"},
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
         }
     },
@@ -47,7 +45,6 @@ local servers = {
             cmd = {DATA_PATH .. "/lspinstall/rust/rust-analyzer"},
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
         }
     },
@@ -57,7 +54,6 @@ local servers = {
             cmd = {DATA_PATH .. "/lspinstall/yaml/node_modules/.bin/yaml-language-server", "--stdio"},
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
         }
     },
@@ -68,7 +64,6 @@ local servers = {
             filetypes = { "sh", "zsh" },
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
         }
     },
@@ -80,7 +75,6 @@ local servers = {
             capabilities = capabilities,
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
         }
     },
@@ -101,7 +95,6 @@ local servers = {
             },
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
         }
     },
@@ -119,7 +112,6 @@ local servers = {
             },
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
         }
     },
@@ -148,7 +140,6 @@ local servers = {
             },
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
 		}
 	},
@@ -167,7 +158,6 @@ local servers = {
             },
             on_attach = function(client, bufnr)
                 require "lsp_signature".on_attach(signaturecfg)  -- Note: add in lsp client on-attach
-				require'aerial'.on_attach(client)
             end
         }
     }
