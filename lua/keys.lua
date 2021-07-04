@@ -1,71 +1,73 @@
 require('nvim_comment').setup()
 
+local keymap = vim.api.nvim_set_keymap
+
 -- leader
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
+keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 
 -- fold open/close
-vim.api.nvim_set_keymap('n', '<Leader>Fo', ':foldopen<CR>', {silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>Fq', ':foldopen<CR>', {silent = true})
+keymap('n', '<Leader>Fo', ':foldopen<CR>', {silent = true})
+keymap('n', '<Leader>Fq', ':foldopen<CR>', {silent = true})
 
 -- toggle stuff
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>te', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>ta', ':AerialToggle<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>tr', ':LspTroubleToggle<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>tt', ':ToggleTerm<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>te', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>ta', ':AerialToggle<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>tr', ':LspTroubleToggle<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>tt', ':ToggleTerm<CR>', {noremap = true, silent = true})
 
 -- hop
-vim.api.nvim_set_keymap('n', 's', ":HopChar2<CR>", {silent = true})
+keymap('n', 's', ":HopChar2<CR>", {silent = true})
 
 -- dashboard
-vim.api.nvim_set_keymap('n', '<Leader>fd', ':Dashboard<CR>', {silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>ff', ':DashboardFindFile<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>fg', ':DashboardFindWord<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>fh', ':DashboardFindHistory<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>fn', ':DashboardNewFile<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>fs', ':e $HOME/.config/nvim/lua/settings.lua<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>fd', ':Dashboard<CR>', {silent = true})
+keymap('n', '<Leader>fb', ':Telescope file_browser<CR>', {silent = true})
+keymap('n', '<Leader>ff', ':Telescope find_file<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>fg', ':Telescope live_grep<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>fh', ':Telescope oldfiles<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>fs', ':e $HOME/.config/nvim/lua/settings.lua<CR>', {noremap = true, silent = true})
 
 -- quit/close
-vim.api.nvim_set_keymap('n', '<Leader>qq', ':q<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>qa', ':qa<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>qb', ':Bdelete<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>qh', ':set hlsearch!<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>qq', ':q<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>qa', ':qa<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>qb', ':Bdelete<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>qh', ':set hlsearch!<CR>', {noremap = true, silent = true})
 
 -- write
-vim.api.nvim_set_keymap('n', '<Leader>ww', ':w<CR>', {silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>wq', ':wq<CR>', {silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>wa', ':wqa<CR>', {silent = true})
+keymap('n', '<Leader>ww', ':w<CR>', {silent = true})
+keymap('n', '<Leader>wq', ':wq<CR>', {silent = true})
+keymap('n', '<Leader>wa', ':wqa<CR>', {silent = true})
 
 -- buffer movement
-vim.api.nvim_set_keymap('n', '<S-j>', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-k>', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>bp', ':BufferLinePick<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>b1', ':lua require"bufferline".go_to_buffer(1)<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>b2', ':lua require"bufferline".go_to_buffer(2)<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>b3', ':lua require"bufferline".go_to_buffer(3)<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>b4', ':lua require"bufferline".go_to_buffer(4)<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>b5', ':lua require"bufferline".go_to_buffer(5)<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>b6', ':lua require"bufferline".go_to_buffer(6)<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>b7', ':lua require"bufferline".go_to_buffer(7)<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>b8', ':lua require"bufferline".go_to_buffer(8)<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>b9', ':lua require"bufferline".go_to_buffer(9)<CR>', {noremap = true, silent = true})
+keymap('n', '<S-j>', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})
+keymap('n', '<S-k>', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>bp', ':BufferLinePick<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>b1', ':lua require"bufferline".go_to_buffer(1)<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>b2', ':lua require"bufferline".go_to_buffer(2)<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>b3', ':lua require"bufferline".go_to_buffer(3)<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>b4', ':lua require"bufferline".go_to_buffer(4)<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>b5', ':lua require"bufferline".go_to_buffer(5)<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>b6', ':lua require"bufferline".go_to_buffer(6)<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>b7', ':lua require"bufferline".go_to_buffer(7)<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>b8', ':lua require"bufferline".go_to_buffer(8)<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>b9', ':lua require"bufferline".go_to_buffer(9)<CR>', {noremap = true, silent = true})
 
 -- git stuff
-vim.api.nvim_set_keymap('n','<Leader>gj',':Gitsigns next_hunk<CR>',{noremap = true, silent = true})
-vim.api.nvim_set_keymap('n','<Leader>gk',':Gitsigns prev_hunk<CR>',{noremap = true, silent = true})
-vim.api.nvim_set_keymap('n','<Leader>gh',':Gitsigns preview_hunk<CR>',{noremap = true, silent = true})
-vim.api.nvim_set_keymap('n','<Leader>gl',':LazyGit<CR>',{noremap = true, silent = true})
+keymap('n','<Leader>gj',':Gitsigns next_hunk<CR>',{noremap = true, silent = true})
+keymap('n','<Leader>gk',':Gitsigns prev_hunk<CR>',{noremap = true, silent = true})
+keymap('n','<Leader>gh',':Gitsigns preview_hunk<CR>',{noremap = true, silent = true})
+keymap('n','<Leader>lg',':LazyGit<CR>',{noremap = true, silent = true})
 
 -- better window movement
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
+keymap('n', '<C-h>', '<C-w>h', {silent = true})
+keymap('n', '<C-j>', '<C-w>j', {silent = true})
+keymap('n', '<C-k>', '<C-w>k', {silent = true})
+keymap('n', '<C-l>', '<C-w>l', {silent = true})
 
 -- split
-vim.api.nvim_set_keymap('n', '<Leader>sh', ':split<CR>',  {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>sv', ':vsplit<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>sh', ':split<CR>',  {noremap = true, silent = true})
+keymap('n', '<Leader>sv', ':vsplit<CR>', {noremap = true, silent = true})
 
 -- Terminal window navigation
 vim.cmd([[
@@ -89,16 +91,16 @@ vim.cmd([[
 ]])
 
 -- better indenting
-vim.api.nvim_set_keymap('n', '<M-h>', '<<', {silent = true})
-vim.api.nvim_set_keymap('n', '<M-l>', '>>', {silent = true})
-vim.api.nvim_set_keymap('v', '<M-h>', '<gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<M-l>', '>gv', {noremap = true, silent = true})
+keymap('n', '<M-h>', '<<', {silent = true})
+keymap('n', '<M-l>', '>>', {silent = true})
+keymap('v', '<M-h>', '<gv', {noremap = true, silent = true})
+keymap('v', '<M-l>', '>gv', {noremap = true, silent = true})
 
 -- move lines up or down
-vim.api.nvim_set_keymap('n', '<M-k>', ':move-2<CR>', {silent = true}) -- move a single line in normal
-vim.api.nvim_set_keymap('n', '<M-j>', ':move+<CR>',  {silent = true})
-vim.api.nvim_set_keymap('x', '<M-k>', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true}) -- move multiple lines in visual
-vim.api.nvim_set_keymap('x', '<M-j>', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
+keymap('n', '<M-k>', ':move-2<CR>', {silent = true}) -- move a single line in normal
+keymap('n', '<M-j>', ':move+<CR>',  {silent = true})
+keymap('x', '<M-k>', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true}) -- move multiple lines in visual
+keymap('x', '<M-j>', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 
 -- Better nav for omnicomplete
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
