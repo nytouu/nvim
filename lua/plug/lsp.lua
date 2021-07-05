@@ -184,8 +184,6 @@ vim.fn.sign_define(
     {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
 )
 
-DATA_PATH = vim.fn.stdpath('data')
-
 -- vim.lsp.handlers["textDocument/signatureHelp"] = require'lspsaga'.signature_help
 require('lsp_signature').on_attach()
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
