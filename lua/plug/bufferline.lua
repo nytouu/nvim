@@ -1,9 +1,8 @@
 require('bufferline').setup{
 	options = {
 		buffer_close_icon = "",
-        -- indicator_icon = '▎',
-        indicator_icon = "▊",
-        modified_icon = "",
+        indicator_icon = '▎',
+        modified_icon = "●",
         left_trunc_marker = "",
         right_trunc_marker = "",
         max_name_length = 14,
@@ -24,51 +23,10 @@ require('bufferline').setup{
         }
     },
     highlights = {
-        background = {
-            guifg = "#414868",
-            guibg = "#1f2335"
-        },
         fill = {
             guifg = "#414868",
             guibg = "#1f2335"
             -- guibg = "NONE"
-        },
-        buffer_selected = {
-            guifg = "#c0caf5",
-            guibg = "#24283b",
-            gui = "bold"
-        },
-        buffer_visible = {
-            guifg = "#414868",
-            guibg = "#1f2335"
-        },
-        separator_visible = {
-            guifg = "#24283b",
-            guibg = "#1f2335"
-        },
-        separator_selected = {
-            guifg = "#1f2335",
-            guibg = "#24283b"
-        },
-        separator = {
-            guifg = "#414868",
-            guibg = "#1f2335"
-        },
-        indicator_selected = {
-            guifg = "#7aa2f7",
-            guibg = "#24283b"
-        },
-        modified = {
-            guifg = "#414868",
-            guibg = "#1f2335"
-        },
-        modified_selected = {
-            guifg = "#c0caf5",
-            guibg = "#24283b"
-        },
-        modified_visible = {
-            guifg = "#c0caf5",
-            guibg = "#1f2335"
         }
     }
 }
