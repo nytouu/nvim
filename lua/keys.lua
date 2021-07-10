@@ -3,71 +3,21 @@ require('nvim_comment').setup()
 local keymap = vim.api.nvim_set_keymap
 
 -- leader
-keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 
--- fold open/close
-keymap('n', '<Leader>Fo', ':foldopen<CR>', {silent = true})
-keymap('n', '<Leader>Fq', ':foldopen<CR>', {silent = true})
-
--- toggle stuff
 keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>te', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>ta', ':AerialToggle<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>tr', ':LspTroubleToggle<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>tt', ':ToggleTerm<CR>', {noremap = true, silent = true})
-
 -- hop
 keymap('n', 's', ":HopChar2<CR>", {silent = true})
-
--- dashboard
-keymap('n', '<Leader>fd', ':Dashboard<CR>', {silent = true})
-keymap('n', '<Leader>fb', ':Telescope file_browser<CR>', {silent = true})
-keymap('n', '<Leader>ff', ':Telescope find_file<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>fg', ':Telescope live_grep<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>fh', ':Telescope oldfiles<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>fs', ':e $HOME/.config/nvim/lua/settings.lua<CR>', {noremap = true, silent = true})
-
--- quit/close
-keymap('n', '<Leader>qq', ':q<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>qa', ':qa<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>qb', ':Bdelete<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>qh', ':set hlsearch!<CR>', {noremap = true, silent = true})
-
--- write
-keymap('n', '<Leader>ww', ':w<CR>', {silent = true})
-keymap('n', '<Leader>wq', ':wq<CR>', {silent = true})
-keymap('n', '<Leader>wa', ':wqa<CR>', {silent = true})
 
 -- buffer movement
 keymap('n', '<S-j>', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})
 keymap('n', '<S-k>', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>bp', ':BufferLinePick<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>b1', ':lua require"bufferline".go_to_buffer(1)<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>b2', ':lua require"bufferline".go_to_buffer(2)<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>b3', ':lua require"bufferline".go_to_buffer(3)<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>b4', ':lua require"bufferline".go_to_buffer(4)<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>b5', ':lua require"bufferline".go_to_buffer(5)<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>b6', ':lua require"bufferline".go_to_buffer(6)<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>b7', ':lua require"bufferline".go_to_buffer(7)<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>b8', ':lua require"bufferline".go_to_buffer(8)<CR>', {noremap = true, silent = true})
-keymap('n', '<Leader>b9', ':lua require"bufferline".go_to_buffer(9)<CR>', {noremap = true, silent = true})
-
--- git stuff
-keymap('n','<Leader>gj',':Gitsigns next_hunk<CR>',{noremap = true, silent = true})
-keymap('n','<Leader>gk',':Gitsigns prev_hunk<CR>',{noremap = true, silent = true})
-keymap('n','<Leader>gh',':Gitsigns preview_hunk<CR>',{noremap = true, silent = true})
-keymap('n','<Leader>lg',':LazyGit<CR>',{noremap = true, silent = true})
 
 -- better window movement
 keymap('n', '<C-h>', '<C-w>h', {silent = true})
 keymap('n', '<C-j>', '<C-w>j', {silent = true})
 keymap('n', '<C-k>', '<C-w>k', {silent = true})
 keymap('n', '<C-l>', '<C-w>l', {silent = true})
-
--- split
-keymap('n', '<Leader>sh', ':split<CR>',  {noremap = true, silent = true})
-keymap('n', '<Leader>sv', ':vsplit<CR>', {noremap = true, silent = true})
 
 -- Terminal window navigation
 vim.cmd([[
@@ -106,16 +56,6 @@ keymap('x', '<M-j>', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
--- lsp saga stuff
-vim.cmd("nnoremap <silent> <Leader>ld :Lspsaga preview_definition<CR>")
-vim.cmd("nnoremap <silent> <Leader>lc <cmd>lua vim.lsp.buf.declaration()<CR>")
-vim.cmd("nnoremap <silent> <Leader>lr <cmd>lua vim.lsp.buf.references()<CR>")
-vim.cmd("nnoremap <silent> <Leader>li <cmd>lua vim.lsp.buf.implementation()<CR>")
-vim.cmd("nnoremap <silent> <Leader>la :Lspsaga code_action<CR>")
-vim.cmd("nnoremap <silent> <Leader>lh :Lspsaga hover_doc<CR>")
-vim.cmd('nnoremap <silent> <Leader>ls :Lspsaga signature_help<CR>')
-vim.cmd("nnoremap <silent> <Leader>lj :Lspsaga diagnostic_jump_next<CR>")
-vim.cmd("nnoremap <silent> <Leader>lk :Lspsaga diagnostic_jump_prev<CR>")
 -- scroll down hover doc or scroll in definition preview
 -- vim.cmd("nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
 -- scroll up hover doc
