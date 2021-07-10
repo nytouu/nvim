@@ -29,13 +29,13 @@ return require('packer').startup(function()
 
     -- Colors
     use 'norcalli/nvim-colorizer.lua'
-    use 'folke/lsp-colors.nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- Themes
     use 'folke/tokyonight.nvim'
 
     -- UI stuff
+    use 'nvim-telescope/telescope.nvim'
 	use 'dominikduda/vim_current_word'
     use 'glepnir/dashboard-nvim'
     use 'folke/lsp-trouble.nvim'
@@ -43,9 +43,8 @@ return require('packer').startup(function()
     use { 'glepnir/galaxyline.nvim', branch = 'main' }
     use 'akinsho/nvim-toggleterm.lua'
 	use 'sindrets/diffview.nvim'
-
-    -- Telescope
-    use 'nvim-telescope/telescope.nvim'
+    use 'lewis6991/gitsigns.nvim'
+	use 'jeffkreeftmeijer/vim-numbertoggle'
 
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
@@ -63,15 +62,11 @@ return require('packer').startup(function()
     use 'karb94/neoscroll.nvim'
 	use 'L3MON4D3/LuaSnip'
 	use 'rafamadriz/friendly-snippets'
-    use 'lewis6991/gitsigns.nvim'
     use 'phaazon/hop.nvim'
-	use 'jeffkreeftmeijer/vim-numbertoggle'
 	use 'kdheepak/lazygit.nvim'
 
     -- Not useful but cool stuff
-    -- use 'andweeb/presence.nvim'
-    -- use 'Pocco81/TrueZen.nvim'
-    -- use 'Xuyuanp/scrollbar.nvim'
-    -- use 'dstein64/nvim-scrollview'
 	use 'folke/zen-mode.nvim'
+    -- use 'andweeb/presence.nvim'
+    -- use 'dstein64/nvim-scrollview'
 end)
