@@ -25,6 +25,7 @@ return require('packer').startup(function()
     use 'kabouzeid/nvim-lspinstall'
     use 'hrsh7th/nvim-compe'
     use 'ray-x/lsp_signature.nvim'
+	use 'tjdevries/astronauta.nvim'
 
     -- Colors
     use 'norcalli/nvim-colorizer.lua'
