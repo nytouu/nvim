@@ -123,7 +123,7 @@ local mappings = {
 		i = {"<cmd>LspInfo<cr>","Info"},
 		a = {"<cmd>Lspsaga code_action<cr>","Code action"},
 		h = {"<cmd>Lspsaga hover_doc<cr>","Hover doc"},
-		s = {"<cmd>Lspsaga signaturecfg<cr>","Signature Help"},
+		s = {"<cmd>Lspsaga signature_help<cr>","Signature help"},
 		j = {"<cmd>Lspsaga diagnostic_jump_next<cr>","Jump to next diagnostic"},
 		k = {"<cmd>Lspsaga diagnostic_jump_prev<cr>","Jump to previous diagnostic"},
 	},
