@@ -66,7 +66,6 @@ return require('packer').startup(function()
 		-- end
 	}
 	use 'dominikduda/vim_current_word'
-    use 'akinsho/nvim-bufferline.lua'
     use { 'glepnir/galaxyline.nvim', branch = 'main' }
     use 'akinsho/nvim-toggleterm.lua'
 	use 'sindrets/diffview.nvim'
@@ -84,6 +83,13 @@ return require('packer').startup(function()
 			require("plug.lsp-trouble")
 		end,
 		cmd = "LspTroubleToggle"
+	}
+    use {
+		'akinsho/nvim-bufferline.lua',
+		config = function()
+			require("plug.bufferline")
+		end,
+		event = "BufWinEnter"
 	}
 
     -- Icons
