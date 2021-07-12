@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-    use 'folke/which-key.nvim'
     use 'famiu/nvim-reload'
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
@@ -141,6 +140,13 @@ return require('packer').startup(function()
     use {
 		'famiu/bufdelete.nvim',
 		cmd = "Bdelete"
+	}
+    use {
+		'folke/which-key.nvim',
+		config = function()
+			require("plug.which-key")
+		end,
+		event = "BufWinEnter"
 	}
 
     -- Not useful but cool stuff
