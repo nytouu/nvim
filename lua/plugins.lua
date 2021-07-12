@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-    use 'lukas-reineke/indent-blankline.nvim'
     use 'karb94/neoscroll.nvim'
 	use 'L3MON4D3/LuaSnip'
 	use 'rafamadriz/friendly-snippets'
@@ -159,6 +158,13 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.autopairs")
 		end
+	}
+    use {
+		'lukas-reineke/indent-blankline.nvim',
+		config = function()
+			require("plug.indent")
+		end,
+		event = "BufRead"
 	}
 
     -- Not useful but cool stuff
