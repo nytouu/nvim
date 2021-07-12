@@ -1,8 +1,8 @@
 local actions = require('telescope.actions')
 require('telescope').setup {
-    config = {
+    defaults = {
         find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
-        prompt_position = "top",
+        -- prompt_position = "top",
         prompt_prefix = "  ",
         selection_caret = "  ",
         entry_prefix = "  ",
@@ -14,17 +14,17 @@ require('telescope').setup {
         file_sorter = require'telescope.sorters'.get_fuzzy_file,
         file_ignore_patterns = {},
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-        shorten_path = true,
+        -- shorten_path = true,
         winblend = 0,
-        width = 0.75,
-        height = 1,
-        preview_cutoff = 120,
+        -- width = 0.75,
+        -- height = 1,
+        -- preview_cutoff = 120,
         border = {},
         -- borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
 		-- borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
 		borderchars = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
         color_devicons = true,
-        use_less = true,
+        use_less = false,
         set_env = {['COLORTERM'] = 'truecolor'},
 		file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
 		grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
