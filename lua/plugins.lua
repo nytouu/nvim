@@ -21,10 +21,16 @@ return require('packer').startup(function()
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-    use 'glepnir/lspsaga.nvim'
     use 'kabouzeid/nvim-lspinstall'
     use 'hrsh7th/nvim-compe'
     use 'ray-x/lsp_signature.nvim'
+    use {
+		'glepnir/lspsaga.nvim',
+		config = function()
+			require("plug.lsp-saga")
+		end,
+		event = "BufWinEnter"
+	}
 	use 'tjdevries/astronauta.nvim'
 
     -- Colors
