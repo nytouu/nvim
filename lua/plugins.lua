@@ -66,13 +66,19 @@ return require('packer').startup(function()
 		-- end
 	}
 	use 'dominikduda/vim_current_word'
-    use 'glepnir/dashboard-nvim'
     use 'folke/lsp-trouble.nvim'
     use 'akinsho/nvim-bufferline.lua'
     use { 'glepnir/galaxyline.nvim', branch = 'main' }
     use 'akinsho/nvim-toggleterm.lua'
 	use 'sindrets/diffview.nvim'
     use 'lewis6991/gitsigns.nvim'
+    use {
+		'glepnir/dashboard-nvim',
+		config = function()
+			require("plug.dashboard")
+		end,
+		event = "BufWinEnter"
+	}
 
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
