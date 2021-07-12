@@ -1,5 +1,4 @@
 require'gitsigns'.setup {
-    debug_mode = false,
     signs = {
         add = {
 			hl = "DiffAdd",
@@ -22,5 +21,7 @@ require'gitsigns'.setup {
 			text = "▎"
 		}
     },
-    numhl = false
+    numhl = false,
+	linehl = false,
+	keymaps = {}
 }
