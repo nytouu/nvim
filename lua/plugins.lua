@@ -120,7 +120,12 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-web-devicons'
 
     -- File explorer
-    use 'kyazdani42/nvim-tree.lua'
+    use {
+		'kyazdani42/nvim-tree.lua',
+		config = function()
+			require("plug.nvim-tree")
+		end
+	}
 
     -- Quality of life stuff
     use 'famiu/bufdelete.nvim'
