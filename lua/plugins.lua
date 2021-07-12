@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-    use 'famiu/bufdelete.nvim'
     use 'folke/which-key.nvim'
     use 'famiu/nvim-reload'
     use 'terrortylor/nvim-comment'
@@ -139,6 +138,10 @@ return require('packer').startup(function()
 	use 'rafamadriz/friendly-snippets'
     use 'phaazon/hop.nvim'
 	use 'kdheepak/lazygit.nvim'
+    use {
+		'famiu/bufdelete.nvim',
+		cmd = "Bdelete"
+	}
 
     -- Not useful but cool stuff
 	use 'folke/zen-mode.nvim'
