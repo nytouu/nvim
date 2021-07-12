@@ -8,23 +8,31 @@ require('telescope').setup {
         entry_prefix = "  ",
         initial_mode = "insert",
         selection_strategy = "reset",
-        sorting_strategy = "ascending",
+        sorting_strategy = "descending",
         layout_strategy = "horizontal",
-        layout_defaults = {horizontal = {mirror = false}, vertical = {mirror = false}},
         file_sorter = require'telescope.sorters'.get_fuzzy_file,
         file_ignore_patterns = {},
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-        -- shorten_path = true,
         winblend = 0,
-        -- width = 0.75,
-        -- height = 1,
-        -- preview_cutoff = 120,
+		layout_config = {
+			horizontal = {
+				prompt_position = "bottom",
+				preview_width = 0.55,
+				results_width = 0.8
+			},
+			vertical = {
+				mirror = false
+			},
+			width = 0.85,
+			height = 0.80,
+			preview_cutoff = 120
+		},
         border = {},
         -- borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
 		-- borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
 		borderchars = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
         color_devicons = true,
-        use_less = false,
+        use_less = true,
         set_env = {['COLORTERM'] = 'truecolor'},
 		file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
 		grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
