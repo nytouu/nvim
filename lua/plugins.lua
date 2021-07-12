@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-    use 'karb94/neoscroll.nvim'
 	use 'L3MON4D3/LuaSnip'
 	use 'rafamadriz/friendly-snippets'
     use 'phaazon/hop.nvim'
@@ -165,6 +164,13 @@ return require('packer').startup(function()
 			require("plug.indent")
 		end,
 		event = "BufRead"
+	}
+    use {
+		'karb94/neoscroll.nvim',
+		config = function()
+			require("plug.neoscroll")
+		end,
+		event = "BufWinEnter"
 	}
 
     -- Not useful but cool stuff
