@@ -192,6 +192,10 @@ return require('packer').startup(function()
 		'folke/zen-mode.nvim',
 		cmd = "ZenMode"
 	}
+	use {
+		'dstein64/vim-startuptime',
+		cmd = "StartupTime"
+	}
     -- use 'andweeb/presence.nvim'
     -- use 'dstein64/nvim-scrollview'
 end)
