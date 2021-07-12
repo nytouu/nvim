@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-	use 'rafamadriz/friendly-snippets'
     use 'phaazon/hop.nvim'
 	use 'kdheepak/lazygit.nvim'
     use {
@@ -174,6 +173,10 @@ return require('packer').startup(function()
 	use {
 		-- TODO lazyload
 		'L3MON4D3/LuaSnip',
+	}
+	use {
+		'rafamadriz/friendly-snippets',
+		event = "InsertEnter"
 	}
 
     -- Not useful but cool stuff
