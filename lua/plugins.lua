@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-    use 'windwp/nvim-autopairs'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'karb94/neoscroll.nvim'
 	use 'L3MON4D3/LuaSnip'
@@ -154,6 +153,12 @@ return require('packer').startup(function()
 		-- TODO lazyload
 		'terrortylor/nvim-comment',
 		-- event = "BufRead"
+	}
+    use {
+		'windwp/nvim-autopairs',
+		config = function()
+			require("plug.autopairs")
+		end
 	}
 
     -- Not useful but cool stuff
