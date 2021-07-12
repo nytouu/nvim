@@ -66,7 +66,6 @@ return require('packer').startup(function()
 		-- end
 	}
 	use 'dominikduda/vim_current_word'
-    use { 'glepnir/galaxyline.nvim', branch = 'main' }
     use 'akinsho/nvim-toggleterm.lua'
 	use 'sindrets/diffview.nvim'
     use 'lewis6991/gitsigns.nvim'
@@ -88,6 +87,13 @@ return require('packer').startup(function()
 		'akinsho/nvim-bufferline.lua',
 		config = function()
 			require("plug.bufferline")
+		end,
+		event = "BufWinEnter"
+	}
+    use {
+		'glepnir/galaxyline.nvim',
+		config = function()
+			require("plug.statusline")
 		end,
 		event = "BufWinEnter"
 	}
