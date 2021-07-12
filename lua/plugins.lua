@@ -21,7 +21,6 @@ return require('packer').startup(function()
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-compe'
     use 'ray-x/lsp_signature.nvim'
     use {
 		'glepnir/lspsaga.nvim',
@@ -34,6 +33,12 @@ return require('packer').startup(function()
     use {
 		'kabouzeid/nvim-lspinstall',
 		cmd = "LspInstall"
+	}
+    use {
+		'hrsh7th/nvim-compe',
+		config = function()
+			require("plug.lsp-compe")
+		end
 	}
 
     -- Colors
