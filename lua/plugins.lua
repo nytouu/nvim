@@ -21,7 +21,6 @@ return require('packer').startup(function()
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-    use 'kabouzeid/nvim-lspinstall'
     use 'hrsh7th/nvim-compe'
     use 'ray-x/lsp_signature.nvim'
     use {
@@ -32,6 +31,10 @@ return require('packer').startup(function()
 		event = "BufWinEnter"
 	}
 	use 'tjdevries/astronauta.nvim'
+    use {
+		'kabouzeid/nvim-lspinstall',
+		cmd = "LspInstall"
+	}
 
     -- Colors
     use 'norcalli/nvim-colorizer.lua'
