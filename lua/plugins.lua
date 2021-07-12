@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-	use 'kdheepak/lazygit.nvim'
     use {
 		'famiu/bufdelete.nvim',
 		cmd = "Bdelete"
@@ -182,6 +181,10 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.hop")
 		end
+	}
+	use {
+		'kdheepak/lazygit.nvim',
+		cmd = "LazyGit"
 	}
 
     -- Not useful but cool stuff
