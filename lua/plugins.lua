@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-    use 'famiu/nvim-reload'
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
     use 'lukas-reineke/indent-blankline.nvim'
@@ -147,6 +146,10 @@ return require('packer').startup(function()
 			require("plug.which-key")
 		end,
 		event = "BufWinEnter"
+	}
+    use {
+		'famiu/nvim-reload',
+		cmd = "Reload"
 	}
 
     -- Not useful but cool stuff
