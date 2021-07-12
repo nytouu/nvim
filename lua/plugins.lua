@@ -21,13 +21,16 @@ return require('packer').startup(function()
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-    use 'ray-x/lsp_signature.nvim'
     use {
 		'glepnir/lspsaga.nvim',
 		config = function()
 			require("plug.lsp-saga")
 		end,
 		event = "BufWinEnter"
+	}
+    use {
+		'ray-x/lsp_signature.nvim',
+		event = "BufRead"
 	}
 	use 'tjdevries/astronauta.nvim'
     use {
