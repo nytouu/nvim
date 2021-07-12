@@ -66,7 +66,6 @@ return require('packer').startup(function()
 		-- end
 	}
 	use 'dominikduda/vim_current_word'
-	use 'sindrets/diffview.nvim'
     use 'lewis6991/gitsigns.nvim'
     use {
 		'glepnir/dashboard-nvim',
@@ -102,6 +101,13 @@ return require('packer').startup(function()
 			require("plug.toggleterm")
 		end,
 		cmd = "ToggleTerm"
+	}
+	use {
+		'sindrets/diffview.nvim',
+		config = function()
+			require("plug.diffview")
+		end,
+		cmd = "DiffViewOpen"
 	}
 
     -- Icons
