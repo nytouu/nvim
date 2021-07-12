@@ -144,9 +144,11 @@ return require('packer').startup(function()
 		cmd = "Reload"
 	}
     use {
-		-- TODO lazyload
 		'terrortylor/nvim-comment',
-		-- event = "BufRead"
+		config = function()
+			require("nvim_comment").setup()
+		end,
+		event = "BufRead"
 	}
     use {
 		'windwp/nvim-autopairs',

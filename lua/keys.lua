@@ -1,5 +1,3 @@
-require('nvim_comment').setup()
-
 local keymap = vim.api.nvim_set_keymap
 
 -- leader
