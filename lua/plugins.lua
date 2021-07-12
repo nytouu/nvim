@@ -188,7 +188,10 @@ return require('packer').startup(function()
 	}
 
     -- Not useful but cool stuff
-	use 'folke/zen-mode.nvim'
+	use {
+		'folke/zen-mode.nvim',
+		cmd = "ZenMode"
+	}
     -- use 'andweeb/presence.nvim'
     -- use 'dstein64/nvim-scrollview'
 end)
