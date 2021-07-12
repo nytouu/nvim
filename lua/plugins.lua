@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-    use 'phaazon/hop.nvim'
 	use 'kdheepak/lazygit.nvim'
     use {
 		'famiu/bufdelete.nvim',
@@ -177,6 +176,12 @@ return require('packer').startup(function()
 	use {
 		'rafamadriz/friendly-snippets',
 		event = "InsertEnter"
+	}
+    use {
+		'phaazon/hop.nvim',
+		config = function()
+			require("plug.hop")
+		end
 	}
 
     -- Not useful but cool stuff
