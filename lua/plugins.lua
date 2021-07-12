@@ -59,7 +59,12 @@ return require('packer').startup(function()
     use 'folke/tokyonight.nvim'
 
     -- UI stuff
-    use 'nvim-telescope/telescope.nvim'
+    use {
+		'nvim-telescope/telescope.nvim',
+		-- config = function()
+		-- 	require("plug.telescope")
+		-- end
+	}
 	use 'dominikduda/vim_current_word'
     use 'glepnir/dashboard-nvim'
     use 'folke/lsp-trouble.nvim'
