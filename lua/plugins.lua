@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-    use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'karb94/neoscroll.nvim'
@@ -150,6 +149,11 @@ return require('packer').startup(function()
     use {
 		'famiu/nvim-reload',
 		cmd = "Reload"
+	}
+    use {
+		-- TODO lazyload
+		'terrortylor/nvim-comment',
+		-- event = "BufRead"
 	}
 
     -- Not useful but cool stuff
