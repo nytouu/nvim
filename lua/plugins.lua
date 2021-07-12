@@ -66,7 +66,6 @@ return require('packer').startup(function()
 		-- end
 	}
 	use 'dominikduda/vim_current_word'
-    use 'akinsho/nvim-toggleterm.lua'
 	use 'sindrets/diffview.nvim'
     use 'lewis6991/gitsigns.nvim'
     use {
@@ -96,6 +95,13 @@ return require('packer').startup(function()
 			require("plug.statusline")
 		end,
 		event = "BufWinEnter"
+	}
+    use {
+		'akinsho/nvim-toggleterm.lua',
+		config = function()
+			require("plug.toggleterm")
+		end,
+		cmd = "ToggleTerm"
 	}
 
     -- Icons
