@@ -128,7 +128,6 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-	use 'L3MON4D3/LuaSnip'
 	use 'rafamadriz/friendly-snippets'
     use 'phaazon/hop.nvim'
 	use 'kdheepak/lazygit.nvim'
@@ -171,6 +170,10 @@ return require('packer').startup(function()
 			require("plug.neoscroll")
 		end,
 		event = "BufWinEnter"
+	}
+	use {
+		-- TODO lazyload
+		'L3MON4D3/LuaSnip',
 	}
 
     -- Not useful but cool stuff
