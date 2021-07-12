@@ -44,7 +44,6 @@ return require('packer').startup(function()
     use 'akinsho/nvim-toggleterm.lua'
 	use 'sindrets/diffview.nvim'
     use 'lewis6991/gitsigns.nvim'
-	use 'jeffkreeftmeijer/vim-numbertoggle'
 
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
