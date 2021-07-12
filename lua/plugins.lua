@@ -20,7 +20,13 @@ return require('packer').startup(function()
     use 'nvim-lua/popup.nvim'
 
     -- LSP
-    use 'neovim/nvim-lspconfig'
+    use {
+		'neovim/nvim-lspconfig',
+		-- 	    after = "nvim-lspinstall",
+		-- config = function()
+		-- 	require("plug.lsp")
+		-- end
+	}
     use {
 		'glepnir/lspsaga.nvim',
 		config = function()
@@ -32,16 +38,36 @@ return require('packer').startup(function()
 		'ray-x/lsp_signature.nvim',
 		event = "BufRead"
 	}
-	use 'tjdevries/astronauta.nvim'
+	use {
+		'tjdevries/astronauta.nvim',
+	    event = "BufWinEnter"
+	}
     use {
 		'kabouzeid/nvim-lspinstall',
-		cmd = "LspInstall"
+		event = "BufRead"
 	}
     use {
 		'hrsh7th/nvim-compe',
+		after = "nvim-lspconfig",
 		config = function()
 			require("plug.lsp-compe")
-		end
+		end,
+		event = "InsertEnter",
+		-- wants = {"LuaSnip"},
+		-- requires = {
+		-- 	{
+		-- 		"L3MON4D3/LuaSnip",
+		-- 		wants = "friendly-snippets",
+		-- 		event = "InsertCharPre",
+		-- 		config = function()
+		-- 			require("plugins.snippets")
+		-- 		end
+		-- 	},
+		-- 	{
+		-- 		"rafamadriz/friendly-snippets",
+		-- 		event = "InsertCharPre"
+		-- 	}
+		-- }
 	}
 
     -- Colors
@@ -49,9 +75,15 @@ return require('packer').startup(function()
 		'norcalli/nvim-colorizer.lua',
 		config = function()
 			require("plug.colors")
-		end,}
+		end,
+		event = "BufRead"
+	}
     use {
 		'nvim-treesitter/nvim-treesitter',
+		config = function()
+			require("plug.treesitter")
+		end,
+		event = "BufRead",
 		run = ':TSUpdate'
 	}
 
@@ -61,11 +93,15 @@ return require('packer').startup(function()
     -- UI stuff
     use {
 		'nvim-telescope/telescope.nvim',
-		-- config = function()
-		-- 	require("plug.telescope")
-		-- end
+		config = function()
+			require("plug.telescope")
+		end,
+		cmd = "Telescope"
 	}
-	use 'dominikduda/vim_current_word'
+	use {
+		'dominikduda/vim_current_word',
+	    event = "BufRead"
+	}
     use {
 		'glepnir/dashboard-nvim',
 		config = function()
@@ -129,7 +165,8 @@ return require('packer').startup(function()
 		'kyazdani42/nvim-tree.lua',
 		config = function()
 			require("plug.nvim-tree")
-		end
+		end,
+		cmd = "NvimTreeToggle"
 	}
 
     -- Quality of life stuff
@@ -175,19 +212,12 @@ return require('packer').startup(function()
 		end,
 		event = "BufWinEnter"
 	}
-	use {
-		-- TODO lazyload
-		'L3MON4D3/LuaSnip',
-	}
-	use {
-		'rafamadriz/friendly-snippets',
-		event = "InsertEnter"
-	}
     use {
 		'phaazon/hop.nvim',
 		config = function()
 			require("plug.hop")
-		end
+		end,
+		event = "BufRead"
 	}
 	use {
 		'kdheepak/lazygit.nvim',
