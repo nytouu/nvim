@@ -14,7 +14,7 @@ check lua/plugins.lua to see what plugins i'm using
 
 # inspirations
 
-this config is by on chris@machine's [LunarVim](https://github.com/ChristianChiarulli/LunarVim)\
+this config is inspired by chris@machine's [LunarVim](https://github.com/ChristianChiarulli/LunarVim)\
 and siduck76's [NvChad](https://github.com/siduck76/NvChad)
 
 # TODO
