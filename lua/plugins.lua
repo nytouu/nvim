@@ -38,10 +38,6 @@ return require('packer').startup(function()
 		'ray-x/lsp_signature.nvim',
 		event = "BufRead"
 	}
-	use {
-		'tjdevries/astronauta.nvim',
-	    event = "BufWinEnter"
-	}
     use {
 		'kabouzeid/nvim-lspinstall',
 		event = "BufRead"
