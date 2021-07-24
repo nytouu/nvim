@@ -1,10 +1,3 @@
-vim.g.tokyonight_style = "storm"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_italic_comments = true
-vim.g.tokyonight_sidebars = { "NvimTree", "Outline", "toggleterm", "terminal", "packer" }
--- vim.g.tokyonight_dark_sidebar = false
-vim.cmd('colorscheme tokyonight')
-
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 

@@ -21,8 +21,14 @@ return require('packer').startup(function()
     }
 
     -- Lua stuff
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-lua/popup.nvim'
+    use {
+        'nvim-lua/plenary.nvim',
+        event = "BufRead"
+    }
+    use {
+        'nvim-lua/popup.nvim',
+        after = "plenary.nvim"
+    }
 
     -- LSP
     use {
@@ -49,26 +55,26 @@ return require('packer').startup(function()
 	}
     use {
 		'hrsh7th/nvim-compe',
+		event = "InsertEnter",
 		after = "nvim-lspconfig",
 		config = function()
 			require("plug.lsp-compe")
 		end,
-		event = "InsertEnter",
-		-- wants = {"LuaSnip"},
-		-- requires = {
-		-- 	{
-		-- 		"L3MON4D3/LuaSnip",
-		-- 		wants = "friendly-snippets",
-		-- 		event = "InsertCharPre",
-		-- 		config = function()
-		-- 			require("plugins.snippets")
-		-- 		end
-		-- 	},
-		-- 	{
-		-- 		"rafamadriz/friendly-snippets",
-		-- 		event = "InsertCharPre"
-		-- 	}
-		-- }
+		wants = "LuaSnip",
+		requires = {
+			{
+				"L3MON4D3/LuaSnip",
+				wants = "friendly-snippets",
+				event = "InsertCharPre",
+				config = function()
+					require("plug.snippets")
+				end
+			},
+			{
+				"rafamadriz/friendly-snippets",
+				event = "InsertCharPre"
+			}
+		}
 	}
 
     -- Colors
@@ -89,7 +95,19 @@ return require('packer').startup(function()
 	}
 
     -- Themes
-    use 'folke/tokyonight.nvim'
+    use {
+        'folke/tokyonight.nvim',
+        after = "packer.nvim",
+        config = function()
+            -- require('tokyonight')
+            vim.g.tokyonight_style = "storm"
+            vim.g.tokyonight_italic_functions = true
+            vim.g.tokyonight_italic_comments = true
+            vim.g.tokyonight_sidebars = { "NvimTree", "Outline", "toggleterm", "terminal", "packer" }
+            -- vim.g.tokyonight_dark_sidebar = false
+            vim.cmd('colorscheme tokyonight')
+        end
+    }
 
     -- UI stuff
     use {
@@ -105,6 +123,7 @@ return require('packer').startup(function()
 	}
     use {
 		'glepnir/dashboard-nvim',
+        -- after = "popup.nvim",
 		config = function()
 			require("plug.dashboard")
 		end,
@@ -119,6 +138,7 @@ return require('packer').startup(function()
 	}
     use {
 		'akinsho/nvim-bufferline.lua',
+		after = "tokyonight.nvim",
 		config = function()
 			require("plug.bufferline")
 		end,
@@ -126,6 +146,7 @@ return require('packer').startup(function()
 	}
     use {
 		'glepnir/galaxyline.nvim',
+		after = "tokyonight.nvim",
 		config = function()
 			require("plug.statusline")
 		end,
@@ -147,10 +168,11 @@ return require('packer').startup(function()
 	}
     use {
 		'lewis6991/gitsigns.nvim',
+        after = "plenary.nvim",
 		config = function()
 			require("plug.git")
 		end,
-		event = "BufRead"
+		-- event = "BufWinEnter"
 	}
 
     -- Icons
@@ -206,13 +228,13 @@ return require('packer').startup(function()
 		end,
 		event = "BufRead"
 	}
-    use {
-		'karb94/neoscroll.nvim',
-		config = function()
-			require("plug.neoscroll")
-		end,
-		event = "BufWinEnter"
-	}
+	--     use {
+	-- 	'karb94/neoscroll.nvim',
+	-- 	config = function()
+	-- 		require("plug.neoscroll")
+	-- 	end,
+	-- 	event = "BufWinEnter"
+	-- }
     use {
 		'phaazon/hop.nvim',
 		config = function()
