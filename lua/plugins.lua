@@ -223,10 +223,10 @@ return require('packer').startup(function()
 	}
     use {
 		'lukas-reineke/indent-blankline.nvim',
+        after = "tokyonight.nvim",
 		config = function()
 			require("plug.indent")
-		end,
-		event = "BufRead"
+		end
 	}
 	--     use {
 	-- 	'karb94/neoscroll.nvim',
