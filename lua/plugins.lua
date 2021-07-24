@@ -228,13 +228,6 @@ return require('packer').startup(function()
 			require("plug.indent")
 		end
 	}
-	--     use {
-	-- 	'karb94/neoscroll.nvim',
-	-- 	config = function()
-	-- 		require("plug.neoscroll")
-	-- 	end,
-	-- 	event = "BufWinEnter"
-	-- }
     use {
 		'phaazon/hop.nvim',
 		config = function()
@@ -256,6 +249,4 @@ return require('packer').startup(function()
 		'dstein64/vim-startuptime',
 		cmd = "StartupTime"
 	}
-    -- use 'andweeb/presence.nvim'
-    -- use 'dstein64/nvim-scrollview'
 end)
