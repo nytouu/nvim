@@ -53,5 +53,5 @@ vim.g.nvim_tree_icons = {
 
 vim.g.nvim_tree_window_picker_exclude = {
 	filetype = { 'packer', 'qf' },
-	buftype = { 'terminal', 'toggleterm' }
+	buftype = { 'terminal', 'toggleterm', 'Trouble' }
 }
