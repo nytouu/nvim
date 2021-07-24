@@ -44,9 +44,12 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.synmaxcol = 1024
 vim.cmd('syntax on')
-vim.cmd('set shortmess+=c')
+vim.opt.shortmess:append("c")
+vim.cmd("let &fcs='eob: '")
 vim.o.backup = false
 vim.o.writebackup = false
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 vim.cmd('hi CurrentWordTwins guibg=#2c3044')
 vim.cmd('let g:vim_current_word#highlight_current_word = 0')
 vim.cmd('let g:vim_current_word#highlight_twins = 1')
