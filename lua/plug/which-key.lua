@@ -112,7 +112,8 @@ local mappings = {
 		g = {"<cmd>LazyGit<cr>","Open Lazygit"},
 		j = {"<cmd>Gitsigns next_hunk<cr>","Next hunk"},
 		k = {"<cmd>Gitsigns prev_hunk<cr>","Previous hunk"},
-		h = {"<cmd>Gitsigns preview_hunk<cr>","Preview hunk"}
+		p = {"<cmd>Gitsigns preview_hunk<cr>","Preview hunk"},
+		r = {"<cmd>Gitsigns reset_hunk<cr>","Preview hunk"}
 	},
 	l = {
 		name = "Lsp",
@@ -137,6 +138,7 @@ local mappings = {
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
 		i = { "<cmd>PackerInstall<cr>", "Install" },
 		s = { "<cmd>PackerSync<cr>", "Sync" },
+		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" }
 	}
 }
