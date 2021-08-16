@@ -159,13 +159,6 @@ return require('packer').startup(function()
 		end,
 		cmd = "ToggleTerm"
 	}
-	use {
-		'sindrets/diffview.nvim',
-		config = function()
-			require("plug.diffview")
-		end,
-		cmd = "DiffViewOpen"
-	}
     use {
 		'lewis6991/gitsigns.nvim',
         after = "plenary.nvim",
