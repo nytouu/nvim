@@ -47,28 +47,54 @@ return require('packer').startup(function()
     use {
 		'kabouzeid/nvim-lspinstall',
 	}
-    use {
-		'hrsh7th/nvim-compe',
+
+	-- Completion stuff
+   use {
+		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
-		after = "nvim-lspconfig",
 		config = function()
-			require("plug.lsp-compe")
+			require "plug.cmp"
+		end
+	}
+	use {
+		"L3MON4D3/LuaSnip",
+		wants = "friendly-snippets",
+		after = "nvim-cmp",
+		config = function()
+			require("plug.snippets")
 		end,
-		wants = "LuaSnip",
-		requires = {
-			{
-				"L3MON4D3/LuaSnip",
-				wants = "friendly-snippets",
-				event = "InsertCharPre",
-				config = function()
-					require("plug.snippets")
-				end
-			},
-			{
-				"rafamadriz/friendly-snippets",
-				event = "InsertCharPre"
-			}
+	}
+	use {
+		"saadparwaiz1/cmp_luasnip",
+		after = "LuaSnip",
+	}
+	use {
+		"hrsh7th/cmp-nvim-lua",
+		after = "cmp_luasnip",
+	}
+	use {
+		"hrsh7th/cmp-nvim-lsp",
+		after = "cmp-nvim-lua",
 		}
+	use {
+		"hrsh7th/cmp-buffer",
+		after = "cmp-nvim-lsp",
+	}
+	use {
+		"hrsh7th/cmp-path",
+		after = "cmp-buffer"
+	}
+	use {
+		"hrsh7th/cmp-calc",
+		after = "cmp-path"
+	}
+	use {
+		"f3fora/cmp-spell",
+		after = "cmp-calc"
+	}
+	use {
+      "rafamadriz/friendly-snippets",
+      after = "cmp-spell",
 	}
 
     -- Colors
