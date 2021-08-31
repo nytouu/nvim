@@ -97,6 +97,7 @@ local mappings = {
 	b = {
 		name = "Buffer",
 		p = {"<cmd>BufferLinePick<cr>","Pick buffer"},
+		s = {"<cmd>source %<cr>","Source buffer"},
 		["1"] = {"<cmd>lua require'bufferline'.go_to_buffer(1)<cr>","1st buffer"},
 		["2"] = {"<cmd>lua require'bufferline'.go_to_buffer(2)<cr>","2nd buffer"},
 		["3"] = {"<cmd>lua require'bufferline'.go_to_buffer(3)<cr>","3rd buffer"},
