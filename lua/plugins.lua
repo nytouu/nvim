@@ -7,7 +7,7 @@ vim.cmd("packadd packer.nvim")
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+    execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
     execute 'packadd packer.nvim'
 end
 
@@ -23,17 +23,14 @@ return require('packer').startup(function()
     -- Lua stuff
     use {
         'nvim-lua/plenary.nvim',
-        event = "BufRead"
     }
     use {
         'nvim-lua/popup.nvim',
-        after = "plenary.nvim"
     }
 
     -- LSP
     use {
 		'neovim/nvim-lspconfig',
-        after = "nvim-lspinstall",
 		config = function()
 			require("plug.lsp")
 		end
@@ -43,15 +40,12 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.lsp-saga")
 		end,
-		event = "BufWinEnter"
 	}
     use {
 		'ray-x/lsp_signature.nvim',
-		event = "BufRead"
 	}
     use {
 		'kabouzeid/nvim-lspinstall',
-		event = "BufRead"
 	}
     use {
 		'hrsh7th/nvim-compe',
@@ -83,7 +77,6 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.colors")
 		end,
-		event = "BufRead"
 	}
     use {
 		'nvim-treesitter/nvim-treesitter',
@@ -115,7 +108,6 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.telescope")
 		end,
-		cmd = "Telescope"
 	}
 	use {
 		'dominikduda/vim_current_word',
@@ -123,7 +115,6 @@ return require('packer').startup(function()
 	}
     use {
 		'glepnir/dashboard-nvim',
-        -- after = "popup.nvim",
 		config = function()
 			require("plug.dashboard")
 		end,
@@ -159,13 +150,11 @@ return require('packer').startup(function()
 		end,
 		cmd = "ToggleTerm"
 	}
-    use {
+	    use {
 		'lewis6991/gitsigns.nvim',
-        after = "plenary.nvim",
 		config = function()
 			require("plug.git")
-		end,
-		-- event = "BufWinEnter"
+		end
 	}
 
     -- Icons
@@ -182,10 +171,13 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.nvim-tree")
 		end,
-		cmd = "NvimTreeToggle"
+        cmd = { "NvimTreeToggle", "NvimTreeFocus" }
 	}
 
     -- Quality of life stuff
+    use {
+        "antoinemadec/FixCursorHold.nvim"
+    }
     use {
 		'famiu/bufdelete.nvim',
 		cmd = "Bdelete"
@@ -212,7 +204,8 @@ return require('packer').startup(function()
 		'windwp/nvim-autopairs',
 		config = function()
 			require("plug.autopairs")
-		end
+		end,
+        event = "BufRead"
 	}
     use {
 		'lukas-reineke/indent-blankline.nvim',
@@ -227,10 +220,6 @@ return require('packer').startup(function()
 			require("plug.hop")
 		end,
 		event = "BufRead"
-	}
-	use {
-		'kdheepak/lazygit.nvim',
-		cmd = "LazyGit"
 	}
 
     -- Not useful but cool stuff
