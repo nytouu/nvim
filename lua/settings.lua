@@ -52,3 +52,8 @@ vim.cmd('let g:vim_current_word#highlight_delay = 0')
 vim.o.guifont = "JetBrainsMono Nerd Font:h18"
 vim.g.neovide_refresh_rate = 140
 vim.g.neovide_cursor_animation_length = 0
+vim.cmd([[
+if !exists('g:neovide')
+	autocmd VimEnter * hi Normal guibg=NONE
+endif
+]])
