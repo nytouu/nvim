@@ -93,8 +93,8 @@ return require('packer').startup(function()
 		after = "cmp-calc"
 	}
 	use {
-      "rafamadriz/friendly-snippets",
-      after = "cmp-spell",
+		"rafamadriz/friendly-snippets",
+		after = "cmp-spell",
 	}
 
     -- Colors

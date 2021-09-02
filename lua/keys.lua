@@ -19,15 +19,15 @@ keymap('n', '<C-l>', '<C-w>l', {silent = true})
 
 -- Terminal window navigation
 vim.cmd([[
-  tnoremap <C-h> <C-\><C-N><C-w>h
-  tnoremap <C-j> <C-\><C-N><C-w>j
-  tnoremap <C-k> <C-\><C-N><C-w>k
-  tnoremap <C-l> <C-\><C-N><C-w>l
-  inoremap <C-h> <C-\><C-N><C-w>h
-  inoremap <C-j> <C-\><C-N><C-w>j
-  inoremap <C-k> <C-\><C-N><C-w>k
-  inoremap <C-l> <C-\><C-N><C-w>l
-  tnoremap <Esc> <C-\><C-n>
+	tnoremap <C-h> <C-\><C-N><C-w>h
+	tnoremap <C-j> <C-\><C-N><C-w>j
+	tnoremap <C-k> <C-\><C-N><C-w>k
+	tnoremap <C-l> <C-\><C-N><C-w>l
+	inoremap <C-h> <C-\><C-N><C-w>h
+	inoremap <C-j> <C-\><C-N><C-w>j
+	inoremap <C-k> <C-\><C-N><C-w>k
+	inoremap <C-l> <C-\><C-N><C-w>l
+	tnoremap <Esc> <C-\><C-n>
 ]])
 
 -- resize with arrows
@@ -53,9 +53,3 @@ keymap('x', '<M-j>', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 -- Better nav for omnicomplete
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
-
--- scroll down hover doc or scroll in definition preview
--- vim.cmd("nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
--- scroll up hover doc
--- vim.cmd("nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
--- vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
