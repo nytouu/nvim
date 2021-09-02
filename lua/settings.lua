@@ -21,6 +21,7 @@ vim.wo.relativenumber = false
 vim.o.hidden = true
 vim.cmd('set ts=4')
 vim.cmd('set sw=4')
+vim.cmd('set listchars=trail:-,nbsp:+')
 vim.o.cmdheight = 1
 vim.o.confirm = true
 vim.o.showtabline = 2
