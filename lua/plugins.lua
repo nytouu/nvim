@@ -247,6 +247,10 @@ return require('packer').startup(function()
 		end,
 		event = "BufRead"
 	}
+	use {
+		'kdheepak/lazygit.nvim',
+		cmd = "LazyGit"
+	}
 
     -- Not useful but cool stuff
 	use {
