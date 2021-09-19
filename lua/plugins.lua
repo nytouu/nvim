@@ -231,7 +231,7 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.autopairs")
 		end,
-        event = "BufRead"
+        after = "nvim-cmp"
 	}
     use {
 		'lukas-reineke/indent-blankline.nvim',

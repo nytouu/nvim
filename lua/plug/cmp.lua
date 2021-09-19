@@ -14,9 +14,13 @@ require("cmp").setup{
 		)
 
 		vim_item.menu = ({
-			nvim_lsp = "[LSP]",
-			nvim_lua = "[Lua]",
-			buffer = "[BUF]",
+			nvim_lsp = "[lsp]",
+			nvim_lua = "[lua]",
+			buffer = "[buffer]",
+			path = "[path]",
+			calc = "[calc]",
+			luasnip = "[luasnip]",
+			spell = "[spell]"
 		})[entry.source.name]
 
 		return vim_item
