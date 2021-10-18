@@ -1,36 +1,25 @@
-vim.g.nvim_tree_disable_netrw = 1
+require'nvim-tree'.setup {
+	disable_netrw       = true,
+	hijack_netrw        = true,
+	open_on_setup       = false,
+	ignore_ft_on_setup  = {},
+	auto_close          = true,
+	open_on_tab         = false,
+	update_to_buf_dir   = {
+		enable = true,
+		auto_open = true,
+	},
+	view = {
+    width = 26,
+    height = 30,
+    side = 'left',
+    auto_resize = false,
+	}
+}
+
 vim.g.nvim_tree_hide_dotfiles = 1
 vim.g.nvim_tree_indent_markers = 0
 vim.g.nvim_tree_width = 26
-vim.g.nvim_tree_follow = 0
-vim.g.nvim_tree_auto_open = 1
-vim.g.nvim_tree_auto_close = 1 -- TODO why wont this work
--- local tree_cb = require'nvim-tree.config'.nvim_tree_callback
--- vim.g.nvim_tree_bindings = {
---     -- default mappings
---     ["<CR>"]           = tree_cb("edit"),
---     ["l"]              = tree_cb("edit"),
---     ["<2-LeftMouse>"]  = tree_cb("edit"),
---     ["<2-RightMouse>"] = tree_cb("cd"),
---     ["C"]          	 = tree_cb("cd"),
---     ["<C-v>"]          = tree_cb("vsplit"),
---     ["<C-x>"]          = tree_cb("split"),
---     ["<C-t>"]          = tree_cb("tabnew"),
---     ["<BS>"]           = tree_cb("close_node"),
---     ["<Tab>"]          = tree_cb("preview"),
---     ["I"]              = tree_cb("toggle_ignored"),
---     ["H"]              = tree_cb("toggle_dotfiles"),
---     ["R"]              = tree_cb("refresh"),
---     ["a"]              = tree_cb("create"),
---     ["d"]              = tree_cb("remove"),
---     ["r"]              = tree_cb("rename"),
---     ["<C-r>"]          = tree_cb("full_rename"),
---     ["x"]              = tree_cb("cut"),
---     ["y"]              = tree_cb("copy"),
---     ["p"]              = tree_cb("paste"),
---     ["u"]              = tree_cb("dir_up"),
---     ["q"]              = tree_cb("close"),
--- }
 
 vim.g.nvim_tree_show_icons = {
     git = 0,
