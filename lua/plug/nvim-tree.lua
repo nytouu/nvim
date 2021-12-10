@@ -10,10 +10,10 @@ require'nvim-tree'.setup {
 		auto_open = true,
 	},
 	view = {
-    width = 26,
-    height = 30,
-    side = 'left',
-    auto_resize = false,
+		width = 26,
+		height = 30,
+		side = 'left',
+		auto_resize = false,
 	}
 }
 
