@@ -197,7 +197,7 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.nvim-tree")
 		end,
-        cmd = { "NvimTreeToggle", "NvimTreeFocus" }
+        cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeOpen" }
 	}
 
     -- Quality of life stuff
