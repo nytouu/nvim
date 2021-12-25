@@ -21,6 +21,9 @@ return require('packer').startup(function()
     }
 
     -- Lua stuff
+	use {
+		'lewis6991/impatient.nvim'
+	}
     use {
         'nvim-lua/plenary.nvim',
     }
