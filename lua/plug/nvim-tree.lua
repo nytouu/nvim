@@ -14,12 +14,11 @@ require'nvim-tree'.setup {
 		height = 30,
 		side = 'left',
 		auto_resize = false,
+	},
+	filters = {
+		dotfiles = true,
 	}
 }
-
-vim.g.nvim_tree_hide_dotfiles = 1
-vim.g.nvim_tree_indent_markers = 0
-vim.g.nvim_tree_width = 26
 
 vim.g.nvim_tree_show_icons = {
     git = 0,
