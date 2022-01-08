@@ -131,7 +131,7 @@ return require('packer').startup(function()
         after = "packer.nvim",
         config = function()
             -- require('tokyonight')
-            vim.g.tokyonight_style = "storm"
+            vim.g.tokyonight_style = "night"
             vim.g.tokyonight_italic_functions = true
             vim.g.tokyonight_italic_comments = true
             vim.g.tokyonight_sidebars = { "NvimTree", "Outline", "toggleterm", "terminal", "packer" }
