@@ -17,7 +17,10 @@ require'nvim-tree'.setup {
 	},
 	filters = {
 		dotfiles = true,
-	}
+	},
+	git = {
+		enable = false,
+	},
 }
 
 vim.g.nvim_tree_show_icons = {
