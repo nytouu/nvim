@@ -1,4 +1,4 @@
-require'lspsaga'.init_lsp_saga {
+require'lspsaga'.setup {
     use_saga_diagnostic_sign = true,
     code_action_icon = "",
     error_sign = "",
