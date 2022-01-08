@@ -95,7 +95,7 @@ gls.left[3] ={
 gls.left[4] = {
 	FileName = {
 		provider = {'FileName'},
-		separator = ' ',
+		separator = '',
 		condition = buffer_not_empty,
 		separator_highlight = {'NONE',colors.bg},
 		highlight = {colors.green,colors.bg,'bold'}
@@ -250,10 +250,10 @@ gls.short_line_left[2] = {
 }
 
 gls.short_line_left[3] = {
-	SFileName = {
+	FileName = {
 		condition = buffer_not_empty,
 		provider = function ()
-		local fileinfo = require('galaxyline.provider_fileinfo')
+		local fileinfo = require('galaxyline.provider.fileinfo')
 		local fname = fileinfo.get_current_file_name()
 		for _,v in ipairs(gl.short_line_list) do
 			if v == vim.bo.filetype then

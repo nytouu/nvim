@@ -174,12 +174,12 @@ return require('packer').startup(function()
 		event = "BufWinEnter"
 	}
     use {
-		'glepnir/galaxyline.nvim',
-		after = "tokyonight.nvim",
+		'NTBBloodbath/galaxyline.nvim',
+		-- after = "startup.nvim",
 		config = function()
 			require("plug.statusline")
 		end,
-		event = "BufWinEnter"
+		-- event = "BufWinEnter"
 	}
     use {
 		'akinsho/nvim-toggleterm.lua',
