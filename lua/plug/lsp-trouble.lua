@@ -1,7 +1,7 @@
 require("trouble").setup {
     height = 6,
     icons = true,
-    mode = "document",
+    mode = "document_diagnostics",
     fold_open = "",
     fold_closed = "",
     action_keys = {
@@ -30,5 +30,5 @@ require("trouble").setup {
     auto_close = false,
     auto_preview = false,
     auto_fold = false,
-    use_lsp_diagnostic_signs = true
+    use_diagnostic_signs = true
 }

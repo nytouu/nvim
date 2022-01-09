@@ -163,7 +163,7 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.lsp-trouble")
 		end,
-		cmd = "LspTroubleToggle"
+		cmd = "TroubleToggle"
 	}
     use {
 		'akinsho/nvim-bufferline.lua',

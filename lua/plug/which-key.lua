@@ -69,7 +69,7 @@ local mappings = {
 	t = {
 		name = "Toggle",
 		e = {"<cmd>NvimTreeToggle<cr>","Toggle explorer"},
-		r = {"<cmd>LspTroubleToggle<cr>","Toggle diagnostics"},
+		r = {"<cmd>TroubleToggle<cr>","Toggle diagnostics"},
 		t = {"<cmd>ToggleTerm<cr>","Toggle terminal"}
 	},
 	f = {
