@@ -78,8 +78,8 @@ local mappings = {
 		b = {"<cmd>Telescope file_browser<cr>","File browser"},
 		f = {"<cmd>Telescope find_files<cr>","Find file"},
 		g = {"<cmd>Telescope live_grep<cr>","Find word"},
-		h = {"<cmd>Telescope oldfiles<cr>","Old files"},
-		s = {"<cmd>e $HOME/.config/nvim/lua/settings.lua<cr>","Open settings"}
+		r = {"<cmd>Telescope oldfiles<cr>","Recent files"},
+		c = {"<cmd>Telescope find_files cwd=$HOME/.conig/nvim/<cr>","Open settings"}
 	},
 	q = {
 		name = "Quit",

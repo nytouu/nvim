@@ -3,7 +3,7 @@ vim.g.dashboard_default_executive = 'telescope'
 vim.g.dashboard_custom_section = {
     a = {description = {'  Recent Files       spc f h'}, command = 'Telescope oldfiles'},
     b = {description = {'  Find File          spc f f'}, command = 'Telescope find_files'},
-    c = {description = {'漣 Neovim Config      spc f c'}, command = 'Telescope find_files cwd=/home/nytou/.config/nvim'},
+    c = {description = {'漣 Neovim Config      spc f c'}, command = 'Telescope find_files cwd=$HOME/.config/nvim'},
     d = {description = {'  Quit               spc q q'}, command = ':q'}
 }
 
