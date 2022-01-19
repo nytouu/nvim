@@ -10,7 +10,7 @@ require'nvim-tree'.setup {
 		auto_open = true,
 	},
 	view = {
-		width = 26,
+		width = 30,
 		height = 30,
 		side = 'left',
 		auto_resize = false,
@@ -20,6 +20,10 @@ require'nvim-tree'.setup {
 	},
 	git = {
 		enable = false,
+	},
+	trash = {
+        cmd = "trash",
+        require_confirm = true,
 	},
 }
 
