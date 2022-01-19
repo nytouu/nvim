@@ -4,8 +4,9 @@ gl.short_line_list = {'NvimTree','vista','dbui','packager','toggleterm'}
 
 local colors = {
 	bg = '#1f2335',
-	-- bg = '#1d202f',
+	dark_fg = '#394166',
 	fg = '#c0caf5',
+	dark_bg = '#16161e',
 	yellow = '#ffe771',
 	cyan = '#7dcfff',
 	green = '#9ece6a',
@@ -66,16 +67,18 @@ gls.left[1] = {
 	}
 }
 
-gls.left[2] =
-{
-    FileType = {
-        provider = function()
-            if not buffer_not_empty() then return '' end
-            return ' ' .. vim.bo.filetype .. ' '
-        end,
-        condition = buffer_not_empty,
-        highlight = {colors.cyan, colors.bg},
-    }
+
+gls.left[2] = {
+	LineNr = {
+		provider = function()
+		local total_line = vim.fn.line('$')
+			return total_line
+		end,
+		separator = ' ',
+		separator_highlight = {'NONE',colors.bg},
+		condition = buffer_not_empty,
+		highlight = {colors.fg,colors.bg}
+	}
 }
 
 gls.left[3] ={
@@ -102,38 +105,27 @@ gls.left[4] = {
 	}
 }
 
+
 gls.left[5] = {
-	LineNr = {
-		provider = function()
-		local total_line = vim.fn.line('$')
-			return total_line
-		end,
+	LineInfo = {
+		provider = 'LineColumn',
+		condition = checkwidth,
 		separator = ' ',
 		separator_highlight = {'NONE',colors.bg},
-		condition = buffer_not_empty,
-		highlight = {colors.fg,colors.bg}
+		highlight = {colors.dark_fg,colors.bg}
 	}
 }
-
 gls.left[6] = {
-	GitIcon = {
-		provider = function() return icons.git end,
-		condition = require('galaxyline.condition').check_git_workspace,
-		highlight = {colors.orange,colors.bg,'bold'}
+	PerCent = {
+		provider = 'LinePercent',
+		conditon = checkwidth,
+		separator = ' ',
+		separator_highlight = {'NONE',colors.bg},
+		highlight = {colors.dark_fg,colors.bg,'bold'}
 	}
 }
 
 gls.left[7] = {
-	GitBranch = {
-		provider = 'GitBranch',
-		separator = ' ',
-		separator_highlight = {'NONE',colors.bg},
-		condition = require('galaxyline.condition').check_git_workspace,
-		highlight = {colors.fg,colors.bg,'bold'}
-	}
-}
-
-gls.left[8] = {
 	DiffAdd = {
 		provider = 'DiffAdd',
 		icon = icons.gitadd,
@@ -141,14 +133,14 @@ gls.left[8] = {
 	}
 }
 
-gls.left[9] = {
+gls.left[8] = {
 	DiffModified = {
 		provider = 'DiffModified',
 		icon = icons.gitmod,
 		highlight = {colors.orange,colors.bg}
 	}
 }
-gls.left[10] = {
+gls.left[9] = {
 	DiffRemove = {
 		provider = 'DiffRemove',
 		icon = icons.gitdel,
@@ -191,36 +183,50 @@ gls.right[4] = {
 		highlight = {colors.blue,colors.bg}
 	}
 }
-gls.right[5] = {
-	FileEncode = {
-		provider = 'FileEncode',
-		separator = ' ',
-		separator_highlight = {'NONE',colors.bg},
-		highlight = {colors.cyan,colors.bg,'bold'}
-	}
+
+gls.right[5] =
+{
+    FileType = {
+        provider = function()
+            if not buffer_not_empty() then return '' end
+            return '  ' .. vim.bo.filetype
+        end,
+        condition = buffer_not_empty,
+        highlight = {colors.cyan, colors.bg},
+    }
 }
+
 
 gls.right[6] = {
-	LineInfo = {
-		provider = 'LineColumn',
-		condition = checkwidth,
-		separator = ' ',
-		separator_highlight = {'NONE',colors.bg},
-		highlight = {colors.fg,colors.bg}
-	}
-}
-
-gls.right[7] = {
-	PerCent = {
-		provider = 'LinePercent',
-		conditon = checkwidth,
+	FileEncode = {
+		provider = 'FileEncode',
 		separator = ' ',
 		separator_highlight = {'NONE',colors.bg},
 		highlight = {colors.fg,colors.bg,'bold'}
 	}
 }
 
+gls.right[7] = {
+	GitIcon = {
+		provider = function() return icons.git end,
+		separator = ' ',
+		separator_highlight = {'NONE',colors.bg},
+		condition = require('galaxyline.condition').check_git_workspace,
+		highlight = {colors.orange,colors.bg,'bold'}
+	}
+}
+
 gls.right[8] = {
+	GitBranch = {
+		provider = 'GitBranch',
+		separator = ' ',
+		separator_highlight = {'NONE',colors.bg},
+		condition = require('galaxyline.condition').check_git_workspace,
+		highlight = {colors.fg,colors.bg,'bold'}
+	}
+}
+
+gls.right[9] = {
 	ViMode2 = {
 		provider = function()
 			return ' ▊'
@@ -230,13 +236,12 @@ gls.right[8] = {
 		highlight = 'GalaxyViMode'
 	}
 }
-
 gls.short_line_left[1] = {
 	LeftIcon = {
 		provider = function ()
 			return '▊ '
 		end,
-		highlight = {colors.blue, colors.bg}
+		highlight = {colors.blue, colors.dark_bg}
 	}
 }
 
@@ -244,24 +249,24 @@ gls.short_line_left[2] = {
 	BufferType = {
 		provider = 'FileTypeName',
 		separator = ' ',
-		separator_highlight = {'NONE',colors.bg},
-		highlight = {colors.blue,colors.bg,'bold'}
+		separator_highlight = {'NONE',colors.dark_bg},
+		highlight = {colors.blue,colors.dark_bg,'bold'}
 	}
 }
 
-gls.short_line_left[3] = {
-	FileName = {
-		condition = buffer_not_empty,
-		provider = function ()
-		local fileinfo = require('galaxyline.provider.fileinfo')
-		local fname = fileinfo.get_current_file_name()
-		for _,v in ipairs(gl.short_line_list) do
-			if v == vim.bo.filetype then
-				return ''
-			end
-		end
-		return fname
-		end,
-		highlight = {colors.white,colors.bg,'bold'}
-	}
-}
+-- gls.short_line_left[3] = {
+-- 	FileName = {
+-- 		condition = buffer_not_empty,
+-- 		provider = function ()
+-- 		local fileinfo = require('galaxyline.provider.fileinfo')
+-- 		local fname = fileinfo.get_current_file_name()
+-- 		for _,v in ipairs(gl.short_line_list) do
+-- 			if v == vim.bo.filetype then
+-- 				return ''
+-- 			end
+-- 		end
+-- 		return fname
+-- 		end,
+-- 		highlight = {colors.white,colors.bg,'bold'}
+-- 	}
+-- }
