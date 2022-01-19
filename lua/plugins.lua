@@ -258,6 +258,9 @@ return require('packer').startup(function()
     -- Not useful but cool stuff
 	use {
 		'folke/zen-mode.nvim',
+		config = function()
+			require("plug.zen")
+		end,
 		cmd = "ZenMode"
 	}
 	use {
