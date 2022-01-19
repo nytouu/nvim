@@ -57,7 +57,7 @@ return require('packer').startup(function()
 		'ray-x/lsp_signature.nvim',
 	}
     use {
-		'kabouzeid/nvim-lspinstall',
+        'williamboman/nvim-lsp-installer'
 	}
 
 	-- Completion stuff
