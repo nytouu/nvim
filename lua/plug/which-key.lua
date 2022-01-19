@@ -75,11 +75,10 @@ local mappings = {
 	f = {
 		name = "Find",
 		d = {"<cmd>Dashboard<cr>","Open dashboard"},
-		b = {"<cmd>Telescope file_browser<cr>","File browser"},
 		f = {"<cmd>Telescope find_files<cr>","Find file"},
 		g = {"<cmd>Telescope live_grep<cr>","Find word"},
 		r = {"<cmd>Telescope oldfiles<cr>","Recent files"},
-		c = {"<cmd>Telescope find_files cwd=$HOME/.conig/nvim/<cr>","Open settings"}
+		c = {"<cmd>Telescope find_files cwd=$HOME/.config/nvim/<cr>","Open settings"}
 	},
 	q = {
 		name = "Quit",
@@ -114,7 +113,7 @@ local mappings = {
 		j = {"<cmd>Gitsigns next_hunk<cr>","Next hunk"},
 		k = {"<cmd>Gitsigns prev_hunk<cr>","Previous hunk"},
 		p = {"<cmd>Gitsigns preview_hunk<cr>","Preview hunk"},
-		r = {"<cmd>Gitsigns reset_hunk<cr>","Preview hunk"}
+		r = {"<cmd>Gitsigns reset_hunk<cr>","Reset hunk"}
 	},
 	l = {
 		name = "Lsp",

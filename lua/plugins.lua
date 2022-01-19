@@ -130,7 +130,6 @@ return require('packer').startup(function()
         'folke/tokyonight.nvim',
         after = "packer.nvim",
         config = function()
-            -- require('tokyonight')
             vim.g.tokyonight_style = "night"
             vim.g.tokyonight_italic_functions = true
             vim.g.tokyonight_italic_comments = true
@@ -226,10 +225,6 @@ return require('packer').startup(function()
 			require("plug.which-key")
 		end,
 		event = "BufWinEnter"
-	}
-    use {
-		'famiu/nvim-reload',
-		cmd = "Reload"
 	}
     use {
 		'terrortylor/nvim-comment',
