@@ -37,6 +37,7 @@ vim.o.conceallevel = 2
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.synmaxcol = 1024
+vim.o.lazyredraw = true
 vim.cmd('syntax on')
 vim.opt.shortmess:append("c")
 vim.cmd("let &fcs='eob: '")
