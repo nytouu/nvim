@@ -23,6 +23,12 @@ require('packer').init({
 })
 
 return require('packer').startup(function()
+
+    -- Impatient for faster loading
+	use {
+		'lewis6991/impatient.nvim'
+	}
+
     -- Packer can manage itself as an optionnal plugin
     use {
         'wbthomason/packer.nvim',
@@ -30,14 +36,13 @@ return require('packer').startup(function()
     }
 
     -- Lua stuff
-	use {
-		'lewis6991/impatient.nvim'
-	}
     use {
         'nvim-lua/plenary.nvim',
+		after = "impatient.nvim"
     }
     use {
         'nvim-lua/popup.nvim',
+		after = "impatient.nvim"
     }
 
     -- LSP
@@ -45,19 +50,23 @@ return require('packer').startup(function()
 		'neovim/nvim-lspconfig',
 		config = function()
 			require("plug.lsp")
-		end
+		end,
+        event = "VimEnter"
 	}
     use {
 		'tami5/lspsaga.nvim',
 		config = function()
 			require("plug.lsp-saga")
 		end,
+        after = "nvim-lspconfig"
 	}
     use {
 		'ray-x/lsp_signature.nvim',
+        after = "lspsaga.nvim"
 	}
     use {
-        'williamboman/nvim-lsp-installer'
+        'williamboman/nvim-lsp-installer',
+        after = "nvim-lspconfig"
 	}
 
 	-- Completion stuff
@@ -145,6 +154,7 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.telescope")
 		end,
+        after = "plenary.nvim"
 	}
 	use {
 		'dominikduda/vim_current_word',
