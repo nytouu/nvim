@@ -1,7 +1,7 @@
 # init.lua
 
 this is my [neovim](https://github.com/neovim/neovim) config\
-neovim 0.5+ is required
+neovim 0.6+ is required
 
 here are a few screenshots :\
 ![screen1](https://raw.githubusercontent.com/nytouu/nvim/master/screen1.png)
