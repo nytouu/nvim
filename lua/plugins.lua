@@ -51,7 +51,7 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.lsp")
 		end,
-        event = "VimEnter"
+        after = "nvim-lsp-installer"
 	}
     use {
 		'tami5/lspsaga.nvim',
@@ -66,7 +66,7 @@ return require('packer').startup(function()
 	}
     use {
         'williamboman/nvim-lsp-installer',
-        after = "nvim-lspconfig"
+        event = "VimEnter"
 	}
 
 	-- Completion stuff
