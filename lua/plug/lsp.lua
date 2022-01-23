@@ -1,6 +1,6 @@
 local lsp_installer = require("nvim-lsp-installer")
 
-local function on_attach(client, bufnr)
+local function common_on_attach(client, bufnr)
   -- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
     require "lsp_signature".on_attach({
         bind = true,
@@ -24,7 +24,6 @@ local function setup_handlers()
         signs = true,
         underline = true,
         update_in_insert = true
-
     })
 end
 
@@ -38,9 +37,8 @@ local enhance_server_opts = {
             }
         }
     end,
-    ["clangd"] = function(opts)
+    ["csharp_ls"] = function(opts)
         opts.settings = {
-            -- TODO add stuff here
         }
     end,
     ["sumneko_lua"] = function(opts)
@@ -82,7 +80,7 @@ setup_handlers()
 
 lsp_installer.on_server_ready(function(server)
     local opts = {
-        on_attach = on_attach,
+        on_attach = common_on_attach,
     }
 
     if server.name == "bashls" then
