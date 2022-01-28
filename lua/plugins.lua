@@ -156,6 +156,13 @@ return require('packer').startup(function()
 		end,
         after = "plenary.nvim"
 	}
+    use {
+        'nvim-telescope/telescope-fzy-native.nvim',
+        config = function()
+            require('telescope').load_extension('fzy_native')
+        end,
+        after = "telescope.nvim"
+    }
 	use {
 		'dominikduda/vim_current_word',
 	    event = "BufRead"
