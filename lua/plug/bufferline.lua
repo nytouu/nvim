@@ -3,6 +3,7 @@ require('bufferline').setup{
 		buffer_close_icon = "",
         indicator_icon = '▎',
         modified_icon = "●",
+		color_icons = true,
         left_trunc_marker = "",
         right_trunc_marker = "",
         max_name_length = 14,
@@ -26,7 +27,14 @@ require('bufferline').setup{
         fill = {
             guifg = "#414868",
             guibg = "#1f2335"
-            -- guibg = "NONE"
+        },
+        separator = {
+            guifg = "#414868",
+            guibg = "#1a1b26"
+        },
+        separator_visible = {
+            guifg = "#414868",
+            guibg = "#15161e"
         }
     }
 }
