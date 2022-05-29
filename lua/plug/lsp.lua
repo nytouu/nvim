@@ -1,4 +1,5 @@
 local lsp_installer = require("nvim-lsp-installer")
+local root_pattern = require('lspconfig.util').root_pattern
 
 local function common_on_attach(client, bufnr)
   -- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
@@ -29,16 +30,15 @@ end
 
 local enhance_server_opts = {
     -- Provide settings that should only apply to the "eslintls" server
-    ["bashls"] = function(opts)
+    ["omnisharp"] = function(opts)
+    local pid = vim.fn.getpid()
+    local bin = vim.fn.stdpath("data") .. "/lsp_servers/omnisharp/omnisharp/run"
         opts.settings = {
-            config = {
-                -- FIXME figure out why this one doesnt work but line 87 does
-                filetypes = { "sh", "zsh" }
-            }
-        }
-    end,
-    ["csharp_ls"] = function(opts)
-        opts.settings = {
+            cmd = { bin, "--languageserver", "--hostPID", tostring(pid) },
+            root_dir = function(path)
+              -- Make sure an sln doesn't already exist before trying to use the nearest csproj file
+              return root_pattern('*.sln')(path) or root_pattern('*.csproj')(path)
+            end,
         }
     end,
     ["sumneko_lua"] = function(opts)
@@ -69,7 +69,7 @@ local enhance_server_opts = {
                     typeCheckingMode = 'off',
                     autoSearchPaths = true,
                     useLibraryCodeForTypes = true
-                    }
+                }
             },
         }
     end,
