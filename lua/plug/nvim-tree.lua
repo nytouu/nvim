@@ -3,7 +3,6 @@ require'nvim-tree'.setup {
 	hijack_netrw        = true,
 	open_on_setup       = false,
 	ignore_ft_on_setup  = {},
-	auto_close          = true,
 	open_on_tab         = false,
 	update_to_buf_dir   = {
 		enable = true,
@@ -51,3 +50,5 @@ vim.g.nvim_tree_window_picker_exclude = {
 	filetype = { 'packer', 'qf' },
 	buftype = { 'terminal', 'toggleterm', 'Trouble' }
 }
+
+vim.cmd[[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]]
