@@ -1,4 +1,4 @@
--- require('impatient').enable_profile()
+require('impatient')
 
 local disabled_built_ins = {
 	"2html_plugin",

@@ -25,9 +25,9 @@ require('packer').init({
 return require('packer').startup(function()
 
     -- Impatient for faster loading
-	-- use {
-	-- 	'lewis6991/impatient.nvim'
-	-- }
+	use {
+		'lewis6991/impatient.nvim'
+	}
 
     -- Packer can manage itself as an optionnal plugin
     use {
@@ -38,11 +38,11 @@ return require('packer').startup(function()
     -- Lua stuff
     use {
         'nvim-lua/plenary.nvim',
-		-- after = "impatient.nvim"
+		after = "impatient.nvim"
     }
     use {
         'nvim-lua/popup.nvim',
-		-- after = "impatient.nvim"
+		after = "impatient.nvim"
     }
 
     -- LSP
