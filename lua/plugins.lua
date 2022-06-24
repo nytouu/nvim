@@ -271,6 +271,13 @@ return require('packer').startup(function()
 		end,
 		event = "BufRead"
 	}
+    use {
+        'mcauley-penney/tidy.nvim',
+        config = function()
+            require("tidy").setup()
+        end,
+        event = "BufWritePre"
+    }
 
     -- Not useful but cool stuff
 	use {
