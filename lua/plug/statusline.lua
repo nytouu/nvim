@@ -61,7 +61,7 @@ gls.left[1] = {
 							rm = colors.cyan, ['r?'] = colors.cyan,
 							['!']  = colors.red,t = colors.blue}
 		vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
-			return '▊   '
+			return '▊   '
 		end,
 		highlight = {colors.red,colors.bg,'bold'}
 	}
@@ -189,7 +189,7 @@ gls.right[5] =
     FileType = {
         provider = function()
             if not buffer_not_empty() then return '' end
-            return '  ' .. vim.bo.filetype
+            return '  ' .. vim.bo.filetype
         end,
         condition = buffer_not_empty,
         highlight = {colors.cyan, colors.bg},

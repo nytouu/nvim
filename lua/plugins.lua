@@ -213,11 +213,9 @@ return require('packer').startup(function()
 
     -- Icons
     use {
-		'kyazdani42/nvim-web-devicons',
-	    config = function()
-	        require("plug.icons")
-		end
-	}
+        'yamatsum/nvim-nonicons',
+        requires = {'kyazdani42/nvim-web-devicons'}
+    }
 
     -- File explorer
     use {
