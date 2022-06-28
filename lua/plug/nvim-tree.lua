@@ -4,15 +4,10 @@ require'nvim-tree'.setup {
 	open_on_setup       = false,
 	ignore_ft_on_setup  = {},
 	open_on_tab         = false,
-	update_to_buf_dir   = {
-		enable = true,
-		auto_open = true,
-	},
 	view = {
 		width = 30,
 		height = 30,
 		side = 'left',
-		auto_resize = false,
 	},
 	filters = {
 		dotfiles = true,
