@@ -20,7 +20,9 @@ require("cmp").setup{
 			path = "[path]",
 			calc = "[calc]",
 			luasnip = "[luasnip]",
-			spell = "[spell]"
+			spell = "[spell]",
+			zsh = "[zsh]",
+			plugins = "[plugins]",
 		})[entry.source.name]
 
 		return vim_item
@@ -64,5 +66,7 @@ require("cmp").setup{
 		{ name = "path" },
 		{ name = "calc" },
 		{ name = "spell" },
+		{ name = "zsh" },
+		{ name = "plugins" },
 	}
 }

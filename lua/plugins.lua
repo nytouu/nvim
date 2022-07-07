@@ -113,9 +113,22 @@ return require('packer').startup(function()
 		"f3fora/cmp-spell",
 		after = "cmp-calc"
 	}
+    use {
+        "tamago324/cmp-zsh",
+        after = "cmp-spell"
+    }
+    use {
+        "KadoBOT/cmp-plugins",
+        after = "cmp-zsh",
+        config = function()
+            require("cmp-plugins").setup({
+                files = { "plugins.lua" }
+            })
+        end
+    }
 	use {
 		"rafamadriz/friendly-snippets",
-		after = "cmp-spell",
+		after = "cmp-plugins",
 	}
 
     -- Colors
@@ -204,7 +217,7 @@ return require('packer').startup(function()
 		end,
 		cmd = "ToggleTerm"
 	}
-	    use {
+    use {
 		'lewis6991/gitsigns.nvim',
 		config = function()
 			require("plug.git")
