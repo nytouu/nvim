@@ -302,4 +302,10 @@ return require('packer').startup(function()
 		'dstein64/vim-startuptime',
 		cmd = "StartupTime"
 	}
+
+    -- Syntax
+    use {
+        'tridactyl/vim-tridactyl',
+        event = "BufRead"
+    }
 end)
