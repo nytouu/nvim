@@ -22,6 +22,14 @@ require('packer').init({
    }
 })
 
+
+vim.api.nvim_create_autocmd("OptionSet", {
+	pattern = "background",
+	callback = function()
+		vim.cmd("Catppuccin " .. (vim.v.option_new == "light" and "mocha" or "mocha"))
+	end,
+})
+
 return require('packer').startup(function()
 
     -- Impatient for faster loading
@@ -152,14 +160,21 @@ return require('packer').startup(function()
         'folke/tokyonight.nvim',
         after = "packer.nvim",
         config = function()
-            vim.g.tokyonight_style = "night"
+            vim.g.tokyonight_style = "day"
             vim.g.tokyonight_italic_functions = true
             vim.g.tokyonight_italic_comments = true
             vim.g.tokyonight_sidebars = { "NvimTree", "Outline", "toggleterm", "terminal", "packer" }
             -- vim.g.tokyonight_dark_sidebar = false
-            vim.cmd('colorscheme tokyonight')
+            -- vim.cmd('colorscheme tokyonight')
         end
     }
+	use {
+		'catppuccin/nvim',
+		as = 'catppuccin',
+		config = function()
+			require("plug.cat")
+		end,
+	}
 
     -- UI stuff
     use {
