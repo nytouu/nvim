@@ -3,17 +3,17 @@ local gls = gl.section
 gl.short_line_list = {'NvimTree','vista','dbui','packager','toggleterm'}
 
 local colors = {
-	bg = '#1f2335',
-	dark_fg = '#394166',
-	fg = '#c0caf5',
-	dark_bg = '#16161e',
-	yellow = '#ffe771',
-	cyan = '#7dcfff',
-	green = '#9ece6a',
-	orange = '#e0af68',
-	magenta = '#bb9af2',
-	blue = '#7aa2f7',
-	red = '#ec5f67'
+	bg = '#1a1a28',
+	dark_fg = '#b6bed8',
+	fg = '#CDD6F4',
+	dark_bg = '#181825',
+	yellow = '#F9E2AF',
+	cyan = '#94E2D5',
+	green = '#A6E3A1',
+	orange = '#f7ceaf',
+	magenta = '#F5C2E7',
+	blue = '#89B4FA',
+	red = '#F38BA8'
 }
 
 local icons = {
@@ -22,8 +22,8 @@ local icons = {
 	info   = '  ',
 	hint   = '  ',
 	git    = '  ',
-	gitadd = '  ',
-	gitdel = '  ',
+	gitadd = ' ﰂ ',
+	gitdel = ' ﯰ ',
 	gitmod = ' 柳'
 }
 
@@ -189,7 +189,7 @@ gls.right[5] =
     FileType = {
         provider = function()
             if not buffer_not_empty() then return '' end
-            return '  ' .. vim.bo.filetype
+            return '  ' .. vim.bo.filetype
         end,
         condition = buffer_not_empty,
         highlight = {colors.cyan, colors.bg},

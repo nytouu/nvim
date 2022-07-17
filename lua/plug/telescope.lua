@@ -28,8 +28,8 @@ require('telescope').setup {
 			preview_cutoff = 120
 		},
         border = {},
-        borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-		-- borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+        -- borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+		borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
 		-- borderchars = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
         color_devicons = true,
         use_less = true,
