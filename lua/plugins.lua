@@ -22,7 +22,6 @@ require('packer').init({
    }
 })
 
-
 vim.api.nvim_create_autocmd("OptionSet", {
 	pattern = "background",
 	callback = function()
