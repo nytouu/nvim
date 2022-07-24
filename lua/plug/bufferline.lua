@@ -1,6 +1,6 @@
 require('bufferline').setup{
 	options = {
-		buffer_close_icon = "",
+		buffer_close_icon = "",
         indicator_icon = '▎',
         modified_icon = "●",
 		color_icons = true,
@@ -21,20 +21,6 @@ require('bufferline').setup{
                 text = " ",
                 padding = 1
             }
-        }
-    },
-    highlights = {
-        fill = {
-            guifg = "#414868",
-            guibg = "#1f2335"
-        },
-        separator = {
-            guifg = "#414868",
-            guibg = "#1a1b26"
-        },
-        separator_visible = {
-            guifg = "#414868",
-            guibg = "#15161e"
         }
     }
 }
