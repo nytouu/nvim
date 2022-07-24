@@ -1,5 +1,6 @@
 local lsp_installer = require("nvim-lsp-installer")
 local root_pattern = require('lspconfig.util').root_pattern
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local function common_on_attach(client, bufnr)
   -- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
@@ -76,11 +77,30 @@ local enhance_server_opts = {
     -- TODO add other servers
 }
 
+capabilities.textDocument.CompletionItem = {
+	documentationFormat = { "markdown", "plaintext" },
+	snippetSupport = true,
+	preselectSupport = true,
+	insertReplaceSupport = true,
+	labelDetailsSupport = true,
+	deprecatedSupport = true,
+	commitCharactersSupport = true,
+	tagSupport = { valueSet = {1} },
+	resolveSupport = {
+		properties = {
+			"documentation",
+			"detail",
+			"additionalTextEdits"
+		}
+	}
+}
+
 setup_handlers()
 
 lsp_installer.on_server_ready(function(server)
     local opts = {
         on_attach = common_on_attach,
+		capabilities = capabilities
     }
 
     if server.name == "bashls" then
