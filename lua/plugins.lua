@@ -61,7 +61,8 @@ return require('packer').startup(function()
         after = "nvim-lsp-installer"
 	}
     use {
-		'tami5/lspsaga.nvim',
+		'glepnir/lspsaga.nvim',
+		branch = "main",
 		config = function()
 			require("plug.lsp-saga")
 		end,
