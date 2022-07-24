@@ -29,15 +29,15 @@ vim.g.nvim_tree_show_icons = {
 }
 
 vim.g.nvim_tree_icons = {
-    default = '',
-    symlink = '',
+    default = '',
+    symlink = '',
     folder  = {
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
+        default = "",
+        open = "",
+        empty = "",
+        empty_open = "",
         symlink = "",
-        symlink_open = "",
+        symlink_open = "",
     }
 }
 
