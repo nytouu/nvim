@@ -156,18 +156,6 @@ return require('packer').startup(function()
 	}
 
     -- Themes
-    use {
-        'folke/tokyonight.nvim',
-        after = "packer.nvim",
-        config = function()
-            vim.g.tokyonight_style = "day"
-            vim.g.tokyonight_italic_functions = true
-            vim.g.tokyonight_italic_comments = true
-            vim.g.tokyonight_sidebars = { "NvimTree", "Outline", "toggleterm", "terminal", "packer" }
-            -- vim.g.tokyonight_dark_sidebar = false
-            -- vim.cmd('colorscheme tokyonight')
-        end
-    }
 	use {
 		'catppuccin/nvim',
 		as = 'catppuccin',
@@ -184,13 +172,6 @@ return require('packer').startup(function()
 		end,
         after = "plenary.nvim"
 	}
-    use {
-        'nvim-telescope/telescope-fzy-native.nvim',
-        config = function()
-            require('telescope').load_extension('fzy_native')
-        end,
-        after = "telescope.nvim"
-    }
 	use {
 		'dominikduda/vim_current_word',
 	    event = "BufRead"
@@ -211,7 +192,7 @@ return require('packer').startup(function()
 	}
     use {
 		'akinsho/bufferline.nvim',
-		after = "tokyonight.nvim",
+		after = "catppuccin",
 		config = function()
 			require("plug.bufferline")
 		end,
@@ -285,7 +266,7 @@ return require('packer').startup(function()
 	}
     use {
 		'lukas-reineke/indent-blankline.nvim',
-        after = "tokyonight.nvim",
+        after = "catppuccin",
 		config = function()
 			require("plug.indent")
 		end
