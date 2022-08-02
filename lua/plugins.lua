@@ -15,10 +15,10 @@ vim.cmd "autocmd BufWritePost plugins.lua PackerCompile"
 
 require('packer').init({
 	display = {
-      open_fn = function()
-         return require("packer.util").float { border = "single" }
-      end,
-      prompt_border = "single"
+        open_fn = function()
+            return require("packer.util").float { border = "single" }
+        end,
+        prompt_border = "none"
    }
 })
 

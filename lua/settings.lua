@@ -47,7 +47,7 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 -- neovide stuff
-vim.o.guifont = "JetBrainsMono Nerd Font:h13"
+vim.o.guifont = "SFMono Nerd Font:h13"
 vim.g.neovide_refresh_rate = 144
 vim.g.neovide_cursor_animation_length = 0.03
 vim.g.neovide_cursor_trail_length=0.3
