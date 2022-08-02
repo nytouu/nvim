@@ -45,10 +45,6 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
-vim.cmd('hi CurrentWordTwins guibg=#2c3044')
-vim.cmd('let g:vim_current_word#highlight_current_word = 0')
-vim.cmd('let g:vim_current_word#highlight_twins = 1')
-vim.cmd('let g:vim_current_word#highlight_delay = 0')
 
 -- neovide stuff
 vim.o.guifont = "JetBrainsMono Nerd Font:h13"
