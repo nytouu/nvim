@@ -16,7 +16,6 @@ require("which-key").setup {
             g = true,
         },
     },
-    operators = { gc = "Comments" },
     key_labels = {
         ["<Leader>"] = "SPC",
         ["<cr>"] = "RET",
@@ -70,7 +69,8 @@ local mappings = {
 		name = "Toggle",
 		e = {"<cmd>NvimTreeToggle<cr>","Toggle explorer"},
 		r = {"<cmd>TroubleToggle<cr>","Toggle diagnostics"},
-		t = {"<cmd>ToggleTerm<cr>","Toggle terminal"}
+		t = {"<cmd>ToggleTerm<cr>","Toggle terminal"},
+		T = {"<cmd>TransparentToggle<cr>","Toggle trancparency"}
 	},
 	f = {
 		name = "Find",

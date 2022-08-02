@@ -60,8 +60,3 @@ vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_cursor_vfx_particle_lifetime=2.2
 vim.g.neovide_ccursor_vfx_particle_density=10.0
 vim.g.neovide_ccursor_vfx_particle_phase=3.0
--- vim.cmd([[
--- if !exists('g:neovide')
--- 	autocmd VimEnter * hi Normal guibg=NONE
--- endif
--- ]])
