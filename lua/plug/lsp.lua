@@ -17,7 +17,7 @@ local function common_on_attach(client, bufnr)
             border = "single"
         },
         decorator = {"`", "`"}
-        })
+	})
 end
 
 local function setup_handlers()
