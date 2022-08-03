@@ -4,33 +4,27 @@ require("cmp").setup{
 		require("luasnip").lsp_expand(args.body)
 		end,
 	},
+	window = {
+		completion = {
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+			col_offset = -3,
+			side_padding = 0,
+		},
+	},
 	formatting = {
-	format = function(entry, vim_item)
-		-- load lspkind icons
-		vim_item.kind = string.format(
-			"%s %s",
-			require("plug.cmp-icons").icons[vim_item.kind],
-			vim_item.kind
-		)
+		fields = { "kind", "abbr", "menu" },
+		format = function(entry, vim_item)
+			local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+			local strings = vim.split(kind.kind, "%s", { trimempty = true })
+			kind.kind = " " .. strings[1] .. " "
+			kind.menu = "    (" .. strings[2] .. ")"
 
-		vim_item.menu = ({
-			nvim_lsp = "[lsp]",
-			nvim_lua = "[lua]",
-			buffer = "[buffer]",
-			path = "[path]",
-			calc = "[calc]",
-			luasnip = "[luasnip]",
-			spell = "[spell]",
-			zsh = "[zsh]",
-			plugins = "[plugins]",
-		})[entry.source.name]
-
-		return vim_item
-	end,
+			return kind
+		end,
 	},
 	mapping = {
-		["<C-p>"] = require("cmp").mapping.select_prev_item(),
-		["<C-n>"] = require("cmp").mapping.select_next_item(),
+		["<C-k>"] = require("cmp").mapping.select_prev_item(),
+		["<C-j>"] = require("cmp").mapping.select_next_item(),
 		["<C-d>"] = require("cmp").mapping.scroll_docs(-4),
 		["<C-f>"] = require("cmp").mapping.scroll_docs(4),
 		["<C-Space>"] = require("cmp").mapping.complete(),

@@ -138,6 +138,10 @@ return require('packer').startup(function()
 		"rafamadriz/friendly-snippets",
 		after = "cmp-plugins",
 	}
+	use {
+		"onsails/lspkind.nvim",
+		event = "BufRead"
+	}
 
     -- Colors
     use {
