@@ -13,7 +13,7 @@ require("catppuccin").setup({
 		cmp = true,
 		lsp_saga = true,
 		gitsigns = true,
-		telescope = true,
+		telescope = false,
 		nvimtree = {
 			enabled = true,
 			show_root = true,
