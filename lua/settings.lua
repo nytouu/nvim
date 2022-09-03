@@ -51,12 +51,12 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 -- neovide stuff
-vim.o.guifont = "SFMono Nerd Font:h13"
-vim.g.neovide_refresh_rate = 144
-vim.g.neovide_cursor_animation_length = 0.03
+vim.o.guifont = "nonicons,JetBrains Mono"
+vim.g.neovide_refresh_rate=144
+vim.g.neovide_cursor_animation_length=0.03
 vim.g.neovide_cursor_trail_length=0.3
 vim.g.neovide_cursor_antialiasing=true
-vim.g.neovide_cursor_vfx_mode = "pixiedust"
+vim.g.neovide_cursor_vfx_mode="pixiedust"
 vim.g.neovide_cursor_vfx_particle_lifetime=2.2
 vim.g.neovide_ccursor_vfx_particle_density=10.0
 vim.g.neovide_ccursor_vfx_particle_phase=3.0

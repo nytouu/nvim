@@ -1,7 +1,7 @@
 require('bufferline').setup{
 	options = {
 		buffer_close_icon = "",
-        indicator_icon = '▎',
+        -- indicator_icon = '▎',
         modified_icon = "●",
 		color_icons = true,
         left_trunc_marker = "",
