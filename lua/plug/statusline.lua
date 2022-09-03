@@ -3,17 +3,17 @@ local gls = gl.section
 gl.short_line_list = {'NvimTree','vista','dbui','packager','toggleterm'}
 
 local colors = {
-	bg = '#1a1a28',
-	dark_fg = '#b6bed8',
-	fg = '#CDD6F4',
-	dark_bg = '#181825',
+	bg = '#101010',
+	dark_bg = '#0c0c0c',
+	fg = '#dde1e6',
+	dark_fg = '#525252',
 	yellow = '#F9E2AF',
-	cyan = '#94E2D5',
-	green = '#A6E3A1',
-	orange = '#f7ceaf',
-	magenta = '#F5C2E7',
-	blue = '#89B4FA',
-	red = '#F38BA8'
+	cyan = '#3ddbd9',
+	green = '#42be65',
+	orange = '#FFAB91',
+	magenta = '#ff7eb6',
+	blue = '#82cfff',
+	red = '#ee5396'
 }
 
 local icons = {
