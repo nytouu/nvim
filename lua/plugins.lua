@@ -22,13 +22,6 @@ require('packer').init({
    }
 })
 
-vim.api.nvim_create_autocmd("OptionSet", {
-	pattern = "background",
-	callback = function()
-		vim.cmd("Catppuccin " .. (vim.v.option_new == "light" and "mocha" or "mocha"))
-	end,
-})
-
 return require('packer').startup(function()
 
     -- Impatient for faster loading
@@ -163,10 +156,11 @@ return require('packer').startup(function()
 	use {
 		'catppuccin/nvim',
 		as = 'catppuccin',
-		config = function()
-			require("plug.cat")
-		end,
 	}
+    use {
+		'shaunsingh/oxocarbon.nvim',
+		run = './install.sh'
+    }
 
     -- UI stuff
     use {
@@ -207,7 +201,6 @@ return require('packer').startup(function()
 	}
     use {
 		'akinsho/bufferline.nvim',
-		after = "catppuccin",
 		config = function()
 			require("plug.bufferline")
 		end,
@@ -281,10 +274,10 @@ return require('packer').startup(function()
 	}
     use {
 		'lukas-reineke/indent-blankline.nvim',
-        after = "catppuccin",
 		config = function()
 			require("plug.indent")
-		end
+		end,
+        event = "BufWinEnter"
 	}
     use {
 		'phaazon/hop.nvim',
