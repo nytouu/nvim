@@ -133,7 +133,7 @@ return require('packer').startup(function()
 	}
 	use {
 		"onsails/lspkind.nvim",
-		event = "BufRead"
+		event = "InsertEnter"
 	}
 
     -- Colors
