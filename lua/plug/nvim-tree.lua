@@ -6,7 +6,6 @@ require'nvim-tree'.setup {
 	open_on_tab         = false,
 	view = {
 		width = 30,
-		height = 30,
 		side = 'left',
 	},
 	filters = {
