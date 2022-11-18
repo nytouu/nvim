@@ -165,13 +165,13 @@ return require('packer').startup(function()
     -- UI stuff
     use {
         "xiyaowong/nvim-transparent",
-        config = function ()
-			vim.cmd([[
-				if !exists('g:neovide')
-					lua require("transparent").setup({ enable = true })
-				endif
-			]])
-            end,
+			--         config = function ()
+			-- vim.cmd([[
+			-- 	if !exists('g:neovide')
+			-- 		lua require("transparent").setup({ enable = true })
+			-- 	endif
+			-- ]])
+			--             end,
         event = "VimEnter"
     }
     use {
