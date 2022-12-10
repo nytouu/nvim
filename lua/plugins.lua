@@ -47,11 +47,7 @@ return require('packer').startup(function()
 
     -- LSP
     use {
-		'neovim/nvim-lspconfig',
-		config = function()
-			require("plug.lsp")
-		end,
-        after = "nvim-lsp-installer"
+		'neovim/nvim-lspconfig'
 	}
     use {
 		'glepnir/lspsaga.nvim',
@@ -65,9 +61,13 @@ return require('packer').startup(function()
 		'ray-x/lsp_signature.nvim',
         after = "lspsaga.nvim"
 	}
+        "williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("plug.lsp")
+		end
+    }
     use {
-        'williamboman/nvim-lsp-installer',
-        event = "VimEnter"
+        'williamboman/mason.nvim'
 	}
 
 	-- Completion stuff
