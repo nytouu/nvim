@@ -57,10 +57,12 @@ return require('packer').startup(function()
 		end,
         after = "nvim-lspconfig"
 	}
+	-- use {
+	-- 	'ray-x/lsp_signature.nvim',
+	-- 	after = "lspsaga.nvim"
+	-- }
+
     use {
-		'ray-x/lsp_signature.nvim',
-        after = "lspsaga.nvim"
-	}
         "williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("plug.lsp")
@@ -153,18 +155,25 @@ return require('packer').startup(function()
 	}
 
     -- Themes
-	use {
-		'catppuccin/nvim',
-		as = 'catppuccin',
-	}
+	-- use {
+	-- 	'catppuccin/nvim',
+	-- 	as = 'catppuccin',
+	-- }
     use {
 		'shaunsingh/oxocarbon.nvim',
-		run = './install.sh'
     }
 
     -- UI stuff
     use {
-        "xiyaowong/nvim-transparent",
+		"folke/noice.nvim",
+		config = function()
+			require("plug.noice")
+		end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+        },
+        after = "nvim-web-devicons"
+    }
 
     use {
         "utilyre/barbecue.nvim",
@@ -174,6 +183,8 @@ return require('packer').startup(function()
             require("plug.bbq")
         end,
     }
+    -- use {
+    --     "xiyaowong/nvim-transparent",
 			--         config = function ()
 			-- vim.cmd([[
 			-- 	if !exists('g:neovide')
@@ -181,8 +192,8 @@ return require('packer').startup(function()
 			-- 	endif
 			-- ]])
 			--             end,
-        event = "VimEnter"
-    }
+    --     event = "VimEnter"
+    -- }
     use {
 		'nvim-telescope/telescope.nvim',
 		config = function()
@@ -190,10 +201,10 @@ return require('packer').startup(function()
 		end,
         after = "plenary.nvim"
 	}
-	use {
-		'dominikduda/vim_current_word',
-	    event = "BufRead"
-	}
+	-- use {
+	-- 	'dominikduda/vim_current_word',
+	--     event = "BufRead"
+	-- }
     use {
 		'glepnir/dashboard-nvim',
 		config = function()
@@ -201,13 +212,13 @@ return require('packer').startup(function()
 		end,
 		event = "BufWinEnter"
 	}
-    use {
-		'folke/lsp-trouble.nvim',
-		config = function()
-			require("plug.lsp-trouble")
-		end,
-		cmd = "TroubleToggle"
-	}
+	--     use {
+	-- 	'folke/lsp-trouble.nvim',
+	-- 	config = function()
+	-- 		require("plug.lsp-trouble")
+	-- 	end,
+	-- 	cmd = "TroubleToggle"
+	-- }
     use {
 		'akinsho/bufferline.nvim',
 		config = function()
@@ -240,7 +251,7 @@ return require('packer').startup(function()
     -- Icons
     use {
         'yamatsum/nvim-nonicons',
-        requires = {'kyazdani42/nvim-web-devicons'}
+        requires = {'nvim-tree/nvim-web-devicons'}
     }
 
     -- File explorer
@@ -253,9 +264,9 @@ return require('packer').startup(function()
 	}
 
     -- Quality of life stuff
-    use {
-        "antoinemadec/FixCursorHold.nvim"
-    }
+    -- use {
+    --     "antoinemadec/FixCursorHold.nvim"
+    -- }
     use {
 		'famiu/bufdelete.nvim',
 		cmd = "Bdelete"
@@ -288,13 +299,13 @@ return require('packer').startup(function()
 		end,
         event = "BufWinEnter"
 	}
-    use {
-		'phaazon/hop.nvim',
-		config = function()
-			require("plug.hop")
-		end,
-		event = "BufRead"
-	}
+	--     use {
+	-- 	'phaazon/hop.nvim',
+	-- 	config = function()
+	-- 		require("plug.hop")
+	-- 	end,
+	-- 	event = "BufRead"
+	-- }
     use {
         'mcauley-penney/tidy.nvim',
         config = function()
@@ -304,21 +315,21 @@ return require('packer').startup(function()
     }
 
     -- Not useful but cool stuff
-	use {
-		'folke/zen-mode.nvim',
-		config = function()
-			require("plug.zen")
-		end,
-		cmd = "ZenMode"
-	}
-	use {
-		'dstein64/vim-startuptime',
-		cmd = "StartupTime"
-	}
+	-- use {
+	-- 	'folke/zen-mode.nvim',
+	-- 	config = function()
+	-- 		require("plug.zen")
+	-- 	end,
+	-- 	cmd = "ZenMode"
+	-- }
+	-- use {
+	-- 	'dstein64/vim-startuptime',
+	-- 	cmd = "StartupTime"
+	-- }
 
     -- Syntax
-    use {
-        'tridactyl/vim-tridactyl',
-        event = "BufRead"
-    }
+    -- use {
+    --     'tridactyl/vim-tridactyl',
+    --     event = "BufRead"
+    -- }
 end)
