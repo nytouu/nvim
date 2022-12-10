@@ -4,8 +4,6 @@ local keymap = vim.api.nvim_set_keymap
 vim.g.mapleader = ' '
 
 keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
--- hop
-keymap('n', 's', ":HopChar2<CR>", {silent = true})
 
 -- buffer movement
 keymap('n', '<S-j>', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})

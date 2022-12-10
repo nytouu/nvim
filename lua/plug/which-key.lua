@@ -68,9 +68,9 @@ local mappings = {
 	t = {
 		name = "Toggle",
 		e = {"<cmd>NvimTreeToggle<cr>","Toggle explorer"},
-		r = {"<cmd>TroubleToggle<cr>","Toggle diagnostics"},
+		-- r = {"<cmd>TroubleToggle<cr>","Toggle diagnostics"},
 		t = {"<cmd>ToggleTerm<cr>","Toggle terminal"},
-		T = {"<cmd>TransparentToggle<cr>","Toggle trancparency"}
+		-- T = {"<cmd>TransparentToggle<cr>","Toggle trancparency"}
 	},
 	f = {
 		name = "Find",
@@ -120,13 +120,14 @@ local mappings = {
 		d = {"<cmd>Lspsaga preview_definition<cr>","Go to definiton"},
 		c = {"<cmd>lua vim.lsp.buf.declaration()<cr>","Go to declaration"},
 		R = {"<cmd>lua vim.lsp.buf.references()<cr>","Go to references"},
-		r = {"<cmd>lua lua vim.lsp.buf.rename()<cr>","Rename"},
+		r = {"<cmd>Lspsaga rename<cr>","Rename"},
 		i = {"<cmd>LspInfo<cr>","Info"},
 		a = {"<cmd>Lspsaga code_action<cr>","Code action"},
 		h = {"<cmd>Lspsaga hover_doc<cr>","Hover doc"},
 		s = {"<cmd>Lspsaga signature_help<cr>","Signature help"},
 		j = {"<cmd>Lspsaga diagnostic_jump_next<cr>","Jump to next diagnostic"},
 		k = {"<cmd>Lspsaga diagnostic_jump_prev<cr>","Jump to previous diagnostic"},
+		m = {"<cmd>Mason<cr>","Open Mason window"},
 	},
 	s = {
 		name = "Split",

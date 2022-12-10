@@ -41,7 +41,7 @@ vim.o.conceallevel = 2
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.synmaxcol = 1024
-vim.o.lazyredraw = true
+-- vim.o.lazyredraw = true
 vim.cmd('syntax on')
 vim.opt.shortmess:append("c")
 vim.cmd("let &fcs='eob: '")
@@ -51,7 +51,7 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 -- neovide stuff
-vim.o.guifont = "nonicons,JetBrains Mono"
+vim.o.guifont = "SF Mono,nonicons"
 vim.g.neovide_refresh_rate=144
 vim.g.neovide_cursor_animation_length=0.03
 vim.g.neovide_cursor_trail_length=0.3

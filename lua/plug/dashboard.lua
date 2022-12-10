@@ -5,28 +5,20 @@ db.preview_file_height = 12
 db.preview_file_width = 80
 db.hide_statusline = false
 db.hide_tabline = false
-db.custom_header =
-{
-'                                            ',
-'                                            ',
-'                     @hpp                   ',
-'                     "KKP                   ',
-'           ,      ,+;n@nnw,    ,,           ',
-'        ,||ppKN|||p##KKNpp|LKp!L@|IN,       ',
-'      ;L##KKPL|$#KKM"````"TE|IKm`"K@LKp     ',
-'    ||#KKM` ||#KKP .*||hw,  T|I#N   T||Km   ',
-'   ||$#K`   |I#KP | |||$##N  @I#KH   ||$#N  ',
-'   "|I8N    |I#Kb Y@@p##KBKP |I#KN  ,@$#KM  ',
-'     TPLKm, Y|I8N  "KKKKKK* ||##KL,@$#KKP   ',
-'       "Kp@bp$p@LKp,     .||p##KH@p#KK*     ',
-'    U@#Kp`*KKK*Tb@@I#m |.{#KKKM*KKKPT@#Kp   ',
-'     `*"         `PK#K HI#KM`        `**`   ',
-'                  IK#K $K#B                 ',
-'          ,Kpp    I#BB IhKKp   p#p,         ',
-'          "KKKKmp##KKK TKKKKp##KKKM         ',
-'            `TKKKKKKP`  `*KKKKKKM`          ',
-'                                            ',
-'                                            '
+db.custom_header = {
+'                                 ',
+'  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆        ',
+'   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      ',
+'         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄    ',
+'          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀ ⠢⣀⡀⠈⠙⠿⠄   ',
+'         ⢠⣿⣿⣿⠈   ⠈⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀  ',
+'  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄ ',
+' ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾   ',
+'⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄ ',
+'⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄',
+'     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆   ⠁',
+'      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃    ',
+'                                 ',
 }
 
 db.custom_footer = { "packer loaded " .. count .. " plugins" }
