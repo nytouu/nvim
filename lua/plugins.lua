@@ -165,6 +165,15 @@ return require('packer').startup(function()
     -- UI stuff
     use {
         "xiyaowong/nvim-transparent",
+
+    use {
+        "utilyre/barbecue.nvim",
+        requires = "smiteshp/nvim-navic",
+        after = "nvim-web-devicons",
+        config = function()
+            require("plug.bbq")
+        end,
+    }
 			--         config = function ()
 			-- vim.cmd([[
 			-- 	if !exists('g:neovide')
