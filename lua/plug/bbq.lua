@@ -31,6 +31,6 @@ require("barbecue").setup({
 		String = "",
 		Key = "",
 		Array = "",
-		Object = "",
+		Object = "ﰠ",
 	},
 })
