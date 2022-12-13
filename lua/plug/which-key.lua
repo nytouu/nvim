@@ -40,7 +40,7 @@ require("which-key").setup {
     },
     ignore_missing = false,
     hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "},
-    show_help = true,
+    show_help = false,
     triggers = {"<Leader>"},
     triggers_blacklist = {
         -- list of mode / prefixes that should never be hooked by WhichKey
