@@ -1,4 +1,7 @@
 require("cmp").setup{
+	completion = {
+		keyword_length = 3,
+	},
 	snippet = {
 		expand = function(args)
 		require("luasnip").lsp_expand(args.body)
@@ -7,7 +10,7 @@ require("cmp").setup{
 	window = {
 		completion = {
 			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-			col_offset = -3,
+			col_offset = 0,
 			side_padding = 0,
 		},
 	},
