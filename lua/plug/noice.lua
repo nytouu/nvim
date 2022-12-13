@@ -37,10 +37,10 @@ require("noice").setup({
 			size = {
 				width = "98%"
 			}
-		}
-	},
-	popupmenu = {
-		backend = "cmp"
+		},
+		popupmenu = {
+			backend = "cmp"
+		},
 	},
 	presets = {
 		long_message_to_split = true,
