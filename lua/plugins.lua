@@ -251,7 +251,10 @@ return require('packer').startup(function()
     -- Icons
     use {
         'yamatsum/nvim-nonicons',
-        requires = {'nvim-tree/nvim-web-devicons'}
+        requires = {'nvim-tree/nvim-web-devicons'},
+		config = function()
+			require("nvim-nonicons").setup{}
+		end
     }
 
     -- File explorer
