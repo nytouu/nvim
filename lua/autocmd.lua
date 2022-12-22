@@ -1,13 +1,13 @@
 vim.cmd('autocmd BufWritePost *.ms execute "!croffpdf %"| redraw!')
 vim.cmd('autocmd VimLeavePre * :set guicursor=n-c-v-r-i-ci-ve:ver25')
 
--- vim.cmd('autocmd VimEnter * hi CurrentWordTwins guibg=#222222 gui=none')
+vim.cmd('autocmd VimEnter * hi CurrentWordTwins guibg=#202020 gui=none')
 vim.cmd('let g:vim_current_word#highlight_current_word = 0')
 vim.cmd('let g:vim_current_word#highlight_twins = 1')
 vim.cmd('let g:vim_current_word#highlight_delay = 0')
 
 -- highlights
--- vim.cmd('autocmd VimEnter * hi CursorLine guibg=#292e42')
+vim.cmd('autocmd VimEnter * hi CursorLine guibg=#191919')
 -- vim.cmd('autocmd VimEnter * hi LineNr guifg=#414868')
 vim.cmd('autocmd VimEnter * hi ScrollView               guibg=#414868')
 vim.cmd('autocmd CursorMoved * hi CursorLineNR          guifg=#82cfff')
