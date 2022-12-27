@@ -1,7 +1,7 @@
 # init.lua
 
 this is my [neovim](https://github.com/neovim/neovim) config\
-neovim 0.6+ is required
+neovim 0.8+ is required
 
 here are a few screenshots :\
 ![screen1](https://raw.githubusercontent.com/nytouu/nvim/master/screen1.png)
@@ -14,8 +14,10 @@ check lua/plugins.lua to see what plugins i'm using
 
 # inspirations
 
-this config is inspired by chris@machine's [LunarVim](https://github.com/ChristianChiarulli/LunarVim)\
-and siduck76's [NvChad](https://github.com/siduck76/NvChad)
+this config was inspired by other neovim distros like \
+    - [LunarVim](https://github.com/ChristianChiarulli/LunarVim)\
+    - [NvChad](https://github.com/siduck76/NvChad)\
+    - [Nyoom](https://github.com/nyoom-engineering/nyoom.nvim)
 
 # TODO
 
