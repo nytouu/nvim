@@ -77,56 +77,25 @@ return require('packer').startup(function()
 	}
 	use {
 		"L3MON4D3/LuaSnip",
-		wants = "friendly-snippets",
+		wants = {
+            "friendly-snippets",
+        },
 		after = "nvim-cmp",
 		config = function()
 			require("plug.snippets")
 		end,
-	}
-	use {
-		"saadparwaiz1/cmp_luasnip",
-		after = "LuaSnip",
-	}
-	use {
-		"hrsh7th/cmp-nvim-lua",
-		after = "cmp_luasnip",
-	}
-	use {
-		"hrsh7th/cmp-nvim-lsp",
-		after = "cmp-nvim-lua",
-		}
-	use {
-		"hrsh7th/cmp-buffer",
-		after = "cmp-nvim-lsp",
-	}
-	use {
-		"hrsh7th/cmp-path",
-		after = "cmp-buffer"
-	}
-	use {
-		"hrsh7th/cmp-calc",
-		after = "cmp-path"
-	}
-	use {
-		"f3fora/cmp-spell",
-		after = "cmp-calc"
-	}
-    use {
-        "tamago324/cmp-zsh",
-        after = "cmp-spell"
-    }
-    use {
-        "KadoBOT/cmp-plugins",
-        after = "cmp-zsh",
-        config = function()
-            require("cmp-plugins").setup({
-                files = { "plugins.lua" }
-            })
-        end
-    }
-	use {
-		"rafamadriz/friendly-snippets",
-		after = "cmp-plugins",
+        requires = {
+            "saadparwaiz1/cmp_luasnip",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-calc",
+            "f3fora/cmp-spell",
+            "tamago324/cmp-zsh",
+            "rafamadriz/friendly-snippets",
+            "KadoBOT/cmp-plugins",
+        }
 	}
 	use {
 		"onsails/lspkind.nvim",
