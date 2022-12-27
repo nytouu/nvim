@@ -261,7 +261,7 @@ return require('packer').startup(function()
 	use {
 		'nvim-neorg/neorg',
 		ft = "norg",
-		after = { "nvim-treesitter", "telescope.nvim" },
+		after = "nvim-treesitter",
 		run = ":Neorg sync-parsers",
 	}
 	use {
