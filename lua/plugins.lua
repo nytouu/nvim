@@ -108,6 +108,7 @@ return require('packer').startup(function()
 		config = function()
 			require("plug.colors")
 		end,
+        event = "BufRead"
 	}
     use {
 		'nvim-treesitter/nvim-treesitter',
@@ -121,6 +122,7 @@ return require('packer').startup(function()
     -- Themes
     use {
 		'shaunsingh/oxocarbon.nvim',
+		event = "VimEnter",
     }
 
     -- UI stuff
@@ -199,11 +201,12 @@ return require('packer').startup(function()
 
     -- File explorer
     use {
-		'kyazdani42/nvim-tree.lua',
+		'nvim-tree/nvim-tree.lua',
 		config = function()
 			require("plug.nvim-tree")
 		end,
-        cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeOpen" }
+        -- cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeOpen" }
+        event = "VimEnter"
 	}
 
     -- Quality of life stuff
