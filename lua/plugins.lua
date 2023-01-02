@@ -134,13 +134,13 @@ return require('packer').startup(function()
         requires = {
             "MunifTanjim/nui.nvim",
         },
-        after = "nvim-web-devicons"
+        after = "nvim-nonicons",
     }
 
     use {
         "utilyre/barbecue.nvim",
         requires = "smiteshp/nvim-navic",
-        after = "nvim-web-devicons",
+        after = "nvim-nonicons",
         config = function()
             require("plug.bbq")
         end,
@@ -187,7 +187,8 @@ return require('packer').startup(function()
 		'lewis6991/gitsigns.nvim',
 		config = function()
 			require("plug.git")
-		end
+		end,
+		event = "BufEnter"
 	}
 
     -- Icons
