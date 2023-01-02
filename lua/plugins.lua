@@ -259,18 +259,4 @@ return require('packer').startup(function()
 		end,
 		cmd = "ZenMode"
 	}
-	use {
-		'nvim-neorg/neorg',
-		ft = "norg",
-		after = "nvim-treesitter",
-		run = ":Neorg sync-parsers",
-	}
-	use {
-		'lukas-reineke/headlines.nvim',
-		after = "neorg",
-        ft = "norg",
-		config = function()
-			require("plug.norg")
-		end
-	}
 end)
