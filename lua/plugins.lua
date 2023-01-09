@@ -1,90 +1,42 @@
----@diagnostic disable: undefined-global
-local execute = vim.api.nvim_command
-local fn = vim.fn
+return {
+	-- Lua stuff
+	{ "nvim-lua/plenary.nvim" },
+	{ "nvim-lua/popup.nvim" },
 
-vim.cmd("packadd packer.nvim")
-
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
-
-if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-    execute 'packadd packer.nvim'
-end
-
-vim.cmd "autocmd BufWritePost plugins.lua PackerCompile"
-
-require('packer').init({
-	display = {
-        open_fn = function()
-            return require("packer.util").float { border = "single" }
-        end,
-        prompt_border = "none"
-   }
-})
-
-return require('packer').startup(function()
-
-    -- Impatient for faster loading
-	use {
-		'lewis6991/impatient.nvim'
-	}
-
-    -- Packer can manage itself as an optionnal plugin
-    use {
-        'wbthomason/packer.nvim',
-        event = "VimEnter"
-    }
-
-    -- Lua stuff
-    use {
-        'nvim-lua/plenary.nvim',
-		after = "impatient.nvim"
-    }
-    use {
-        'nvim-lua/popup.nvim',
-		after = "impatient.nvim"
-    }
-
-    -- LSP
-    use {
-		'neovim/nvim-lspconfig'
-	}
-    use {
-		'glepnir/lspsaga.nvim',
+	-- LSP
+	{ "neovim/nvim-lspconfig" },
+    { "williamboman/mason.nvim" },
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+		 	require("config.plugins.lsp")
+		end,
+		event = "VeryLazy"
+    },
+	{
+		"glepnir/lspsaga.nvim",
 		branch = "main",
 		config = function()
-			require("plug.lsp-saga")
+			require("config.plugins.lsp-saga")
 		end,
-        after = "nvim-lspconfig"
-	}
-    use {
-        "williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("plug.lsp")
-		end
-    }
-    use {
-        'williamboman/mason.nvim'
-	}
+        event = "VeryLazy"
+	},
 
 	-- Completion stuff
-   use {
+    {
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
 		config = function()
-			require("plug.cmp")
-		end
-	}
-	use {
-		"L3MON4D3/LuaSnip",
-		wants = {
-            "friendly-snippets",
-        },
-		after = "nvim-cmp",
-		config = function()
-			require("plug.snippets")
+		 	require("config.plugins.cmp")
 		end,
-        requires = {
+		event = "InsertEnter",
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		config = function()
+		 	require("config.plugins.snippets")
+		 end,
+        dependencies = {
+            "rafamadriz/friendly-snippets",
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-nvim-lsp",
@@ -93,170 +45,188 @@ return require('packer').startup(function()
             "hrsh7th/cmp-calc",
             "f3fora/cmp-spell",
             "tamago324/cmp-zsh",
-            "rafamadriz/friendly-snippets",
             "KadoBOT/cmp-plugins",
-        }
-	}
-	use {
+        },
+		event = "InsertEnter"
+	},
+	{
 		"onsails/lspkind.nvim",
 		event = "InsertEnter"
-	}
+	},
 
     -- Colors
-    use {
-		'norcalli/nvim-colorizer.lua',
+    {
+		"norcalli/nvim-colorizer.lua",
 		config = function()
-			require("plug.colors")
+			require("config.plugins.colors")
 		end,
-        event = "BufRead"
-	}
-    use {
-		'nvim-treesitter/nvim-treesitter',
+        event = "VeryLazy"
+	},
+    {
+		"nvim-treesitter/nvim-treesitter",
 		config = function()
-			require("plug.treesitter")
+			require("config.plugins.treesitter")
 		end,
-		event = "BufRead",
-		run = ':TSUpdate'
-	}
+		event = "VeryLazy",
+		build = ":TSUpdate"
+	},
 
     -- Themes
-    use {
-		'shaunsingh/oxocarbon.nvim',
-		event = "VimEnter",
-    }
+	{
+		"shaunsingh/oxocarbon.nvim",
+	},
 
     -- UI stuff
-    use {
+	{
 		"folke/noice.nvim",
 		config = function()
-			require("plug.noice")
+			require("config.plugins.noice")
 		end,
-        requires = {
-            "MunifTanjim/nui.nvim",
-        },
-        after = "nvim-nonicons",
-    }
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+        event = "BufWinEnter"
+    },
 
-    use {
+    {
         "utilyre/barbecue.nvim",
-        requires = "smiteshp/nvim-navic",
-        after = "nvim-nonicons",
-        config = function()
-            require("plug.bbq")
+        dependencies = "smiteshp/nvim-navic",
+         config = function()
+             require("config.plugins.bbq")
         end,
-    }
-    use {
-		'nvim-telescope/telescope.nvim',
+        event = "VeryLazy"
+    },
+    {
+		"nvim-telescope/telescope.nvim",
+        config = function()
+            require("config.plugins.telescope")
+        end,
+        event = "VeryLazy"
+	},
+	{
+		"dominikduda/vim_current_word",
+	    event = "VeryLazy"
+	},
+	{
+	 	"glepnir/dashboard-nvim",
+	 	config = function()
+	 		require("config.plugins.dashboard")
+	 	end,
+	 	event = "VimEnter"
+	},
+    {
+		"akinsho/bufferline.nvim",
 		config = function()
-			require("plug.telescope")
-		end,
-        after = "plenary.nvim"
-	}
-	use {
-		'dominikduda/vim_current_word',
-	    event = "BufRead"
-	}
-    use {
-		'glepnir/dashboard-nvim',
-		config = function()
-			require("plug.dashboard")
-		end,
-		event = "BufWinEnter"
-	}
-    use {
-		'akinsho/bufferline.nvim',
-		config = function()
-			require("plug.bufferline")
-		end,
-		event = "BufWinEnter"
-	}
-    use {
-		'NTBBloodbath/galaxyline.nvim',
-		config = function()
-			require("plug.statusline")
-		end,
-	}
-    use {
-		'akinsho/toggleterm.nvim',
-		config = function()
-			require("plug.toggleterm")
-		end,
-		cmd = "ToggleTerm"
-	}
-    use {
-		'lewis6991/gitsigns.nvim',
-		config = function()
-			require("plug.git")
-		end,
-		event = "BufEnter"
-	}
-
-    -- Icons
-    use {
-        'yamatsum/nvim-nonicons',
-        requires = {'nvim-tree/nvim-web-devicons'},
-		config = function()
-			require("nvim-nonicons").setup{}
-		end
-    }
-
-    -- File explorer
-    use {
-		'nvim-tree/nvim-tree.lua',
-		config = function()
-			require("plug.nvim-tree")
-		end,
-        -- cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeOpen" }
-        event = "VimEnter"
-	}
-
-    -- Quality of life stuff
-    use {
-		'famiu/bufdelete.nvim',
-		cmd = "Bdelete"
-	}
-    use {
-		'folke/which-key.nvim',
-		config = function()
-			require("plug.which-key")
+		 	require("config.plugins.bufferline")
 		end,
 		event = "BufWinEnter"
-	}
-    use {
-		'terrortylor/nvim-comment',
+	},
+    {
+		"NTBBloodbath/galaxyline.nvim",
 		config = function()
-			require("nvim_comment").setup()
-		end,
-		event = "BufRead"
-	}
-    use {
-		'windwp/nvim-autopairs',
-		config = function()
-			require("plug.autopairs")
-		end,
-        after = "nvim-cmp"
-	}
-    use {
-		'lukas-reineke/indent-blankline.nvim',
-		config = function()
-			require("plug.indent")
+			require("config.plugins.statusline")
 		end,
         event = "BufWinEnter"
-	}
-    use {
-        'mcauley-penney/tidy.nvim',
+	},
+    {
+		"akinsho/toggleterm.nvim",
+		config = function()
+		 	require("config.plugins.toggleterm")
+		end,
+		cmd = "ToggleTerm"
+	},
+    {
+		"lewis6991/gitsigns.nvim",
+		config = function()
+		 	require("config.plugins.git")
+		end,
+		event = "VeryLazy"
+	},
+
+    -- Icons
+    {
+        "yamatsum/nvim-nonicons",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+		 	require("nvim-nonicons").setup{}
+	    end
+    },
+
+    -- File explorer
+    {
+		"nvim-tree/nvim-tree.lua",
+		config = function()
+			require("config.plugins.nvim-tree")
+		end,
+        cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeOpen" }
+	},
+
+    -- Quality of life stuff
+    {
+		"famiu/bufdelete.nvim",
+		 cmd = "Bdelete"
+	},
+    {
+		"folke/which-key.nvim",
+		config = function()
+			require("config.plugins.which-key")
+	 	end,
+		event = "VeryLazy"
+	},
+    {
+		"terrortylor/nvim-comment",
+		config = function()
+		 	require("nvim_comment").setup()
+		end,
+		event = "VeryLazy"
+	},
+    {
+		"windwp/nvim-autopairs",
+		config = function()
+		 	require("config.plugins.autopairs")
+		end,
+        event = "VeryLazy"
+	},
+    {
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+		 	require("config.plugins.indent")
+		end,
+        event = "BufWinEnter"
+	},
+    {
+        "mcauley-penney/tidy.nvim",
         config = function()
             require("tidy").setup()
         end,
         event = "BufWritePre"
-    }
+    },
 
-    -- Not useful but cool stuff
-	use {
-		'folke/zen-mode.nvim',
-		config = function()
-			require("plug.zen")
-		end,
-		cmd = "ZenMode"
+    -- Not ful but cool stuff
+	{
+		"folke/zen-mode.nvim",
+		-- config = function()
+		-- 	require("plug.zen")
+		-- end,
+		-- cmd = "ZenMode"
+	},
+	{
+		"ray-x/web-tools.nvim",
+		-- config = function ()
+		-- 	require"web-tools".setup({
+		-- 		keymaps = {
+		-- 			rename = nil,
+		-- 			repeat_rename = ".",
+		-- 		},
+		-- 	})
+		-- end,
+		-- ft = "html"
 	}
-end)
+	--  {
+	-- 	"jakewvincent/mkdnflow.nvim",
+	-- 	rocks = "luautf8",
+	-- 	config = function()
+	-- 		require("mkdnflow").setup({})
+	-- 	end
+	-- }
+}

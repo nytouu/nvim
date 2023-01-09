@@ -134,14 +134,14 @@ local mappings = {
 		h = {"<cmd>split<cr>","Horizontal split"},
 		v = {"<cmd>vsplit<cr>","Vertical split"}
 	},
-	p = {
-		name = "Packer",
-		c = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
-		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" }
-	}
+	L = {
+		name = "Lazy",
+		L = {"<cmd>Lazy<cr>","Open Lazy"},
+		s = {"<cmd>Lazy sync<cr>","Sync plugins"},
+		h = {"<cmd>Lazy health<cr>","Check Lazy Health"},
+		p = {"<cmd>Lazy profile<cr>","Lazy Profile"},
+		c = {"<cmd>Lazy clean<cr>","Clean plugins"},
+	},
 }
 
 require("which-key").register(mappings, opts)

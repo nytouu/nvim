@@ -1,9 +1,7 @@
 local keymap = vim.api.nvim_set_keymap
 
--- leader
-vim.g.mapleader = ' '
-
 keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>L', ':Lazy<CR>', {noremap = true, silent = true})
 
 -- buffer movement
 keymap('n', '<S-j>', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})
