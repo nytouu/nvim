@@ -101,7 +101,7 @@ return {
         config = function()
             require("config.plugins.telescope")
         end,
-        event = "VeryLazy"
+        cmd = "Telescope"
 	},
 	{
 		"dominikduda/vim_current_word",
@@ -140,7 +140,7 @@ return {
 		config = function()
 		 	require("config.plugins.git")
 		end,
-		event = "VeryLazy"
+		event = "BufReadPre"
 	},
 
     -- Icons
@@ -192,7 +192,7 @@ return {
 		config = function()
 		 	require("config.plugins.indent")
 		end,
-        event = "BufWinEnter"
+        event = "BufReadPre"
 	},
     {
         "mcauley-penney/tidy.nvim",
@@ -202,31 +202,42 @@ return {
         event = "BufWritePre"
     },
 
-    -- Not ful but cool stuff
+    -- cool stuff
 	{
 		"folke/zen-mode.nvim",
-		-- config = function()
-		-- 	require("plug.zen")
-		-- end,
-		-- cmd = "ZenMode"
+		config = function()
+			require("config.plugins.zen")
+		end,
+		cmd = "ZenMode"
 	},
 	{
 		"ray-x/web-tools.nvim",
-		-- config = function ()
-		-- 	require"web-tools".setup({
-		-- 		keymaps = {
-		-- 			rename = nil,
-		-- 			repeat_rename = ".",
-		-- 		},
-		-- 	})
-		-- end,
-		-- ft = "html"
+		config = function ()
+			require"web-tools".setup({
+				keymaps = {
+					rename = nil,
+					repeat_rename = ".",
+				},
+			})
+		end,
+		ft = "html"
+	},
+	{
+		"folke/trouble.nvim",
+	        config = function ()
+	            require("config.plugins.lsp-trouble")
+	        end,
+		cmd = { "TroubleToggle", "Trouble" },
+	},
+	{
+		"kdheepak/lazygit.nvim",
+		cmd = "LazyGit"
+	},
+	{
+		"phaazon/hop.nvim",
+	        config = function()
+	            require("config.plugins.hop")
+	        end,
+		cmd = { "HopWord", "HopChar2", "HopLine" }
 	}
-	--  {
-	-- 	"jakewvincent/mkdnflow.nvim",
-	-- 	rocks = "luautf8",
-	-- 	config = function()
-	-- 		require("mkdnflow").setup({})
-	-- 	end
-	-- }
 }
