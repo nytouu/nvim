@@ -68,7 +68,7 @@ local mappings = {
 	t = {
 		name = "Toggle",
 		e = {"<cmd>NvimTreeToggle<cr>","Toggle explorer"},
-		-- r = {"<cmd>TroubleToggle<cr>","Toggle diagnostics"},
+		r = {"<cmd>TroubleToggle<cr>","Toggle diagnostics"},
 		t = {"<cmd>ToggleTerm<cr>","Toggle terminal"},
 		-- T = {"<cmd>TransparentToggle<cr>","Toggle trancparency"}
 	},
@@ -109,7 +109,8 @@ local mappings = {
 	},
 	g = {
 		name = "Git",
-		-- g = {"<cmd>LazyGit<cr>","Open Lazygit"},
+		g = {"<cmd>LazyGit<cr>","Open Lazygit"},
+		d = {"<cmd>DiffViewOpen<cr>","Open Lazygit"},
 		j = {"<cmd>Gitsigns next_hunk<cr>","Next hunk"},
 		k = {"<cmd>Gitsigns prev_hunk<cr>","Previous hunk"},
 		p = {"<cmd>Gitsigns preview_hunk<cr>","Preview hunk"},
@@ -133,6 +134,12 @@ local mappings = {
 		name = "Split",
 		h = {"<cmd>split<cr>","Horizontal split"},
 		v = {"<cmd>vsplit<cr>","Vertical split"}
+	},
+	h = {
+		name = "Hop",
+		h = {"<cmd>HopChar2<cr>","Hop to chars"},
+		w = {"<cmd>HopWord<cr>","Hop to word"},
+		l = {"<cmd>HopLine<cr>","Hop to line"}
 	},
 	L = {
 		name = "Lazy",
