@@ -16,6 +16,8 @@ keymap('n', '<C-l>', '<C-w>l', {silent = true})
 keymap('i', '<C-h>', '<Left>', {silent = true})
 keymap('i', '<C-l>', '<Right>', {silent = true})
 
+keymap('n', 's', ':HopChar2<CR>', {silent = true})
+
 -- Terminal window navigation
 vim.cmd([[
 	tnoremap <C-h> <C-\><C-N><C-w>h
