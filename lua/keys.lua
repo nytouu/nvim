@@ -54,3 +54,8 @@ keymap('i', '<C-k>', '\"\\<C-p>\"', {noremap = true, expr = true})
 -- Better nav for omnicomplete
 -- vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 -- vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
+
+keymap("n", "<C-a>", require("dial.map").inc_normal(), {noremap = true})
+keymap("n", "<C-x>", require("dial.map").dec_normal(), {noremap = true})
+keymap("v", "<C-a>", require("dial.map").inc_visual(), {noremap = true})
+keymap("v", "<C-x>", require("dial.map").dec_visual(), {noremap = true})
