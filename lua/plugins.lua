@@ -34,7 +34,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		config = function()
 		 	require("config.plugins.snippets")
-		 end,
+		end,
         dependencies = {
             "rafamadriz/friendly-snippets",
             "saadparwaiz1/cmp_luasnip",
@@ -220,7 +220,7 @@ return {
 				},
 			})
 		end,
-		ft = "html"
+		ft = { "html", "js", "javascript" }
 	},
 	{
 		"folke/trouble.nvim",
