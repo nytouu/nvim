@@ -75,6 +75,9 @@ return {
 	{
 		"shaunsingh/oxocarbon.nvim",
 	},
+	{
+		"sainnhe/everforest",
+	},
 
     -- UI stuff
 	{
@@ -234,10 +237,17 @@ return {
 		cmd = "LazyGit"
 	},
 	{
+		"monaqa/dial.nvim",
+	},
+	{
 		"phaazon/hop.nvim",
 	        config = function()
 	            require("config.plugins.hop")
 	        end,
 		cmd = { "HopWord", "HopChar2", "HopLine" }
+	},
+	{
+		"dstein64/vim-startuptime",
+		cmd = "StartupTime"
 	}
 }
