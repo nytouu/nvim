@@ -11,7 +11,7 @@ return {
 		config = function()
 		 	require("config.plugins.lsp")
 		end,
-		event = "VeryLazy"
+		event = "BufRead"
     },
 	{
 		"glepnir/lspsaga.nvim",
@@ -60,7 +60,7 @@ return {
 		config = function()
 			require("config.plugins.colors")
 		end,
-        event = "VeryLazy"
+        event = "BufRead"
 	},
     {
 		"nvim-treesitter/nvim-treesitter",
