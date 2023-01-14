@@ -1,54 +1,86 @@
-require'lspsaga'.init_lsp_saga (
+require('lspsaga').setup(
 {
-	border_style = "single",
-	saga_winblend = 0,
-	move_in_saga = { prev = '<C-k>',next = '<C-j>'},
-	diagnostic_header = { " ", " ", " ", " " },
-	max_preview_lines = 15,
-	code_action_icon = " ",
-	code_action_num_shortcut = true,
-	code_action_lightbulb = {
+	preview = {
+		lines_above = 0,
+		lines_below = 10,
+	},
+	scroll_preview = {
+		scroll_down = '<C-f>',
+		scroll_up = '<C-b>',
+	},
+	request_timeout = 2000,
+	finder = {
+		edit = { 'o', '<CR>' },
+		vsplit = 's',
+		split = 'i',
+		tabe = 't',
+		quit = { 'q', '<ESC>' },
+	},
+	code_action = {
+		num_shortcut = true,
+		keys = {
+			quit = 'q',
+			exec = '<CR>',
+		},
+	},
+	lightbulb = {
 		enable = true,
+		enable_in_insert = true,
 		sign = true,
-		sign_priority = 99,
-		virtual_text = false,
+		sign_priority = 40,
+		virtual_text = true,
 	},
-	finder_icons = {
-	  def = '  ',
-	  ref = '諭 ',
-	  link = '  ',
+	diagnostic = {
+		twice_into = false,
+		show_code_action = true,
+		show_source = true,
+		keys = {
+			exec_action = 'o',
+			quit = 'q',
+			go_action = 'g'
+		},
 	},
-	finder_action_keys = {
-		open = "o",
-		vsplit = "s",
-		split = "i",
-		tabe = "t",
-		quit = "q",
-		scroll_down = "<C-f>",
-		scroll_up = "<C-b>", -- quit can be a table
+	rename = {
+		quit = '<C-c>',
+		exec = '<CR>',
+		in_select = true,
 	},
-	code_action_keys = {
-		quit = "q",
-		exec = "<CR>",
-	},
-	rename_action_quit = "<C-c>",
 	symbol_in_winbar = {
-		in_custom = false,
-		enable = false,
-		separator = ' ',
+		enable = true,
+		separator = '  ',
+		hide_keyword = true,
 		show_file = true,
-		click_support = false,
+		folder_level = 2,
 	},
-	show_outline = {
-	  win_position = 'right',
-	  left_with = '',
-	  win_width = 30,
-	  auto_enter = true,
-	  auto_preview = true,
-	  virt_text = '┃',
-	  jump_key = 'o',
-	  auto_refresh = true,
-	}
+	ui = {
+		-- currently only round theme
+		theme = 'round',
+		-- border type can be single,double,rounded,solid,shadow.
+		border = 'solid',
+		winblend = 0,
+		expand = '',
+		collapse = '',
+		preview = ' ',
+		code_action = '',
+		diagnostic = '🐞',
+		colors = {
+			--float window normal bakcground color
+			normal_bg = '#0c0c0c',
+			--title background color
+			title_bg = '#ee5396',
+			red = '#ee5396',
+			magenta = '#ff7eb6',
+			orange = '#FFAB91',
+			yellow = '#F9E2AF',
+			green = '#42be65',
+			cyan = '#3ddbd9',
+			blue = '#82cfff',
+			purple = '#CBA6F7',
+			white = '#dde1e6',
+			black = '#0c0c0c',
+		},
+		kind = {},
+	},
 })
 
 local signs = {

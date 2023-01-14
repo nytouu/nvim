@@ -15,11 +15,10 @@ return {
     },
 	{
 		"glepnir/lspsaga.nvim",
-		branch = "main",
 		config = function()
 			require("config.plugins.lsp-saga")
 		end,
-        event = "VeryLazy"
+        event = "BufRead"
 	},
 
 	-- Completion stuff
@@ -89,15 +88,6 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
         event = "BufWinEnter"
-    },
-
-    {
-        "utilyre/barbecue.nvim",
-        dependencies = "smiteshp/nvim-navic",
-         config = function()
-             require("config.plugins.bbq")
-        end,
-        event = "VeryLazy"
     },
     {
 		"nvim-telescope/telescope.nvim",
