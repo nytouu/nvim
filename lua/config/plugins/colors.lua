@@ -12,3 +12,5 @@ require'colorizer'.setup{
 		mode = "background",
 	}
 }
+
+vim.cmd('autocmd BufEnter * :ColorizerAttachToBuffer')

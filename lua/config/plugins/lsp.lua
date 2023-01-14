@@ -64,3 +64,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
         update_in_insert = false
     }
 )
+
+vim.cmd('autocmd BufEnter * LspStart')
