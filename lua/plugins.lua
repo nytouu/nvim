@@ -239,5 +239,13 @@ return {
 	{
 		"dstein64/vim-startuptime",
 		cmd = "StartupTime"
+	},
+	{
+		"toppair/peek.nvim",
+		ft = { "md", "markdown" },
+		config = function ()
+			require("config.plugins.peek")
+		end,
+		build = "deno task --quiet build:fast"
 	}
 }
