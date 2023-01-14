@@ -7,9 +7,8 @@ vim.cmd('let g:vim_current_word#highlight_twins = 1')
 vim.cmd('let g:vim_current_word#highlight_delay = 0')
 
 -- highlights
-vim.cmd('autocmd VimEnter * hi CursorLine guibg=#191919')
--- vim.cmd('autocmd VimEnter * hi LineNr guifg=#414868')
-vim.cmd('autocmd VimEnter * hi ScrollView               guibg=#414868')
+vim.cmd('autocmd BufEnter * hi CursorLine guibg=#191919')
+vim.cmd('autocmd BufEnter * hi ScrollView               guibg=#414868')
 vim.cmd('autocmd CursorMoved * hi CursorLineNR          guifg=#82cfff')
 vim.cmd('autocmd VimEnter * hi DiffAdd                  guifg=#42be65 guibg=none')
 vim.cmd('autocmd VimEnter * hi DiffChange               guifg=#FFAB91 guibg=none')
