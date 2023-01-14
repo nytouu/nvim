@@ -251,5 +251,12 @@ return {
 	{
 		"alec-gibson/nvim-tetris",
 		cmd = "Tetris"
+	},
+	{
+		"Xuyuanp/scrollbar.nvim",
+		config = function ()
+			require("config.plugins.scrollbar")
+		end,
+		event = "BufEnter"
 	}
 }
