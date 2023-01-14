@@ -247,5 +247,9 @@ return {
 			require("config.plugins.peek")
 		end,
 		build = "deno task --quiet build:fast"
+	},
+	{
+		"alec-gibson/nvim-tetris",
+		cmd = "Tetris"
 	}
 }
