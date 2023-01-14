@@ -217,9 +217,9 @@ return {
 	},
 	{
 		"folke/trouble.nvim",
-	        config = function ()
-	            require("config.plugins.lsp-trouble")
-	        end,
+		config = function ()
+			require("config.plugins.lsp-trouble")
+		end,
 		cmd = { "TroubleToggle", "Trouble" },
 	},
 	{
@@ -231,9 +231,9 @@ return {
 	},
 	{
 		"phaazon/hop.nvim",
-	        config = function()
-	            require("config.plugins.hop")
-	        end,
+		config = function()
+			require("config.plugins.hop")
+		end,
 		cmd = { "HopWord", "HopChar2", "HopLine" }
 	},
 	{
