@@ -1,7 +1,4 @@
 require("cmp").setup{
-	completion = {
-		keyword_length = 2,
-	},
 	snippet = {
 		expand = function(args)
 		require("luasnip").lsp_expand(args.body)
