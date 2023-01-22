@@ -70,12 +70,24 @@ return {
 		build = ":TSUpdate"
 	},
 
-    -- Themes
+    -- Colorschemes
 	{
 		"shaunsingh/oxocarbon.nvim",
 	},
 	{
 		"sainnhe/everforest",
+	},
+	{
+		"folke/tokyonight.nvim",
+	},
+	{
+		"ChristianChiarulli/nvcode-color-schemes.vim",
+	},
+	{
+		"catppuccin/nvim",
+	},
+	{
+		"EdenEast/nightfox.nvim"
 	},
 
     -- UI stuff
