@@ -228,6 +228,7 @@ return {
 	},
 	{
 		"monaqa/dial.nvim",
+		event = "VeryLazy"
 	},
 	{
 		"phaazon/hop.nvim",
@@ -257,6 +258,6 @@ return {
 		config = function ()
 			require("config.plugins.scrollbar")
 		end,
-		event = "BufEnter"
+		event = "VeryLazy"
 	}
 }
