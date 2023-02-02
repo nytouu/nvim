@@ -1,45 +1,58 @@
-local db = require('dashboard')
 local stats = require("lazy").stats()
 
-db.preview_file_height = 12
-db.preview_file_width = 80
-db.hide_statusline = false
-db.hide_tabline = false
-db.custom_header = {
-'                                 ',
-'  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆        ',
-'   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      ',
-'         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄    ',
-'          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀ ⠢⣀⡀⠈⠙⠿⠄   ',
-'         ⢠⣿⣿⣿⠈   ⠈⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀  ',
-'  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄ ',
-' ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾   ',
-'⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄ ',
-'⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄',
-'     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆   ⠁',
-'      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃    ',
-'                                 ',
-}
+require('dashboard').setup {
+	theme = 'doom',
+	config = {
+		header = {
+			'                                 ',
+			'                                 ',
+			'                                 ',
+			'                                 ',
+			'  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆        ',
+			'   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      ',
+			'         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄    ',
+			'          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀ ⠢⣀⡀⠈⠙⠿⠄   ',
+			'         ⢠⣿⣿⣿⠈   ⠈⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀  ',
+			'  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄ ',
+			' ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾   ',
+			'⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄ ',
+			'⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄',
+			'     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆   ⠁',
+			'      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃    ',
+			'                                 ',
+			'                                 ',
+			'                                 ',
+			'                                 ',
+		},
+		center = {
+			{
+				icon = '  ',
+				desc = 'Recent Files                            ',
+				key = 'spc f r',
+				action = 'Telescope oldfiles',
+			},
+			{
+				icon = '  ',
+				desc = 'Find Files                              ',
+				key = 'spc f f',
+				action = 'Telescope find_files',
+			},
+			{
+				icon = '漣 ',
+				desc = 'Neovim Config                           ',
+				key = 'spc f c',
+				action = 'Telescope find_files cwd=$HOME/.config/nvim',
+			},
+			{
+				icon = '  ',
+				desc = 'Quit                                    ',
+				key = 'spc q q',
+				action = ':q',
+			},
 
--- db.custom_footer = { "lazy loaded " .. stats.count .. " plugins in " .. stats.startuptime .. "ms"}
-db.custom_footer = { "lazy loaded " .. stats.count .. " plugins" }
-db.custom_center = {
-    {icon = '  ',
-    desc = 'Recent Files                            ',
-    shortcut = 'spc f h',
-    action ='Telescope oldfiles'},
-    {icon = '  ',
-    desc = 'Find Files                              ',
-    action =  'Telescope find_files',
-    shortcut = 'spc f f'},
-    {icon = '漣 ',
-    desc = 'Neovim Config                           ',
-    action = 'Telescope find_files cwd=$HOME/.config/nvim',
-    shortcut = 'spc f c'},
-    {icon = '  ',
-    desc = 'Quit                                    ',
-    action =  ':q',
-    shortcut = 'spc q q'},
+		},
+		footer = { "lazy loaded " .. stats.count .. " plugins" }
+	}
 }
 
 -- vim.g.dashboard_custom_header =
