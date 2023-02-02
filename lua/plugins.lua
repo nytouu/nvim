@@ -2,6 +2,7 @@ return {
 	-- Lua stuff
 	{ "nvim-lua/plenary.nvim" },
 	{ "nvim-lua/popup.nvim" },
+	{ "folke/neodev.nvim" },
 
 	-- LSP
 	{ "neovim/nvim-lspconfig" },
