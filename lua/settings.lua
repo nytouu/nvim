@@ -60,3 +60,13 @@ vim.g.neovide_cursor_vfx_mode="pixiedust"
 vim.g.neovide_cursor_vfx_particle_lifetime=2.2
 vim.g.neovide_ccursor_vfx_particle_density=10.0
 vim.g.neovide_ccursor_vfx_particle_phase=3.0
+vim.g.neovide_transparency = 0.9
+vim.g.transparency = 0.9
+vim.g.neovide_floating_blur_amount_x = 2.0
+vim.g.neovide_floating_blur_amount_y = 2.0
+
+if vim.g.neovide then
+	vim.g.transparent_enabled = false
+else
+	vim.g.transparent_enabled = true
+end
