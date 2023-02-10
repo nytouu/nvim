@@ -148,6 +148,21 @@ return {
 		end,
 		event = "BufReadPre"
 	},
+	{
+		"xiyaowong/nvim-transparent",
+		config = function ()
+			require("config.plugins.transparent")
+		end,
+		event = "BufEnter"
+	},
+	{
+		"petertriho/nvim-scrollbar",
+		config = function ()
+			require("config.plugins.scrollbar")
+		end,
+		event = "VeryLazy"
+	},
+
 
     -- Icons
     {
@@ -207,6 +222,25 @@ return {
         end,
         event = "BufWritePre"
     },
+	{
+		"kevinhwang91/nvim-hlslens",
+		config = function()
+			require("hlslens").setup({
+				-- override_lens = function() end,
+				build_position_cb = function(plist, _, _, _)
+					require("scrollbar.handlers.search").handler.show(plist.start_pos)
+				end,
+			})
+
+			vim.cmd([[
+				augroup scrollbar_search_hide
+				autocmd!
+				autocmd CmdlineLeave : lua require('scrollbar.handlers.search').handler.hide()
+				augroup END
+			]])
+		end,
+		event = "VimEnter"
+	},
 
     -- cool stuff
 	{
@@ -267,10 +301,14 @@ return {
 		cmd = "Tetris"
 	},
 	{
-		"Xuyuanp/scrollbar.nvim",
+		"chaimleib/vim-renpy",
+		ft = { "rpy", "renpy" }
+	},
+	{
+		"sindrets/diffview.nvim",
 		config = function ()
-			require("config.plugins.scrollbar")
+			require("diffview")
 		end,
-		event = "VeryLazy"
+		cmd =  { "DiffviewOpen" }
 	}
 }
