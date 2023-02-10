@@ -110,7 +110,10 @@ local mappings = {
 	g = {
 		name = "Git",
 		g = {"<cmd>LazyGit<cr>","Open Lazygit"},
-		d = {"<cmd>DiffViewOpen<cr>","Open Lazygit"},
+		d = {
+			d = {"<cmd>DiffviewOpen<cr>","Open Diffview"},
+			c = {"<cmd>DiffviewClose<cr>","Close Diffview"},
+		},
 		j = {"<cmd>Gitsigns next_hunk<cr>","Next hunk"},
 		k = {"<cmd>Gitsigns prev_hunk<cr>","Previous hunk"},
 		p = {"<cmd>Gitsigns preview_hunk<cr>","Preview hunk"},
