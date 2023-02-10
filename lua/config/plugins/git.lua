@@ -19,7 +19,11 @@ require'gitsigns'.setup {
         changedelete = {
 			hl = "DiffChange",
 			text = "▎"
-		}
+		},
+		untracked = {
+			hl = "DiffAdd",
+			text = '▎'
+		},
     },
     numhl = false,
 	linehl = false,
