@@ -58,7 +58,7 @@ return {
     {
 		"NvChad/nvim-colorizer.lua",
 		config = function()
-			require("config.plugins.colors")
+			require("config.plugins.colorizer")
 		end,
         event = "BufRead"
 	},
@@ -130,7 +130,7 @@ return {
     {
 		"NTBBloodbath/galaxyline.nvim",
 		config = function()
-			require("config.plugins.statusline")
+			require("config.plugins.galaxyline")
 		end,
         event = "BufWinEnter"
 	},
