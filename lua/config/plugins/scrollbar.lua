@@ -117,6 +117,7 @@ require("scrollbar").setup(
 		"noice",
 		"Dashboard",
 		"NvimTree",
+		"mason",
 		"lazy"
 	},
 	autocmd = {
