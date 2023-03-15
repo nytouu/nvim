@@ -76,7 +76,7 @@ local mappings = {
 		name = "Find",
 		d = {"<cmd>Dashboard<cr>","Open dashboard"},
 		f = {"<cmd>Telescope find_files<cr>","Find file"},
-		g = {"<cmd>Telescope live_grep<cr>","Find word"},
+		w = {"<cmd>Telescope live_grep<cr>","Find word"},
 		r = {"<cmd>Telescope oldfiles<cr>","Recent files"},
 		c = {"<cmd>Telescope find_files cwd=$HOME/.config/nvim/<cr>","Open config"}
 	},
