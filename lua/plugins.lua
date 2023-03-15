@@ -5,15 +5,16 @@ return {
 	{ "folke/neodev.nvim" },
 
 	-- LSP
-	{ "neovim/nvim-lspconfig" },
-    { "williamboman/mason.nvim" },
-	{
-		"williamboman/mason-lspconfig.nvim",
+	{ "neovim/nvim-lspconfig",
 		config = function()
 		 	require("config.plugins.lsp")
 		end,
-		event = "BufRead"
-    },
+		dependencies = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+		},
+		event = { "BufReadPre", "BufNewFile" },
+	},
 	{
 		"glepnir/lspsaga.nvim",
 		config = function()
