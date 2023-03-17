@@ -27,12 +27,13 @@ require('lspsaga').setup(
 		enable = true,
 		enable_in_insert = true,
 		sign = true,
-		sign_priority = 40,
-		virtual_text = true,
+		sign_priority = 80,
+		virtual_text = false,
 	},
 	diagnostic = {
 		twice_into = false,
 		show_code_action = true,
+		on_insert = false,
 		show_source = true,
 		keys = {
 			exec_action = 'o',
