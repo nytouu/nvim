@@ -164,6 +164,13 @@ return {
 		end,
 		event = "VeryLazy"
 	},
+	{
+		"m4xshen/smartcolumn.nvim",
+		config = function ()
+			require("config.plugins.smartcolumn")
+		end,
+		event = "VeryLazy"
+	},
 
 
     -- Icons
