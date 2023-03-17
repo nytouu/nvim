@@ -1,7 +1,11 @@
 require("cmp").setup{
+	completion = {
+		-- completeopt = "menu,menuone",
+		keyword_length = 1,
+	},
 	snippet = {
 		expand = function(args)
-		require("luasnip").lsp_expand(args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
 	window = {
@@ -30,30 +34,31 @@ require("cmp").setup{
 		["<C-Space>"] = require("cmp").mapping.complete(),
 		["<C-e>"] = require("cmp").mapping.close(),
 		["<CR>"] = require("cmp").mapping.confirm {
-		behavior = require("cmp").ConfirmBehavior.Replace,
-		select = true,
-	},
-	["<Tab>"] = function(fallback)
-		if require("cmp").visible() then
-			require("cmp").select_next_item()
-		elseif require("luasnip").expand_or_jumpable() then
-			vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-		else
-		fallback()
-		end
-	end,
-	["<S-Tab>"] = function(fallback)
-		if require("cmp").visible() then
-			require("cmp").select_prev_item()
-		elseif require("luasnip").jumpable(-1) then
-			vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-		else
-		fallback()
-		end
-	end,
+			behavior = require("cmp").ConfirmBehavior.Replace,
+			select = false,
+		},
+		["<Tab>"] = function(fallback)
+			if require("cmp").visible() then
+				require("cmp").select_next_item()
+			elseif require("luasnip").expand_or_jumpable() then
+				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+			else
+				fallback()
+			end
+		end,
+		["<S-Tab>"] = function(fallback)
+			if require("cmp").visible() then
+				require("cmp").select_prev_item()
+			elseif require("luasnip").jumpable(-1) then
+				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+			else
+				fallback()
+			end
+		end,
 	},
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = 'nvim_lsp_signature_help' },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "nvim_lua" },
