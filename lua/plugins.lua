@@ -150,13 +150,13 @@ return {
 		end,
 		event = "BufReadPre"
 	},
-	{
-		"xiyaowong/nvim-transparent",
-		config = function ()
-			require("config.plugins.transparent")
-		end,
-		event = "BufEnter"
-	},
+	-- {
+	-- 	"xiyaowong/nvim-transparent",
+	-- 	config = function ()
+	-- 		require("config.plugins.transparent")
+	-- 	end,
+	-- 	event = "VimEnter"
+	-- },
 	{
 		"petertriho/nvim-scrollbar",
 		config = function ()
