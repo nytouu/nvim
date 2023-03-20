@@ -121,8 +121,8 @@ local mappings = {
 	},
 	l = {
 		name = "Lsp",
-		d = {"<cmd>Lspsaga peek_definition<cr>","Peek to definiton"},
-		D = {"<cmd>Lspsaga goto_definition<cr>","Peek to definiton"},
+		D = {"<cmd>Lspsaga peek_definition<cr>","Peek to definiton"},
+		d = {"<cmd>Lspsaga goto_definition<cr>","Go to definiton"},
 		r = {"<cmd>Lspsaga rename<cr>","Rename"},
 		f = {"<cmd>Lspsaga lsp_finder<cr>","Lsp Finder"},
 		i = {"<cmd>LspInfo<cr>","Info"},
