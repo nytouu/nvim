@@ -333,5 +333,20 @@ return {
 		end,
 		cmd = "UrlView"
 	},
+	{
+		"utilyre/sentiment.nvim",
+		version = "*",
+		config = function ()
+			require("sentiment").setup()
+		end,
+		event = "VeryLazy",
+	},
+	 {
+		 "j-hui/fidget.nvim",
+		 config = function ()
+		 	require"fidget".setup{}
+		 end,
+		 event = "VeryLazy"
+	 }
 	-- { "chrisgrieser/nvim-spider" },
 }
