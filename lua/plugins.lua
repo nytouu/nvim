@@ -5,7 +5,8 @@ return {
 	{ "folke/neodev.nvim" },
 
 	-- LSP
-	{ "neovim/nvim-lspconfig",
+	{
+		"neovim/nvim-lspconfig",
 		config = function()
 		 	require("config.plugins.lsp")
 		end,
@@ -76,21 +77,12 @@ return {
     -- Colorschemes
 	{
 		"shaunsingh/oxocarbon.nvim",
-	},
-	{
 		"sainnhe/everforest",
-	},
-	{
 		"folke/tokyonight.nvim",
-	},
-	{
 		"ChristianChiarulli/nvcode-color-schemes.vim",
-	},
-	{
 		"catppuccin/nvim",
-	},
-	{
-		"EdenEast/nightfox.nvim"
+		"EdenEast/nightfox.nvim",
+		"Yazeed1s/minimal.nvim"
 	},
 
     -- UI stuff
@@ -307,5 +299,32 @@ return {
 			require("diffview")
 		end,
 		cmd =  { "DiffviewOpen" }
-	}
+	},
+	{
+		"andweeb/presence.nvim",
+		config = function ()
+			require("config.plugins.discord")
+		end,
+		event = "VeryLazy"
+	},
+	{
+		"jbyuki/venn.nvim",
+		-- event = "VeryLazy",
+		ft = { "md", "markdown" }
+	},
+	{
+		"NFrid/due.nvim",
+		config = function ()
+			require('due_nvim').setup()
+		end,
+		ft = { "md", "markdown" }
+	},
+	{
+		"axieax/urlview.nvim",
+		config = function ()
+			require("urlview").setup()
+		end,
+		cmd = "UrlView"
+	},
+	{ "chrisgrieser/nvim-spider" },
 }
