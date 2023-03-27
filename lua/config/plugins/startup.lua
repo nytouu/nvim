@@ -1,4 +1,4 @@
-require"startup".setup({
+require("startup").setup({
 	theme = "evil",
-    mappings = {}
+	mappings = {},
 })

@@ -1,6 +1,6 @@
 require("config.lazy")
 
-require('settings')
-require('keys')
+require("settings")
+require("keys")
 
-require('autocmd')
+require("autocmd")

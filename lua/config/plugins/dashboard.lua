@@ -1,59 +1,58 @@
 local stats = require("lazy").stats()
 
-require('dashboard').setup {
-	theme = 'doom',
+require("dashboard").setup({
+	theme = "doom",
 	config = {
 		header = {
-			'                                 ',
-			'                                 ',
-			'                                 ',
-			'                                 ',
-			'  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆        ',
-			'   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      ',
-			'         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄    ',
-			'          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀ ⠢⣀⡀⠈⠙⠿⠄   ',
-			'         ⢠⣿⣿⣿⠈   ⠈⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀  ',
-			'  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄ ',
-			' ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾   ',
-			'⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄ ',
-			'⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄',
-			'     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆   ⠁',
-			'      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃    ',
-			'                                 ',
-			'                                 ',
-			'                                 ',
-			'                                 ',
+			"                                 ",
+			"                                 ",
+			"                                 ",
+			"                                 ",
+			"  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆        ",
+			"   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      ",
+			"         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄    ",
+			"          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀ ⠢⣀⡀⠈⠙⠿⠄   ",
+			"         ⢠⣿⣿⣿⠈   ⠈⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀  ",
+			"  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄ ",
+			" ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾   ",
+			"⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄ ",
+			"⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄",
+			"     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆   ⠁",
+			"      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃    ",
+			"                                 ",
+			"                                 ",
+			"                                 ",
+			"                                 ",
 		},
 		center = {
 			{
-				icon = '  ',
-				desc = 'Recent Files                            ',
-				key = 'spc f r',
-				action = 'Telescope oldfiles',
+				icon = "  ",
+				desc = "Recent Files                            ",
+				key = "spc f r",
+				action = "Telescope oldfiles",
 			},
 			{
-				icon = '  ',
-				desc = 'Find Files                              ',
-				key = 'spc f f',
-				action = 'Telescope find_files',
+				icon = "  ",
+				desc = "Find Files                              ",
+				key = "spc f f",
+				action = "Telescope find_files",
 			},
 			{
-				icon = '漣 ',
-				desc = 'Neovim Config                           ',
-				key = 'spc f c',
-				action = 'Telescope find_files cwd=$HOME/.config/nvim',
+				icon = "漣 ",
+				desc = "Neovim Config                           ",
+				key = "spc f c",
+				action = "Telescope find_files cwd=$HOME/.config/nvim",
 			},
 			{
-				icon = '  ',
-				desc = 'Quit                                    ',
-				key = 'spc q q',
-				action = ':q',
+				icon = "  ",
+				desc = "Quit                                    ",
+				key = "spc q q",
+				action = ":q",
 			},
-
 		},
-		footer = { "lazy loaded " .. stats.count .. " plugins" }
-	}
-}
+		footer = { "lazy loaded " .. stats.count .. " plugins" },
+	},
+})
 
 -- vim.g.dashboard_custom_header =
 -- {

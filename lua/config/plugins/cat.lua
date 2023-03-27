@@ -26,7 +26,7 @@ require("catppuccin").setup({
 		dashboard = true,
 		bufferline = true,
 		hop = true,
-	}
+	},
 })
 vim.g.catppuccin_flavour = "latte"
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd([[colorscheme catppuccin]])

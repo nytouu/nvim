@@ -13,14 +13,14 @@ require("noice").setup({
 			win_options = {
 				winhighlight = {
 					Normal = "NormalFloat",
-					FloatBorder = "FloatBorder"
+					FloatBorder = "FloatBorder",
 				},
 			},
 		},
 	},
 	lsp = {
 		progress = {
-			enabled = true
+			enabled = true,
 		},
 		override = {
 			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -35,14 +35,14 @@ require("noice").setup({
 		cmdline_popup = {
 			position = {
 				row = 0,
-				col = "50%"
+				col = "50%",
 			},
 			size = {
-				width = "98%"
-			}
+				width = "98%",
+			},
 		},
 		popupmenu = {
-			backend = "cmp"
+			backend = "cmp",
 		},
 	},
 	presets = {

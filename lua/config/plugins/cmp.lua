@@ -1,4 +1,4 @@
-require("cmp").setup{
+require("cmp").setup({
 	completion = {
 		-- completeopt = "menu,menuone",
 		keyword_length = 1,
@@ -33,10 +33,10 @@ require("cmp").setup{
 		["<C-f>"] = require("cmp").mapping.scroll_docs(4),
 		["<C-Space>"] = require("cmp").mapping.complete(),
 		["<C-e>"] = require("cmp").mapping.close(),
-		["<CR>"] = require("cmp").mapping.confirm {
+		["<CR>"] = require("cmp").mapping.confirm({
 			behavior = require("cmp").ConfirmBehavior.Replace,
 			select = false,
-		},
+		}),
 		["<Tab>"] = function(fallback)
 			if require("cmp").visible() then
 				require("cmp").select_next_item()
@@ -58,7 +58,7 @@ require("cmp").setup{
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = 'nvim_lsp_signature_help' },
+		{ name = "nvim_lsp_signature_help" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "nvim_lua" },
@@ -67,5 +67,5 @@ require("cmp").setup{
 		{ name = "spell" },
 		{ name = "zsh" },
 		{ name = "plugins" },
-	}
-}
+	},
+})

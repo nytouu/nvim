@@ -1,5 +1,5 @@
 require("barbecue").setup({
-	  symbols = {
+	symbols = {
 		modified = "●",
 		ellipsis = "…",
 		separator = "",

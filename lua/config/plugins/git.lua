@@ -1,31 +1,31 @@
-require'gitsigns'.setup {
-    signs = {
-        add = {
+require("gitsigns").setup({
+	signs = {
+		add = {
 			hl = "DiffAdd",
-			text = "▎"
+			text = "▎",
 		},
-        change = {
+		change = {
 			hl = "DiffChange",
-			text = "▎"
+			text = "▎",
 		},
-        delete = {
+		delete = {
 			hl = "DiffDelete",
-			text = "▎"
+			text = "▎",
 		},
-        topdelete = {
+		topdelete = {
 			hl = "DiffDelete",
-			text = "▎"
+			text = "▎",
 		},
-        changedelete = {
+		changedelete = {
 			hl = "DiffChange",
-			text = "▎"
+			text = "▎",
 		},
 		untracked = {
 			hl = "DiffAdd",
-			text = '▎'
+			text = "▎",
 		},
-    },
-    numhl = false,
+	},
+	numhl = false,
 	linehl = false,
-	keymaps = {}
-}
+	keymaps = {},
+})

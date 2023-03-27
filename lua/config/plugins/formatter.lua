@@ -1,6 +1,6 @@
-local util = require "formatter.util"
+local util = require("formatter.util")
 
-require("formatter").setup {
+require("formatter").setup({
 	logging = true,
 	log_level = vim.log.levels.WARN,
 	filetype = {
@@ -23,7 +23,7 @@ require("formatter").setup {
 					stdin = true,
 					try_node_modules = true,
 				}
-			end
+			end,
 		},
 		python = {
 			require("formatter.filetypes.python").black,
@@ -39,7 +39,7 @@ require("formatter").setup {
 		},
 
 		["*"] = {
-			require("formatter.filetypes.any").remove_trailing_whitespace
-		}
-	}
-}
+			require("formatter.filetypes.any").remove_trailing_whitespace,
+		},
+	},
+})
