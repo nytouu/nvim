@@ -30,6 +30,13 @@ return {
 		end,
 		cmd = "IncRename"
 	},
+	{
+		"mhartington/formatter.nvim",
+		config = function ()
+			require("config.plugins.formatter")
+		end,
+		event = "BufWinEnter"
+	},
 
 	-- Completion stuff
     {
@@ -223,13 +230,6 @@ return {
 		end,
         event = "BufReadPre"
 	},
-    {
-        "mcauley-penney/tidy.nvim",
-        config = function()
-            require("tidy").setup()
-        end,
-        event = "BufWritePre"
-    },
 	{
 		"kevinhwang91/nvim-hlslens",
 		config = function()
