@@ -3,17 +3,17 @@ local gls = gl.section
 gl.short_line_list = {'NvimTree','vista','dbui','packager','toggleterm'}
 
 local colors = {
-	bg = '#101010',
-	dark_bg = '#0c0c0c',
-	fg = '#dde1e6',
-	dark_fg = '#525252',
-	yellow = '#F9E2AF',
-	cyan = '#3ddbd9',
-	green = '#42be65',
-	orange = '#FFAB91',
-	magenta = '#ff7eb6',
-	blue = '#82cfff',
-	red = '#ee5396'
+	bg = '#101216',
+	dark_bg = '#0c0f11',
+	fg = '#dfe0ea',
+	dark_fg = '#272932',
+	yellow = '#e9d26c',
+	cyan = '#89beb7',
+	green = '#94dd8e',
+	orange = '#e9946c',
+	magenta = '#d895c7',
+	blue = '#7eb7e6',
+	red = '#e85a84'
 }
 
 local icons = {
@@ -54,7 +54,7 @@ gls.left[1] = {
 		-- auto change color according the vim mode
 		local mode_color = {n = colors.blue, i = colors.green,v=colors.yellow,
 							[''] = colors.yellow,V=colors.yellow,
-							c = colors.green,no = colors.magenta,s = colors.orange,
+							c = colors.red,no = colors.magenta,s = colors.orange,
 							S=colors.orange,[''] = colors.orange,
 							ic = colors.yellow,R = colors.red,Rv = colors.red,
 							cv = colors.orange,ce=colors.orange, r = colors.red,
@@ -89,7 +89,7 @@ gls.left[3] ={
             if icon == nil then return '' end
             local fg = vim.fn.synIDattr(vim.fn.hlID(iconhl), 'fg')
             highlight('GalaxyFileIcon', fg, colors.bg)
-            return ' ' .. icon .. ' '
+            return ' ' .. icon .. '  '
         end,
         condition = buffer_not_empty
     }
