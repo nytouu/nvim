@@ -35,7 +35,7 @@ vim.o.confirm = true
 vim.o.showtabline = 2
 vim.o.showmode = false
 vim.o.termguicolors = true
-vim.o.updatetime = 300
+vim.o.updatetime = 50
 vim.o.timeoutlen = 200
 vim.bo.smartindent = true
 vim.bo.expandtab = true
@@ -53,6 +53,7 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
+vim.opt.hlsearch = false
 
 -- neovide stuff
 vim.o.guifont = "SF Mono,nonicons"
@@ -62,8 +63,8 @@ vim.g.neovide_cursor_trail_length=0.3
 vim.g.neovide_cursor_antialiasing=true
 vim.g.neovide_cursor_vfx_mode="pixiedust"
 vim.g.neovide_cursor_vfx_particle_lifetime=2.2
-vim.g.neovide_ccursor_vfx_particle_density=10.0
-vim.g.neovide_ccursor_vfx_particle_phase=3.0
+vim.g.neovide_cursor_vfx_particle_density=10.0
+vim.g.neovide_cursor_vfx_particle_phase=3.0
 vim.g.neovide_transparency = 0.9
 vim.g.transparency = 0.9
 vim.g.neovide_floating_blur_amount_x = 2.0
