@@ -59,7 +59,6 @@ local opts = {
 }
 
 local mappings = {
-	["e"] = "Explorer",
 	F = {
 		name = "Folds",
 		o = {"<cmd>foldopen<cr>","Open fold"},
@@ -152,6 +151,7 @@ local mappings = {
 		p = {"<cmd>Lazy profile<cr>","Lazy Profile"},
 		c = {"<cmd>Lazy clean<cr>","Clean plugins"},
 	},
+	["u"] = "Utils",
 }
 
 require("which-key").register(mappings, opts)
