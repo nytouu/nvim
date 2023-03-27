@@ -59,6 +59,8 @@ keymap('n', 'N', 'Nzzzv', {silent = true})
 keymap('n', '<C-d>', '<C-d>zz', {silent = true})
 keymap('n', '<C-u>', '<C-u>zz', {silent = true})
 
+keymap('n', '<leader>lr', ':IncRename ', {silent = true, desc = "Rename"})
+
 keymap("n", "<C-a>", require("dial.map").inc_normal(), {noremap = true})
 keymap("n", "<C-x>", require("dial.map").dec_normal(), {noremap = true})
 keymap("v", "<C-a>", require("dial.map").inc_visual(), {noremap = true})

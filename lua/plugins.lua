@@ -23,6 +23,13 @@ return {
 		end,
         event = "BufRead"
 	},
+	{
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup()
+		end,
+		cmd = "IncRename"
+	},
 
 	-- Completion stuff
     {
