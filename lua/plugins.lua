@@ -326,5 +326,5 @@ return {
 		end,
 		cmd = "UrlView"
 	},
-	{ "chrisgrieser/nvim-spider" },
+	-- { "chrisgrieser/nvim-spider" },
 }
