@@ -1,15 +1,45 @@
 local util = require("formatter.util")
 local tabw = vim.api.nvim_buf_get_option(0, "tabstop")
 
-local function clangformat_config()
+local c_args = {
+	'--style="{IndentWidth: '
+		.. tabw
+		.. ", BreakBeforeBraces: Allman, AlwaysBreakAfterReturnType: TopLevelDefinitions, ",
+	'PointerAlignment: Right, IndentCaseLabels: true}"',
+	"-assume-filename",
+	util.escape_path(util.get_current_buffer_file_name()),
+}
+
+local js_args = {
+	'--style="{IndentWidth: '
+		.. tabw
+		.. ', BreakBeforeBraces: Allman, AlwaysBreakAfterReturnType: TopLevelDefinitions}"',
+	"-assume-filename",
+	util.escape_path(util.get_current_buffer_file_name()),
+}
+
+local function clangformat_config(arg)
 	return {
 		exe = "clang-format",
+		args = arg,
+		stdin = true,
+		try_node_modules = true,
+	}
+end
+
+local function prettier_config()
+	return {
+		exe = "prettier",
 		args = {
-			'--style="{IndentWidth: '
-				.. tabw
-				.. ', BreakBeforeBraces: Allman, AlwaysBreakAfterReturnType: TopLevelDefinitions}"',
-			"-assume-filename",
-			util.escape_path(util.get_current_buffer_file_name()),
+			"--use-tabs",
+			"--tab-width " .. tabw,
+			"--semi true",
+			"--trailing-comma all",
+			"--bracket-spacing true",
+			"--arrow-parens always",
+			"--single-attribute-per-line true",
+			"--stdin-filepath",
+			util.escape_path(util.get_current_buffer_file_path()),
 		},
 		stdin = true,
 		try_node_modules = true,
@@ -28,11 +58,11 @@ require("formatter").setup({
 		},
 		c = {
 			require("formatter.filetypes.c").clangformat,
-			clangformat_config(),
+			clangformat_config(c_args),
 		},
 		cpp = {
 			require("formatter.filetypes.cpp").clangformat,
-			clangformat_config(),
+			clangformat_config(c_args),
 		},
 		python = {
 			require("formatter.filetypes.python").black,
@@ -41,12 +71,16 @@ require("formatter").setup({
 			require("formatter.filetypes.sh").shfmt,
 		},
 		javascript = {
-			require("formatter.filetypes.javascript").clangformat,
-			clangformat_config(),
+			require("formatter.filetypes.javascript").prettier,
+			prettier_config(),
+			-- require("formatter.filetypes.javascript").clangformat,
+			-- clangformat_config(js_args),
 		},
 		typescript = {
-			require("formatter.filetypes.typescript").clangformat,
-			clangformat_config(),
+			require("formatter.filetypes.typescript").prettier,
+			prettier_config(),
+			-- require("formatter.filetypes.typescript").clangformat,
+			-- clangformat_config(js_args),
 		},
 
 		["*"] = {
