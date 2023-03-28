@@ -1,6 +1,6 @@
 require("smartcolumn").setup({
 	colorcolumn = "100",
-	disabled_filetypes = { "help", "text", "markdown", "NvimTree", "lazy", "mason", "dashboard" },
+	disabled_filetypes = { "help", "text", "NvimTree", "lazy", "mason", "dashboard", "lspinfo" },
 	custom_colorcolumn = {},
 	scope = "file",
 })
