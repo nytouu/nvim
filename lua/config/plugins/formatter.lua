@@ -1,4 +1,20 @@
 local util = require("formatter.util")
+local tabw = vim.api.nvim_buf_get_option(0, "tabstop")
+
+local function clangformat_config()
+	return {
+		exe = "clang-format",
+		args = {
+			'--style="{IndentWidth: '
+				.. tabw
+				.. ', BreakBeforeBraces: Allman, AlwaysBreakAfterReturnType: TopLevelDefinitions}"',
+			"-assume-filename",
+			util.escape_path(util.get_current_buffer_file_name()),
+		},
+		stdin = true,
+		try_node_modules = true,
+	}
+end
 
 require("formatter").setup({
 	logging = true,
@@ -10,20 +26,13 @@ require("formatter").setup({
 		rust = {
 			require("formatter.filetypes.rust").rustfmt,
 		},
+		c = {
+			require("formatter.filetypes.c").clangformat,
+			clangformat_config(),
+		},
 		cpp = {
 			require("formatter.filetypes.cpp").clangformat,
-			function()
-				return {
-					exe = "clang-format",
-					args = {
-						'-style="{IndentWidth: ' .. vim.api.nvim_buf_get_option(0, "tabstop") .. '}"',
-						"-assume-filename",
-						util.escape_path(util.get_current_buffer_file_name()),
-					},
-					stdin = true,
-					try_node_modules = true,
-				}
-			end,
+			clangformat_config(),
 		},
 		python = {
 			require("formatter.filetypes.python").black,
@@ -32,10 +41,12 @@ require("formatter").setup({
 			require("formatter.filetypes.sh").shfmt,
 		},
 		javascript = {
-			require("formatter.filetypes.javascript").prettier,
+			require("formatter.filetypes.javascript").clangformat,
+			clangformat_config(),
 		},
 		typescript = {
-			require("formatter.filetypes.typescript").prettier,
+			require("formatter.filetypes.typescript").clangformat,
+			clangformat_config(),
 		},
 
 		["*"] = {
