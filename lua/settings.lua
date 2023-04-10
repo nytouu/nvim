@@ -11,7 +11,6 @@ vim.o.fileencoding = "utf-8"
 
 vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menuone,noselect"
-vim.cmd("set colorcolumn=99999")
 vim.o.ignorecase = true
 vim.wo.foldmethod = "indent"
 vim.wo.foldlevel = 99
@@ -25,7 +24,6 @@ vim.cmd('let &titleold="' .. TERMINAL .. '"')
 vim.o.titlestring = "nvim - %t %r"
 vim.o.titlelen = 50
 vim.wo.number = true
-vim.wo.relativenumber = false
 vim.o.hidden = true
 vim.cmd("set ts=4")
 vim.cmd("set sw=4")
@@ -45,7 +43,6 @@ vim.o.conceallevel = 2
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.synmaxcol = 1024
--- vim.o.lazyredraw = true
 vim.cmd("syntax on")
 vim.opt.shortmess:append("c")
 vim.cmd("let &fcs='eob: '")
