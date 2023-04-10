@@ -43,8 +43,8 @@ keymap("v", "<M-h>", "<gv", { noremap = true, silent = true })
 keymap("v", "<M-l>", ">gv", { noremap = true, silent = true })
 
 -- move lines up or down
-keymap("n", "<M-k>", ":move-2<CR>", { silent = true })
-keymap("n", "<M-j>", ":move+<CR>", { silent = true })
+keymap("n", "<M-k>", ":move-2<CR>==", { silent = true })
+keymap("n", "<M-j>", ":move+<CR>==", { silent = true })
 keymap("x", "<M-k>", ":move '<-2<CR>gv=gv", { noremap = true, silent = true })
 keymap("x", "<M-j>", ":move '>+1<CR>gv=gv", { noremap = true, silent = true })
 
@@ -92,3 +92,8 @@ keymap("n", "<leader>ux", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Set f
 keymap("n", "<leader>uu", "<cmd>UrlView<CR>", { silent = true, desc = "View links" })
 keymap("n", "<leader>uU", "<cmd>UrlView lazy<CR>", { silent = true, desc = "View Lazy links" })
 keymap("n", "<leader>uf", "<cmd>Format<CR>", { silent = true, desc = "Format file" })
+
+keymap("n", "<leader>ubb", "<cmd>BrowserOpen<CR>", { silent = true, desc = "Open browser server" })
+keymap("n", "<leader>ubr", "<cmd>BrowserRestart<CR>", { silent = true, desc = "Restart browser server" })
+keymap("n", "<leader>ubs", "<cmd>BrowserSync<CR>", { silent = true, desc = "Connect to browser server" })
+keymap("n", "<leader>ubS", "<cmd>BrowserSync<CR>", { silent = true, desc = "Stop browser server" })

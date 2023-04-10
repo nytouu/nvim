@@ -151,7 +151,10 @@ local mappings = {
 		p = { "<cmd>Lazy profile<cr>", "Lazy Profile" },
 		c = { "<cmd>Lazy clean<cr>", "Clean plugins" },
 	},
-	["u"] = "Utils",
+	u = {
+		name = "Utils",
+		b = "Browser"
+	},
 }
 
 require("which-key").register(mappings, opts)
