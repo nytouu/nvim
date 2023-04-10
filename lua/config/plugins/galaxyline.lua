@@ -1,19 +1,19 @@
-local gl = require("galaxyline")
+local gl = require('galaxyline')
 local gls = gl.section
-gl.short_line_list = { "NvimTree", "vista", "dbui", "packager", "toggleterm" }
+gl.short_line_list = {'NvimTree','vista','dbui','packager','toggleterm'}
 
 local colors = {
-	bg = "#101216",
-	dark_bg = "#0c0f11",
-	fg = "#dfe0ea",
-	dark_fg = "#272932",
-	yellow = "#e9d26c",
-	cyan = "#89beb7",
-	green = "#94dd8e",
-	orange = "#e9946c",
-	magenta = "#d895c7",
-	blue = "#7eb7e6",
-	red = "#e85a84",
+	bg = '#1a1a28',
+	dark_fg = '#b6bed8',
+	fg = '#CDD6F4',
+	dark_bg = '#181825',
+	yellow = '#F9E2AF',
+	cyan = '#94E2D5',
+	green = '#A6E3A1',
+	orange = '#f7ceaf',
+	magenta = '#F5C2E7',
+	blue = '#89B4FA',
+	red = '#F38BA8'
 }
 
 local icons = {
