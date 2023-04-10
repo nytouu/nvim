@@ -360,4 +360,8 @@ return {
 			require("nvim-surround").setup()
 		end,
 	},
+	{
+		"ThePrimeagen/vim-be-good",
+		cmd = "VimBeGood"
+	}
 }
