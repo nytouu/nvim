@@ -1,7 +1,7 @@
 require("transparent").setup({
 	groups = { -- table: default groups
 		"Normal",
-		-- 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+		'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
 		-- 'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
 		-- 'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
 		-- 'SignColumn', 'CursorLineNr', 'EndOfBuffer',
@@ -16,6 +16,10 @@ require("transparent").setup({
 		"ScrollHead",
 		-- "ScrollBody",
 		"ScrollTail",
+		"NotifyBackground",
+		"DiffAdd",
+		"DiffChange",
+		"DiffDelete"
 	},
 	exclude_groups = {},
 })
