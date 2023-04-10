@@ -111,6 +111,10 @@ return {
 		event = "BufWinEnter",
 	},
 	{
+		"sitiom/nvim-numbertoggle",
+		event = "BufWinEnter"
+	},
+	{
 		"nvim-telescope/telescope.nvim",
 		config = function()
 			require("config.plugins.telescope")
