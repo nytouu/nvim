@@ -45,10 +45,6 @@ require("noice").setup({
 			backend = "cmp",
 		},
 	},
-	notify = {
-		enabled = true,
-		view = "notify",
-	},
 	presets = {
 		long_message_to_split = true,
 		lsp_doc_border = true,
