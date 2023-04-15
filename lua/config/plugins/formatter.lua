@@ -10,6 +10,7 @@ local c_args = {
 	util.escape_path(util.get_current_buffer_file_name()),
 }
 
+---@diagnostic disable-next-line: unused-local
 local js_args = {
 	'--style="{IndentWidth: '
 		.. tabw
