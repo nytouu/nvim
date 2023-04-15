@@ -17,18 +17,11 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 	},
 	{
-		"glepnir/lspsaga.nvim",
+		"nvimdev/lspsaga.nvim",
 		config = function()
 			require("config.plugins.lsp-saga")
 		end,
 		event = "BufRead",
-	},
-	{
-		"smjonas/inc-rename.nvim",
-		config = function()
-			require("inc_rename").setup()
-		end,
-		cmd = "IncRename",
 	},
 	{
 		"mhartington/formatter.nvim",
@@ -44,6 +37,7 @@ return {
 		config = function()
 			require("config.plugins.cmp")
 		end,
+		dependencies = { "windwp/nvim-autopairs" },
 		event = "InsertEnter",
 	},
 	{
@@ -107,19 +101,18 @@ return {
 		end,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			-- "rcarriga/nvim-notify",
 		},
 		event = "BufWinEnter",
 	},
 	{
 		"vigoux/notifier.nvim",
-		config = function ()
+		config = function()
 			require("config.plugins.notify")
-		end
+		end,
 	},
 	{
 		"sitiom/nvim-numbertoggle",
-		event = "BufWinEnter"
+		event = "BufWinEnter",
 	},
 	{
 		"nvim-telescope/telescope.nvim",
@@ -130,10 +123,10 @@ return {
 	},
 	{
 		"dominikduda/vim_current_word",
-		event = "VeryLazy",
+		event = "BufEnter",
 	},
 	{
-		"glepnir/dashboard-nvim",
+		"nvimdev/dashboard-nvim",
 		config = function()
 			require("config.plugins.dashboard")
 		end,
@@ -169,24 +162,24 @@ return {
 	},
 	{
 		"xiyaowong/nvim-transparent",
-		config = function ()
+		config = function()
 			require("config.plugins.transparent")
 		end,
-		event = "VimEnter"
+		event = "VimEnter",
 	},
 	{
 		"petertriho/nvim-scrollbar",
 		config = function()
 			require("config.plugins.scrollbar")
 		end,
-		event = "VeryLazy",
+		event = "BufEnter",
 	},
 	{
 		"m4xshen/smartcolumn.nvim",
 		config = function()
 			require("config.plugins.smartcolumn")
 		end,
-		event = "VeryLazy",
+		event = "BufEnter",
 	},
 
 	-- Icons
@@ -207,6 +200,31 @@ return {
 		cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeOpen" },
 	},
 
+	-- Markdown
+	{
+		"jbyuki/venn.nvim",
+		ft = { "md", "markdown" },
+	},
+	{
+		"NFrid/due.nvim",
+		config = function()
+			require("due_nvim").setup()
+		end,
+		ft = { "md", "markdown" },
+	},
+	{
+		"jakewvincent/mkdnflow.nvim",
+		config = function()
+			require("mkdnflow").setup()
+		end,
+		ft = { "md", "markdown" },
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		build = "cd app && npm install",
+		ft = { "md", "markdown" },
+	},
+
 	-- Quality of life stuff
 	{
 		"famiu/bufdelete.nvim",
@@ -224,14 +242,7 @@ return {
 		config = function()
 			require("nvim_comment").setup()
 		end,
-		event = "VeryLazy",
-	},
-	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("config.plugins.autopairs")
-		end,
-		event = "VeryLazy",
+		event = "BufEnter",
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -289,7 +300,7 @@ return {
 	},
 	{
 		"monaqa/dial.nvim",
-		event = "VeryLazy",
+		event = "BufEnter",
 	},
 	{
 		"phaazon/hop.nvim",
@@ -325,18 +336,6 @@ return {
 		event = "VeryLazy",
 	},
 	{
-		"jbyuki/venn.nvim",
-		-- event = "VeryLazy",
-		ft = { "md", "markdown" },
-	},
-	{
-		"NFrid/due.nvim",
-		config = function()
-			require("due_nvim").setup()
-		end,
-		ft = { "md", "markdown" },
-	},
-	{
 		"axieax/urlview.nvim",
 		config = function()
 			require("urlview").setup()
@@ -349,25 +348,18 @@ return {
 		config = function()
 			require("sentiment").setup()
 		end,
-		event = "VeryLazy",
-	},
-	{
-		"j-hui/fidget.nvim",
-		config = function()
-			require("fidget").setup({})
-		end,
-		event = "VeryLazy",
+		event = "InsertEnter",
 	},
 	{
 		"kylechui/nvim-surround",
-		version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		event = "VeryLazy",
+		version = "*",
+		event = "InsertEnter",
 		config = function()
 			require("nvim-surround").setup()
 		end,
 	},
 	{
 		"ThePrimeagen/vim-be-good",
-		cmd = "VimBeGood"
-	}
+		cmd = "VimBeGood",
+	},
 }
