@@ -112,6 +112,12 @@ return {
 		event = "BufWinEnter",
 	},
 	{
+		"vigoux/notifier.nvim",
+		config = function ()
+			require("config.plugins.notify")
+		end
+	},
+	{
 		"sitiom/nvim-numbertoggle",
 		event = "BufWinEnter"
 	},
