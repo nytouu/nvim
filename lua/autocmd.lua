@@ -6,9 +6,6 @@ vim.cmd('let g:vim_current_word#highlight_current_word = 0')
 vim.cmd('let g:vim_current_word#highlight_twins = 1')
 vim.cmd('let g:vim_current_word#highlight_delay = 0')
 
-vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-
 -- highlights
 -- vim.cmd('autocmd VimEnter * hi CursorLine guibg=#292e42')
 -- vim.cmd('autocmd VimEnter * hi LineNr guifg=#414868')

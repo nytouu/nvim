@@ -289,14 +289,6 @@ return {
 		cmd = "StartupTime",
 	},
 	{
-		"toppair/peek.nvim",
-		ft = { "md", "markdown" },
-		config = function()
-			require("config.plugins.peek")
-		end,
-		build = "deno task --quiet build:fast",
-	},
-	{
 		"alec-gibson/nvim-tetris",
 		cmd = "Tetris",
 	},
