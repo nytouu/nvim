@@ -67,5 +67,6 @@ require("cmp").setup({
 		{ name = "spell" },
 		{ name = "zsh" },
 		{ name = "plugins" },
+		{ name = "crates" },
 	},
 })

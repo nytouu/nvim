@@ -247,6 +247,14 @@ return {
 		end,
 		event = "VimEnter",
 	},
+	{
+		"simrat39/rust-tools.nvim",
+		dependencies = { "Saecki/crates.nvim" },
+		config = function()
+			require("config.plugins.rust")
+		end,
+		ft = { "rs", "rust", "toml" },
+	},
 
 	-- cool stuff
 	{
