@@ -87,7 +87,8 @@ end
 
 keymap("n", "<leader>uv", ":lua Toggle_venn()<CR>", { noremap = true, desc = "Toggle Venn mode" })
 keymap("x", "<leader>up", '"_dP', { desc = "Paste no buffer" })
-keymap("n", "<leader>us", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Substitue current word" })
+keymap("n", "<leader>uss", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Current word on file" })
+keymap("n", "<leader>usl", [[:s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Current word on line" })
 keymap("n", "<leader>ux", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Set file as executable" })
 keymap("n", "<leader>uu", "<cmd>UrlView<CR>", { silent = true, desc = "View links" })
 keymap("n", "<leader>uU", "<cmd>UrlView lazy<CR>", { silent = true, desc = "View Lazy links" })

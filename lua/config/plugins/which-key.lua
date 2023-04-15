@@ -122,7 +122,7 @@ local mappings = {
 		name = "Lsp",
 		D = { "<cmd>Lspsaga peek_definition<cr>", "Peek to definiton" },
 		d = { "<cmd>Lspsaga goto_definition<cr>", "Go to definiton" },
-		-- r = {"<cmd>Lspsaga rename<cr>","Rename"},
+		r = { "<cmd>Lspsaga rename<cr>", "Rename" },
 		f = { "<cmd>Lspsaga lsp_finder<cr>", "Lsp Finder" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		a = { "<cmd>Lspsaga code_action<cr>", "Code action" },
@@ -153,7 +153,8 @@ local mappings = {
 	},
 	u = {
 		name = "Utils",
-		b = "Browser"
+		b = "Browser",
+		s = "Substitute",
 	},
 }
 
