@@ -86,7 +86,7 @@ require("lspsaga").setup({
 
 local signs = {
 	Error = " ",
-	Warn = " ",
+	Warn = " ",
 	Info = " ",
 	Hint = " ",
 }

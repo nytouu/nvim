@@ -17,14 +17,14 @@ local colors = {
 }
 
 local icons = {
-	error = "  ",
-	warn = "  ",
+	error = " 󰅚 ",
+	warn = "  ",
 	info = "  ",
-	hint = "  ",
-	git = "  ",
-	gitadd = " ﰂ ",
-	gitdel = " ﯰ ",
-	gitmod = " 柳",
+	hint = " 󰌶 ",
+	git = "  ",
+	gitadd = "  ",
+	gitdel = "  ",
+	gitmod = "  ",
 }
 
 local buffer_not_empty = function()

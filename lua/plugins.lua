@@ -21,14 +21,21 @@ return {
 		config = function()
 			require("config.plugins.lsp-saga")
 		end,
-		event = "BufRead",
+		event = "LspAttach",
 	},
 	{
 		"mhartington/formatter.nvim",
 		config = function()
 			require("config.plugins.formatter")
 		end,
-		event = "BufWinEnter",
+		event = "LspAttach",
+	},
+	{
+		"VidocqH/lsp-lens.nvim",
+		config = function ()
+			require("lsp-lens").setup()
+		end,
+		event = "BufRead"
 	},
 
 	-- Completion stuff
@@ -46,22 +53,17 @@ return {
 			require("config.plugins.snippets")
 		end,
 		dependencies = {
+			"onsails/lspkind.nvim",
 			"rafamadriz/friendly-snippets",
 			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
-			"hrsh7th/cmp-buffer",
+			-- "hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-calc",
-			"f3fora/cmp-spell",
 			"tamago324/cmp-zsh",
-			"KadoBOT/cmp-plugins",
+			"hrsh7th/cmp-cmdline",
+			"lukas-reineke/cmp-rg"
 		},
-		event = "InsertEnter",
-	},
-	{
-		"onsails/lspkind.nvim",
 		event = "InsertEnter",
 	},
 
@@ -85,12 +87,13 @@ return {
 	-- Colorschemes
 	{
 		"shaunsingh/oxocarbon.nvim",
-		"sainnhe/everforest",
-		"folke/tokyonight.nvim",
-		"ChristianChiarulli/nvcode-color-schemes.vim",
+		-- "sainnhe/everforest",
+		-- "folke/tokyonight.nvim",
+		-- "ChristianChiarulli/nvcode-color-schemes.vim",
 		"catppuccin/nvim",
-		"EdenEast/nightfox.nvim",
+		-- "EdenEast/nightfox.nvim",
 		"Yazeed1s/minimal.nvim",
+		"projekt0n/github-nvim-theme"
 	},
 
 	-- UI stuff
@@ -167,17 +170,18 @@ return {
 		end,
 		event = "VimEnter",
 	},
+	-- {
+	-- 	"petertriho/nvim-scrollbar",
+	-- 	dependencies = "kevinhwang91/nvim-hlslens",
+	-- 	config = function()
+	-- 		require("config.plugins.scrollbar")
+	-- 	end,
+	-- 	event = "BufEnter",
+	-- },
 	{
-		"petertriho/nvim-scrollbar",
+		"Bekaboo/deadcolumn.nvim",
 		config = function()
-			require("config.plugins.scrollbar")
-		end,
-		event = "BufEnter",
-	},
-	{
-		"m4xshen/smartcolumn.nvim",
-		config = function()
-			require("config.plugins.smartcolumn")
+			require("config.plugins.column")
 		end,
 		event = "BufEnter",
 	},
@@ -227,6 +231,10 @@ return {
 
 	-- Quality of life stuff
 	{
+		"mg979/vim-visual-multi",
+		event = "VeryLazy"
+	},
+	{
 		"famiu/bufdelete.nvim",
 		cmd = "Bdelete",
 	},
@@ -242,7 +250,7 @@ return {
 		config = function()
 			require("nvim_comment").setup()
 		end,
-		event = "BufEnter",
+		event = "VeryLazy",
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -251,13 +259,13 @@ return {
 		end,
 		event = "BufReadPre",
 	},
-	{
-		"kevinhwang91/nvim-hlslens",
-		config = function()
-			require("config.plugins.hlslens")
-		end,
-		event = "VimEnter",
-	},
+	-- {
+	-- 	"kevinhwang91/nvim-hlslens",
+	-- 	config = function()
+	-- 		require("config.plugins.hlslens")
+	-- 	end,
+	-- 	event = "VimEnter",
+	-- },
 	{
 		"simrat39/rust-tools.nvim",
 		dependencies = { "Saecki/crates.nvim" },
@@ -268,13 +276,6 @@ return {
 	},
 
 	-- cool stuff
-	{
-		"folke/zen-mode.nvim",
-		config = function()
-			require("config.plugins.zen")
-		end,
-		cmd = "ZenMode",
-	},
 	{
 		"ray-x/web-tools.nvim",
 		config = function()
@@ -294,10 +295,10 @@ return {
 		end,
 		cmd = { "TroubleToggle", "Trouble" },
 	},
-	{
-		"kdheepak/lazygit.nvim",
-		cmd = "LazyGit",
-	},
+	-- {
+	-- 	"kdheepak/lazygit.nvim",
+	-- 	cmd = "LazyGit",
+	-- },
 	{
 		"monaqa/dial.nvim",
 		event = "BufEnter",
@@ -312,21 +313,6 @@ return {
 	{
 		"dstein64/vim-startuptime",
 		cmd = "StartupTime",
-	},
-	{
-		"alec-gibson/nvim-tetris",
-		cmd = "Tetris",
-	},
-	{
-		"chaimleib/vim-renpy",
-		ft = { "rpy", "renpy" },
-	},
-	{
-		"sindrets/diffview.nvim",
-		config = function()
-			require("diffview")
-		end,
-		cmd = { "DiffviewOpen" },
 	},
 	{
 		"andweeb/presence.nvim",
@@ -350,16 +336,29 @@ return {
 		end,
 		event = "InsertEnter",
 	},
-	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "InsertEnter",
-		config = function()
-			require("nvim-surround").setup()
-		end,
-	},
+	-- {
+	-- 	"kylechui/nvim-surround",
+	-- 	version = "*",
+	-- 	event = "InsertEnter",
+	-- 	config = function()
+	-- 		require("nvim-surround").setup()
+	-- 	end,
+	-- },
 	{
 		"ThePrimeagen/vim-be-good",
 		cmd = "VimBeGood",
 	},
+	-- {
+	-- 	"rmagatti/gx-extended.nvim",
+	-- 	config = function ()
+	-- 		require("gx-extended").setup{}
+	-- 	end,
+	-- 	event = "BufWinEnter"
+	-- },
+	-- {
+	-- 	"Chaitanyabsprip/present.nvim",
+	-- 	config = function()
+	-- 		require('present').setup{}
+	-- 	end,
+	-- },
 }

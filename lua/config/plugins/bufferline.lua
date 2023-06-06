@@ -1,5 +1,6 @@
 require("bufferline").setup({
 	options = {
+		diagnostics = "nvim_lsp",
 		buffer_close_icon = "",
 		-- indicator_icon = '▎',
 		modified_icon = "●",
@@ -14,12 +15,17 @@ require("bufferline").setup({
 		view = "multiview",
 		show_buffer_close_icons = true,
 		show_close_icon = false,
-		separator_style = "thin",
+        separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
+        -- indicator = {
+			-- icon = " ",
+			-- style = 'icon',
+			-- style = "underline",
+        -- },
 		offsets = {
 			{
 				filetype = "NvimTree",
 				text = " ",
-				padding = 1,
+				padding = 0,
 			},
 		},
 	},

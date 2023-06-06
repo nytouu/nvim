@@ -7,12 +7,12 @@ require("transparent").setup({
 		-- 'SignColumn', 'CursorLineNr', 'EndOfBuffer',
 	},
 	extra_groups = {
-		"BufferLineTabClose",
-		"BufferlineBufferSelected",
-		"BufferLineFill",
-		"BufferLineBackground",
-		"BufferLineSeparator",
-		"BufferLineIndicatorSelected",
+		-- "BufferLineTabClose",
+		-- "BufferlineBufferSelected",
+		-- "BufferLineFill",
+		-- "BufferLineBackground",
+		-- "BufferLineSeparator",
+		-- "BufferLineIndicatorSelected",
 		"ScrollHead",
 		-- "ScrollBody",
 		"ScrollTail",
@@ -21,5 +21,13 @@ require("transparent").setup({
 		"DiffChange",
 		"DiffDelete"
 	},
-	exclude_groups = {},
+	exclude_groups = {
+		"BufferLineTabClose",
+		"BufferlineBufferSelected",
+		"BufferLineFill",
+		"BufferLineBackground",
+		"BufferLineSeparator",
+		"BufferLineIndicatorSelected",
+
+	},
 })

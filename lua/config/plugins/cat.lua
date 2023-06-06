@@ -13,7 +13,7 @@ require("catppuccin").setup({
 		cmp = true,
 		lsp_saga = true,
 		gitsigns = true,
-		telescope = false,
+		telescope = true,
 		nvimtree = {
 			enabled = true,
 			show_root = true,
@@ -21,12 +21,12 @@ require("catppuccin").setup({
 		which_key = true,
 		indent_blankline = {
 			enabled = true,
-			colored_indent_levels = true,
+			colored_indent_levels = false,
 		},
-		dashboard = true,
+		dashboard = false,
 		bufferline = true,
-		hop = true,
+		hop = false,
 	},
 })
-vim.g.catppuccin_flavour = "latte"
+vim.g.catppuccin_flavour = "mocha"
 vim.cmd([[colorscheme catppuccin]])

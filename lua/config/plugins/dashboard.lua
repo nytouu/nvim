@@ -26,31 +26,31 @@ require("dashboard").setup({
 		},
 		center = {
 			{
-				icon = "  ",
+				icon = "  ",
 				desc = "Find Files                              ",
 				key = "spc f f",
 				action = "Telescope find_files",
 			},
 			{
-				icon = "  ",
+				icon = "  ",
 				desc = "Find Word                              ",
 				key = "spc f w",
 				action = "Telescope live_grep",
 			},
 			{
-				icon = "  ",
+				icon = "  ",
 				desc = "Recent Files                            ",
 				key = "spc f r",
 				action = "Telescope oldfiles",
 			},
 			{
-				icon = "漣 ",
+				icon = "  ",
 				desc = "Neovim Config                           ",
 				key = "spc f c",
 				action = "Telescope find_files cwd=$HOME/.config/nvim",
 			},
 			{
-				icon = "  ",
+				icon = "  ",
 				desc = "Quit                                    ",
 				key = "spc q q",
 				action = ":q",

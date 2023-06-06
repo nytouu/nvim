@@ -2,13 +2,14 @@
 vim.g.minimal_italic_functions = true
 vim.g.minimal_italic_comments = true
 vim.g.minimal_italic_keywords = true
-vim.g.minimal_transparent_background = true
+vim.g.minimal_transparent_background = false
 vim.o.background = "dark"
 require("config.plugins.cat")
 
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 
+vim.cmd("set colorcolumn=100")
 vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menuone,noselect"
 vim.o.ignorecase = true
@@ -48,8 +49,8 @@ vim.opt.shortmess:append("c")
 vim.cmd("let &fcs='eob: '")
 vim.o.backup = false
 vim.o.writebackup = false
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
+vim.opt.scrolloff = 6
+vim.opt.sidescrolloff = 6
 vim.opt.hlsearch = false
 
 -- neovide stuff
@@ -70,5 +71,5 @@ vim.g.neovide_floating_blur_amount_y = 2.0
 if vim.g.neovide then
 	vim.g.transparent_enabled = false
 else
-	vim.g.transparent_enabled = false
+	vim.g.transparent_enabled = true
 end
