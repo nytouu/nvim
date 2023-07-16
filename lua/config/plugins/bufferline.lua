@@ -15,7 +15,7 @@ require("bufferline").setup({
 		view = "multiview",
 		show_buffer_close_icons = true,
 		show_close_icon = false,
-        separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
+        separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
         -- indicator = {
 			-- icon = " ",
 			-- style = 'icon',

@@ -37,6 +37,13 @@ return {
 		end,
 		event = "BufRead"
 	},
+	{
+		"lvimuser/lsp-inlayhints.nvim",
+		config = function ()
+			require("lsp-inlayhints").setup()
+		end,
+		event = "LspAttach"
+	},
 
 	-- Completion stuff
 	{
@@ -87,11 +94,8 @@ return {
 	-- Colorschemes
 	{
 		"shaunsingh/oxocarbon.nvim",
-		-- "sainnhe/everforest",
 		-- "folke/tokyonight.nvim",
-		-- "ChristianChiarulli/nvcode-color-schemes.vim",
 		"catppuccin/nvim",
-		-- "EdenEast/nightfox.nvim",
 		"Yazeed1s/minimal.nvim",
 		"projekt0n/github-nvim-theme"
 	},
@@ -170,14 +174,6 @@ return {
 		end,
 		event = "VimEnter",
 	},
-	-- {
-	-- 	"petertriho/nvim-scrollbar",
-	-- 	dependencies = "kevinhwang91/nvim-hlslens",
-	-- 	config = function()
-	-- 		require("config.plugins.scrollbar")
-	-- 	end,
-	-- 	event = "BufEnter",
-	-- },
 	{
 		"Bekaboo/deadcolumn.nvim",
 		config = function()
@@ -259,13 +255,6 @@ return {
 		end,
 		event = "BufReadPre",
 	},
-	-- {
-	-- 	"kevinhwang91/nvim-hlslens",
-	-- 	config = function()
-	-- 		require("config.plugins.hlslens")
-	-- 	end,
-	-- 	event = "VimEnter",
-	-- },
 	{
 		"simrat39/rust-tools.nvim",
 		dependencies = { "Saecki/crates.nvim" },
@@ -295,10 +284,6 @@ return {
 		end,
 		cmd = { "TroubleToggle", "Trouble" },
 	},
-	-- {
-	-- 	"kdheepak/lazygit.nvim",
-	-- 	cmd = "LazyGit",
-	-- },
 	{
 		"monaqa/dial.nvim",
 		event = "BufEnter",
@@ -336,29 +321,8 @@ return {
 		end,
 		event = "InsertEnter",
 	},
-	-- {
-	-- 	"kylechui/nvim-surround",
-	-- 	version = "*",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("nvim-surround").setup()
-	-- 	end,
-	-- },
 	{
 		"ThePrimeagen/vim-be-good",
 		cmd = "VimBeGood",
 	},
-	-- {
-	-- 	"rmagatti/gx-extended.nvim",
-	-- 	config = function ()
-	-- 		require("gx-extended").setup{}
-	-- 	end,
-	-- 	event = "BufWinEnter"
-	-- },
-	-- {
-	-- 	"Chaitanyabsprip/present.nvim",
-	-- 	config = function()
-	-- 		require('present').setup{}
-	-- 	end,
-	-- },
 }

@@ -4,7 +4,7 @@ vim.g.minimal_italic_comments = true
 vim.g.minimal_italic_keywords = true
 vim.g.minimal_transparent_background = false
 vim.o.background = "dark"
-require("config.plugins.cat")
+vim.cmd([[colorscheme oxocarbon]])
 
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
@@ -54,12 +54,13 @@ vim.opt.sidescrolloff = 6
 vim.opt.hlsearch = false
 
 -- neovide stuff
-vim.o.guifont = "SF Mono,nonicons"
+vim.o.guifont = "JetBrains Mono:h11,nonicons:h11"
+vim.opt.linespace = 0
 vim.g.neovide_refresh_rate = 144
 vim.g.neovide_cursor_animation_length = 0.03
 vim.g.neovide_cursor_trail_length = 0.3
 vim.g.neovide_cursor_antialiasing = true
-vim.g.neovide_cursor_vfx_mode = "pixiedust"
+vim.g.neovide_cursor_vfx_mode = "none"
 vim.g.neovide_cursor_vfx_particle_lifetime = 2.2
 vim.g.neovide_cursor_vfx_particle_density = 10.0
 vim.g.neovide_cursor_vfx_particle_phase = 3.0

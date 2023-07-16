@@ -28,5 +28,5 @@ require("catppuccin").setup({
 		hop = false,
 	},
 })
-vim.g.catppuccin_flavour = "mocha"
+vim.g.catppuccin_flavour = "frappe"
 vim.cmd([[colorscheme catppuccin]])
