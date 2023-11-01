@@ -8,27 +8,29 @@ require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-capabilities.textDocument.CompletionItem = {
-	documentationFormat = { "markdown", "plaintext" },
-	snippetSupport = true,
-	preselectSupport = true,
-	insertReplaceSupport = true,
-	labelDetailsSupport = true,
-	deprecatedSupport = true,
-	commitCharactersSupport = true,
-	tagSupport = { valueSet = { 1 } },
-	resolveSupport = {
-		properties = {
-			"documentation",
-			"detail",
-			"additionalTextEdits",
-		},
-	},
-}
+-- capabilities.textDocument.CompletionItem = {
+-- 	documentationFormat = { "markdown", "plaintext" },
+-- 	snippetSupport = true,
+-- 	preselectSupport = true,
+-- 	insertReplaceSupport = true,
+-- 	labelDetailsSupport = true,
+-- 	deprecatedSupport = true,
+-- 	commitCharactersSupport = true,
+-- 	tagSupport = { valueSet = { 1 } },
+-- 	resolveSupport = {
+-- 		properties = {
+-- 			"documentation",
+-- 			"detail",
+-- 			"additionalTextEdits",
+-- 		},
+-- 	},
+-- }
 
-require("lspconfig")["sumneko_lua"].setup({})
+require("lspconfig")["lua_ls"].setup({})
+require("lspconfig")["rust-analyzer"].setup({})
+
 require("mason-lspconfig").setup_handlers({
 	-- The first entry (without a key) will be the default handler
 	-- and will be called for each installed server that doesn't have

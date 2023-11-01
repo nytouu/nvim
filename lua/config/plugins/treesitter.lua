@@ -11,6 +11,7 @@ require("nvim-treesitter.configs").setup({
 	indent = {
 		disable = {
 			"gdscript",
+			"nix"
 		},
 	},
 })

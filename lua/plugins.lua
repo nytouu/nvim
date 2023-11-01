@@ -51,25 +51,27 @@ return {
 		config = function()
 			require("config.plugins.cmp")
 		end,
-		dependencies = { "windwp/nvim-autopairs" },
+		dependencies = {
+			"windwp/nvim-autopairs",
+			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"tamago324/cmp-zsh",
+			"hrsh7th/cmp-cmdline",
+			"lukas-reineke/cmp-rg",
+			"onsails/lspkind.nvim"
+		},
 		event = "InsertEnter",
-	},
+    },
 	{
 		"L3MON4D3/LuaSnip",
 		config = function()
 			require("config.plugins.snippets")
 		end,
 		dependencies = {
-			"onsails/lspkind.nvim",
 			"rafamadriz/friendly-snippets",
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-nvim-lsp-signature-help",
-			-- "hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"tamago324/cmp-zsh",
-			"hrsh7th/cmp-cmdline",
-			"lukas-reineke/cmp-rg"
 		},
 		event = "InsertEnter",
 	},
@@ -167,13 +169,14 @@ return {
 		end,
 		event = "BufReadPre",
 	},
-	{
-		"xiyaowong/nvim-transparent",
-		config = function()
-			require("config.plugins.transparent")
-		end,
-		event = "VimEnter",
-	},
+    
+	-- {
+	-- 	"xiyaowong/nvim-transparent",
+	-- 	config = function()
+	-- 		require("config.plugins.transparent")
+	-- 	end,
+	-- 	event = "VimEnter",
+	-- },
 	{
 		"Bekaboo/deadcolumn.nvim",
 		config = function()
@@ -201,35 +204,35 @@ return {
 	},
 
 	-- Markdown
-	{
-		"jbyuki/venn.nvim",
-		ft = { "md", "markdown" },
-	},
-	{
-		"NFrid/due.nvim",
-		config = function()
-			require("due_nvim").setup()
-		end,
-		ft = { "md", "markdown" },
-	},
-	{
-		"jakewvincent/mkdnflow.nvim",
-		config = function()
-			require("mkdnflow").setup()
-		end,
-		ft = { "md", "markdown" },
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
-		ft = { "md", "markdown" },
-	},
+	-- {
+	-- 	"jbyuki/venn.nvim",
+	-- 	ft = { "md", "markdown" },
+	-- },
+	-- {
+	-- 	"NFrid/due.nvim",
+	-- 	config = function()
+	-- 		require("due_nvim").setup()
+	-- 	end,
+	-- 	ft = { "md", "markdown" },
+	-- },
+	-- {
+	-- 	"jakewvincent/mkdnflow.nvim",
+	-- 	config = function()
+	-- 		require("mkdnflow").setup()
+	-- 	end,
+	-- 	ft = { "md", "markdown" },
+	-- },
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	build = "cd app && npm install",
+	-- 	ft = { "md", "markdown" },
+	-- },
 
 	-- Quality of life stuff
-	{
-		"mg979/vim-visual-multi",
-		event = "VeryLazy"
-	},
+	-- {
+	-- 	"mg979/vim-visual-multi",
+	-- 	event = "VeryLazy"
+	-- },
 	{
 		"famiu/bufdelete.nvim",
 		cmd = "Bdelete",
@@ -277,42 +280,42 @@ return {
 		end,
 		ft = { "html", "js", "javascript" },
 	},
-	{
-		"folke/trouble.nvim",
-		config = function()
-			require("config.plugins.lsp-trouble")
-		end,
-		cmd = { "TroubleToggle", "Trouble" },
-	},
+	-- {
+	-- 	"folke/trouble.nvim",
+	-- 	config = function()
+	-- 		require("config.plugins.lsp-trouble")
+	-- 	end,
+	-- 	cmd = { "TroubleToggle", "Trouble" },
+	-- },
 	{
 		"monaqa/dial.nvim",
 		event = "BufEnter",
 	},
-	{
-		"phaazon/hop.nvim",
-		config = function()
-			require("config.plugins.hop")
-		end,
-		cmd = { "HopWord", "HopChar2", "HopLine" },
-	},
+	-- {
+	-- 	"phaazon/hop.nvim",
+	-- 	config = function()
+	-- 		require("config.plugins.hop")
+	-- 	end,
+	-- 	cmd = { "HopWord", "HopChar2", "HopLine" },
+	-- },
 	{
 		"dstein64/vim-startuptime",
 		cmd = "StartupTime",
 	},
-	{
-		"andweeb/presence.nvim",
-		config = function()
-			require("config.plugins.discord")
-		end,
-		event = "VeryLazy",
-	},
-	{
-		"axieax/urlview.nvim",
-		config = function()
-			require("urlview").setup()
-		end,
-		cmd = "UrlView",
-	},
+	-- {
+	-- 	"andweeb/presence.nvim",
+	-- 	config = function()
+	-- 		require("config.plugins.discord")
+	-- 	end,
+	-- 	event = "VeryLazy",
+	-- },
+	-- {
+	-- 	"axieax/urlview.nvim",
+	-- 	config = function()
+	-- 		require("urlview").setup()
+	-- 	end,
+	-- 	cmd = "UrlView",
+	-- },
 	{
 		"utilyre/sentiment.nvim",
 		version = "*",
@@ -325,4 +328,32 @@ return {
 		"ThePrimeagen/vim-be-good",
 		cmd = "VimBeGood",
 	},
+	-- {
+	-- 	'nvim-orgmode/orgmode',
+	-- 	dependencies = {
+	-- 		{ 'nvim-treesitter/nvim-treesitter', lazy = true },
+	-- 		"akinsho/org-bullets.nvim",
+	-- 		"lukas-reineke/headlines.nvim"
+	-- 	},
+	-- 	event = 'VeryLazy',
+	-- 	config = function()
+	-- 		-- Load treesitter grammar for org
+	-- 		require('orgmode').setup_ts_grammar()
+	--
+	-- 		-- Setup treesitter
+	-- 		require('nvim-treesitter.configs').setup({
+	-- 			highlight = {
+	-- 				enable = true,
+	-- 				additional_vim_regex_highlighting = { 'org' },
+	-- 			},
+	-- 			ensure_installed = { 'org' },
+	-- 		})
+	--
+	-- 		-- Setup orgmode
+	-- 		require('orgmode').setup({
+	-- 			org_agenda_files = '~/orgfiles/**/*',
+	-- 			org_default_notes_file = '~/orgfiles/refile.org',
+	-- 		})
+	-- 	end,
+	-- }
 }

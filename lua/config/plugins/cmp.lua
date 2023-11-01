@@ -1,4 +1,5 @@
 local cmp = require("cmp");
+local lspkind = require("lspkind");
 
 cmp.setup({
 	-- enabled = function()
@@ -12,9 +13,9 @@ cmp.setup({
 	-- 		and not context.in_syntax_group("Comment")
 	-- 	end
 	-- end,
-	completion = {
-		keyword_length = 1,
-	},
+	-- completion = {
+	-- 	keyword_length = 1,
+	-- },
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
@@ -46,8 +47,8 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Replace,
-			-- select = false,
+			-- behavior = cmp.ConfirmBehavior.Replace,
+			select = false,
 		}),
 		["<Tab>"] = function(fallback)
 			if cmp.visible() then
@@ -68,24 +69,25 @@ cmp.setup({
 			end
 		end,
 	},
-	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "nvim_lsp_signature_help" },
+	sources = cmp.config.sources({
 		{ name = "luasnip" },
+		{ name = "nvim_lsp" },
+	},{
 		{ name = "buffer" },
+		-- { name = "nvim_lsp_signature_help" },
 		{ name = "nvim_lua" },
 		{ name = "path" },
-		{ name = "calc" },
-		{ name = "spell" },
-		{ name = "zsh" },
+		-- { name = "calc" },
+		-- { name = "spell" },
+		-- { name = "zsh" },
 		-- { name = "rg" },
 		-- { name = "plugins" },
-		{ name = "crates" },
-	},
+		-- { name = "crates" },
+	}),
 })
 
 require("nvim-autopairs").setup()
 
 -- If you want insert `(` after select function or method item
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+-- local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+-- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())

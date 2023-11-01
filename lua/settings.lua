@@ -72,5 +72,5 @@ vim.g.neovide_floating_blur_amount_y = 2.0
 if vim.g.neovide then
 	vim.g.transparent_enabled = false
 else
-	vim.g.transparent_enabled = true
+	vim.g.transparent_enabled = false
 end
