@@ -16,7 +16,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		local opts = { noremap = true, silent = true }
-		local on_attach = function(client, bufnr)
+		local on_attach = function(_, bufnr)
 			opts.buffer = bufnr
 
 			-- set keybinds
@@ -103,12 +103,48 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["nil_ls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["clangd"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure lua server (with special settings)
+		lspconfig["lua_ls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "lua-language-server" },
+			settings = { -- custom settings for lua
+				Lua = {
+					completion = {
+						callSnippet = "Replace"
+					},
+					-- make the language server recognize "vim" global
+					diagnostics = {
+						globals = { "vim" },
+					},
+					workspace = {
+						-- make language server aware of runtime files
+						library = {
+							[vim.fn.expand("$HOME/.config/nvim/lua")] = true,
+							[vim.fn.stdpath("config") .. "/lua"] = true,
+						},
+					},
+				},
+			},
+		})
+
 		lspconfig["omnisharp"].setup({
-            cmd = { "OmniSharp", "-z", "-lsp" },
+            cmd = { "OmniSharp", "-lsp" },
 
             enable_roslyn_analyzers = false,
             enable_import_completion = false,
             enable_ms_build_load_projects_on_demand = false,
+            analyze_open_documents_only = false,
 
 			capabilities = capabilities,
 			on_attach = function (client, bufnr)
@@ -191,33 +227,6 @@ return {
                     }
                 end
             end
-		})
-
-		lspconfig["clangd"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			cmd = { "lua-language-server" },
-			settings = { -- custom settings for lua
-				Lua = {
-					-- make the language server recognize "vim" global
-					diagnostics = {
-						globals = { "vim" },
-					},
-					workspace = {
-						-- make language server aware of runtime files
-						library = {
-							[vim.fn.expand("$HOME/.config/nvim/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
-						},
-					},
-				},
-			},
 		})
 	end,
 }

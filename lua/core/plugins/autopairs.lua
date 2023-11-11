@@ -8,7 +8,7 @@ return {
 			lua = { "string", "source" },
 		},
 		fast_wrap = {
-			map = "<M-e>",
+			-- map = "<M-e>",
 			chars = { "{", "[", "(", '"', "'" },
 			pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
 			offset = 0, -- Offset from pattern match
