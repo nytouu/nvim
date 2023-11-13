@@ -1,6 +1,7 @@
 return {
     {
         "utilyre/barbecue.nvim",
+        enabled = true,
         name = "barbecue",
         version = "*",
         event = "LspAttach",
@@ -9,6 +10,7 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         opts = {
+            exclude_filetypes = { "netrw", "toggleterm" },
             symbols = {
                 modified = "●",
                 ellipsis = "…",

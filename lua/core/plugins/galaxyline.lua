@@ -1,5 +1,6 @@
 return {
     "nvimdev/galaxyline.nvim",
+	enabled = true,
     event = "BufWinEnter",
     config = function  ()
 
@@ -8,17 +9,17 @@ return {
         gl.short_line_list = {'NvimTree','vista','dbui','packager','toggleterm','neo-tree'}
 
         local colors = {
-            bg = '#101010',
-            dark_bg = '#0c0c0c',
-            fg = '#dde1e6',
-            dark_fg = '#525252',
-            yellow = '#F9E2AF',
-            cyan = '#3ddbd9',
-            green = '#42be65',
-            orange = '#FFAB91',
-            magenta = '#ff7eb6',
-            blue = '#82cfff',
-            red = '#ee5396'
+            bg = '#0d0e0f',
+            dark_bg = '#171a1a',
+            fg = '#ebdbb2',
+            dark_fg = '#665c54',
+            yellow = '#fabd2f',
+            cyan = '#458588',
+            green = '#689d6a',
+            orange = '#d65d0e',
+            magenta = '#b16286',
+            blue = '#458588',
+            red = '#cc241d'
         }
 
         local icons = {
@@ -30,6 +31,7 @@ return {
             gitadd = "  ",
             gitdel = "  ",
             gitmod = "  ",
+            cog    = " 󰢻 "
         }
 
         local buffer_not_empty = function()
@@ -164,13 +166,15 @@ return {
         gls.left[9] = {
             DiffRemove = {
                 provider = "DiffRemove",
+                separator_highlight = { "NONE", colors.bg },
                 icon = icons.gitdel,
                 highlight = { colors.red, colors.bg },
             },
         }
 
-        gls.right[1] = {
+        gls.right[0] = {
             DiagnosticError = {
+                separator_highlight = { "NONE", colors.bg },
                 provider = "DiagnosticError",
                 condition = checkwidth,
                 icon = icons.error,
@@ -178,7 +182,7 @@ return {
             },
         }
 
-        gls.right[2] = {
+        gls.right[1] = {
             DiagnosticWarn = {
                 provider = "DiagnosticWarn",
                 condition = checkwidth,
@@ -187,7 +191,7 @@ return {
             },
         }
 
-        gls.right[3] = {
+        gls.right[2] = {
             DiagnosticHint = {
                 provider = "DiagnosticHint",
                 condition = checkwidth,
@@ -196,7 +200,7 @@ return {
             },
         }
 
-        gls.right[4] = {
+        gls.right[3] = {
             DiagnosticInfo = {
                 provider = "DiagnosticInfo",
                 condition = checkwidth,
@@ -205,8 +209,18 @@ return {
             },
         }
 
+        gls.right[4] = {
+            GetLspClient = {
+                provider = "GetLspClient",
+                icon = icons.cog,
+                highlight = { colors.dark_fg, colors.bg },
+            },
+        }
+
         gls.right[5] = {
             FileType = {
+                separator = " ",
+                separator_highlight = { "NONE", colors.bg },
                 provider = function()
                     if not buffer_not_empty() then
                         return ""
@@ -259,23 +273,24 @@ return {
                 highlight = "GalaxyViMode",
             },
         }
-        gls.short_line_left[1] = {
+        gls.short_line_left[0] = {
             LeftIcon = {
                 provider = function()
-                    return "▊ "
+                    return ""
+                    -- return "▊ "
                 end,
                 highlight = { colors.blue, colors.dark_bg },
             },
         }
 
-        gls.short_line_left[2] = {
-            BufferType = {
-                provider = "FileTypeName",
-                separator = " ",
-                separator_highlight = { "NONE", colors.dark_bg },
-                highlight = { colors.blue, colors.dark_bg, "bold" },
-            },
-        }
+        -- gls.short_line_left[2] = {
+        --     BufferType = {
+        --         provider = "FileTypeName",
+        --         separator = " ",
+        --         separator_highlight = { "NONE", colors.dark_bg },
+        --         highlight = { colors.blue, colors.dark_bg, "bold" },
+        --     },
+        -- }
 
         -- gls.short_line_left[3] = {
         -- 	FileName = {
@@ -290,7 +305,7 @@ return {
         -- 		end
         -- 		return fname
         -- 		end,
-        -- 		highlight = {colors.white,colors.bg,'bold'}
+        -- 		highlight = {colors.white,colors.dark_bg,'bold'}
         -- 	}
         -- }
     end

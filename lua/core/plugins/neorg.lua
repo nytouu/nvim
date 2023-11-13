@@ -34,21 +34,6 @@ return {
                     },
                 },
             }
-
-			local opts = {
-				mode = "n",
-				prefix = "<leader>",
-				buffer = nil,
-				silent = true,
-				noremap = true,
-				nowait = true,
-			}
-            local mappings = {
-                n = {
-                    name = "Neorg",
-                },
-			}
-			require("which-key").register(mappings, opts)
         end,
 		keys = {
 			{ "<leader>nc", "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },

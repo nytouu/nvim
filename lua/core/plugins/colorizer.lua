@@ -1,6 +1,9 @@
 return {
 	"NvChad/nvim-colorizer.lua",
-	ft = { "html", "css", "sass", "typescript", "javascript", "conf", "sh", "bash", "zsh" },
+	-- ft = { "html", "css", "sass", "typescript", "javascript", "conf", "sh", "bash", "zsh", "lua" },
+	keys = {
+		{ "<leader>tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle colorizer" },
+	},
 	opts = {
 		user_default_options = {
 			RGB = false,

@@ -15,9 +15,19 @@ return {
 
 		local keymap = vim.keymap -- for conciseness
 
+        -- used to enable autocompletion (assign to every lsp server config)
+        local capabilities = cmp_nvim_lsp.default_capabilities()
+
 		local opts = { noremap = true, silent = true }
-		local on_attach = function(_, bufnr)
+		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
+
+            if client.server_capabilities.inlayHintProvider then
+                vim.lsp.inlay_hint(bufnr, false)
+
+                opts.desc = "Toggle inlay hints"
+                keymap.set("n", "<leader>lh", function() vim.lsp.inlay_hint(bufnr, nil) end, opts) -- mapping to restart lsp if necessary
+            end
 
 			-- set keybinds
 			opts.desc = "Show LSP references"
@@ -54,7 +64,7 @@ return {
 			keymap.set("n", "<leader>lj", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
 			opts.desc = "Show documentation for what is under cursor"
-			keymap.set("n", "<leader>lh", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+			keymap.set("n", "<leader>lH", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
 			opts.desc = "Show server info"
 			keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", opts) -- show lsp implementations
@@ -63,8 +73,6 @@ return {
 			keymap.set("n", "<leader>lR", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 		end
 
-		-- used to enable autocompletion (assign to every lsp server config)
-		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 			virtual_text = false,
@@ -96,6 +104,9 @@ return {
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+            config = {
+                procMacro = { enable = true },
+            },
 		})
 
 		lspconfig["bashls"].setup({
@@ -127,7 +138,13 @@ return {
 					diagnostics = {
 						globals = { "vim" },
 					},
+                    hint = {
+                        enable = true,
+                        setType = true,
+                        arrayIndex = "Disable",
+                    },
 					workspace = {
+                        checkThirdParty = false,
 						-- make language server aware of runtime files
 						library = {
 							[vim.fn.expand("$HOME/.config/nvim/lua")] = true,

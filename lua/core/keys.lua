@@ -59,7 +59,7 @@ keymap("n", "<leader>Lh", ":Lazy health<CR> ", { noremap = true, silent = true, 
 keymap("n", "<leader>Lp", ":Lazy profile<CR> ", { noremap = true, silent = true, desc = "Lazy profile" })
 keymap("n", "<leader>Lc", ":Lazy clean<CR> ", { noremap = true, silent = true, desc = "Lazy profile" })
 
--- keymap("x", "<leader>up", '"_dP', { desc = "Paste no buffer" })
--- keymap("n", "<leader>uss", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Current word on file" })
--- keymap("n", "<leader>usl", [[:s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Current word on line" })
--- keymap("n", "<leader>ux", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Set file as executable" })
+keymap("x", "<leader>up", '"_dP', { desc = "Paste no buffer" })
+keymap("n", "<leader>uss", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Current word on file" })
+keymap("n", "<leader>usl", [[:s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Current word on line" })
+keymap("n", "<leader>ux", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Set file as executable" })
