@@ -23,10 +23,11 @@ return {
 			opts.buffer = bufnr
 
             if client.server_capabilities.inlayHintProvider then
-                vim.lsp.inlay_hint(bufnr, false)
+                vim.lsp.inlay_hint.enable(bufnr, false)
 
                 opts.desc = "Toggle inlay hints"
-                keymap.set("n", "<leader>lh", function() vim.lsp.inlay_hint(bufnr, nil) end, opts) -- mapping to restart lsp if necessary
+
+                keymap.set("n", "<leader>lh", function() vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr)) end, opts) -- mapping to restart lsp if necessary
             end
 
 			-- set keybinds

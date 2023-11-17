@@ -4,6 +4,9 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
+	keys = {
+		{ "<leader>m", "<cmd>Mason<cr>", desc = "Open Mason" },
+	},
 	config = function()
 		-- import mason
 		local mason = require("mason")
@@ -29,8 +32,8 @@ return {
 			ensure_installed = {
 				"tsserver",
 				-- "lua_ls",
-				"pyright",
-				"clangd",
+				-- "pyright",
+				-- "clangd",
 				-- "rust_analyzer"
 			},
 			-- auto-install configured servers (with lspconfig)
@@ -49,10 +52,10 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"black", -- python formatter
-				"pylint", -- python linter
+				-- "prettier", -- prettier formatter
+				-- "stylua", -- lua formatter
+				-- "black", -- python formatter
+				-- "pylint", -- python linter
 			},
 		})
 	end,
