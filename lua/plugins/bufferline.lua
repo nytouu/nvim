@@ -1,5 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
+    enabled = true,
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	version = "*",
     -- config = function ()
@@ -17,7 +18,7 @@ return {
 			diagnostics = "nvim_lsp",
 			-- mode = "tabs",
 			separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
-            tab_size = 20,
+            tab_size = 26,
             show_tab_indicators = true,
             enforce_regular_tabs = false,
             view = "multiview",

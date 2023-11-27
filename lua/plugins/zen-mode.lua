@@ -1,6 +1,7 @@
 return {
 	{
 		"folke/zen-mode.nvim",
+		enabled = false,
 		opts = {
 			window = {
 				backdrop = 1,
@@ -12,14 +13,14 @@ return {
 					relativenumber = false, -- disable relative numbers
 					cursorline = false, -- disable cursorline
 					cursorcolumn = false, -- disable cursor column
-					-- foldcolumn = "0", -- disable fold column
+					foldcolumn = "0", -- disable fold column
 					-- list = false, -- disable whitespace characters
 				}
 			},
 			plugins = {
-				alacritty = {
+				kitty = {
 					enabled = true,
-					font = "14", -- font size
+					font = "+4", -- font size
 				},
 			}
 		},

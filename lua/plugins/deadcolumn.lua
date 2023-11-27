@@ -1,6 +1,8 @@
 return {
     {
         "Bekaboo/deadcolumn.nvim",
+        event = "BufEnter",
+		enabled = false,
         opts = {
             scope = 'line',
             modes = { 'i', 'ic', 'ix', 'R', 'Rc', 'Rx', 'Rv', 'Rvc', 'Rvx' },
@@ -25,6 +27,5 @@ return {
                 follow_tw = nil,
             },
         },
-        event = "BufEnter",
     },
 }

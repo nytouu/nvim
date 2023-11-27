@@ -1,6 +1,7 @@
 return {
     {
         "andweeb/presence.nvim",
+		enabled = false,
         opts = {
             -- General options
             auto_update = true,

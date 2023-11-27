@@ -1,5 +1,6 @@
 return {
 	"windwp/nvim-autopairs",
+	enabled = true,
 	event = "InsertEnter",
 	opts = {
 		check_ts = true, -- treesitter integration

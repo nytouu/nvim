@@ -18,7 +18,7 @@ return {
                             icon_preset = "diamond",
                         }
                     },
-                    -- ["core.ui.calendar"] = {},
+                    ["core.ui.calendar"] = {},
                     ["core.completion"] = {
 						config = {
 							engine = "nvim-cmp"
@@ -36,7 +36,9 @@ return {
             }
         end,
 		keys = {
-			{ "<leader>nc", "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
+			{ "<leader>nC", "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
+			{ "<leader>nc", "<cmd>Neorg journal custom<cr>", desc = "Open calendar view" },
+			{ "<leader>nn", "<cmd>Neorg journal today<cr>", desc = "Open today's note" },
 			{ "<leader>nm", "<cmd>Neorg inject-metadata<cr>", desc = "Inject metadata" },
 			{ "<leader>ni", "<cmd>Neorg index<cr>", desc = "Open workspace index" },
 		}
