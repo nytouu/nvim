@@ -43,7 +43,7 @@ keymap("n", "<leader>Fo", ":foldopen<CR>", {noremap = true, silent = true, desc 
 keymap("n", "<leader>Fq", ":foldclose<CR>", {noremap = true, silent = true, desc = "Close fold"})
 
 -- hightlight toggle
-keymap("n", "<leader>th", ":set hlsearch!<CR> ", { noremap = true, silent = true, desc = "Toggle search highlight" })
+keymap("n", "<leader>tH", ":set hlsearch!<CR> ", { noremap = true, silent = true, desc = "Toggle search highlight" })
 
 -- buffer
 keymap("n", "<leader>bs", ":source %<CR> ", { noremap = true, silent = true, desc = "Source file" })
