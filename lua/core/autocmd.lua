@@ -1,20 +1,33 @@
--- vim.api.nvim_create_autocmd("BufRead", {
---     group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
---     pattern = "Cargo.toml",
---     callback = function()
---         require("cmp").setup.buffer({ sources = { { name = "crates" } } })
---     end,
--- })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('highlight_yank', {}),
+  desc = 'Hightlight selection on yank',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500 }
+  end,
+})
 
-local lsp_util = require('nvim.utils.lsp')
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "dashboard", "neo-tree" },
+  callback = function()
+    require("ufo").detach()
+    vim.opt_local.foldenable = false
+  end
+})
 
-vim.api.nvim_create_autocmd('LspAttach', {
-	callback = function(ev)
-		local client = lsp_util.get_client(ev)
+local function augroup(name, autocmds)
+    local group = vim.api.nvim_create_augroup(name, {})
+    for event, opts in pairs(autocmds) do
+        opts.group = group
+        vim.api.nvim_create_autocmd(event, opts)
+    end
+end
 
-		if client.server_capabilities.inlayHintProvider then
-			vim.lsp.buf.inlay_hint(0, true)
-			vim.api.nvim_set_hl(0, 'LspInlayHint', { fg = 'red' })
-		end
-	end,
+-- Set cursor hints according to mode
+augroup('Enter', {
+	InsertEnter = { command = 'set cursorline' },
+})
+
+augroup('Leave', {
+	InsertLeave = { command = 'set nocursorline' },
 })
