@@ -26,8 +26,13 @@ return {
                 {
                     filetype = "neo-tree",
                     text = " ",
-                    padding = 0,
+                    padding = 1,
                 },
+            },
+            hover = {
+                enabled = true,
+                delay = 0,
+                reveal = { 'close' }
             },
 		},
 	},

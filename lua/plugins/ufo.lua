@@ -20,7 +20,6 @@ return {
             end
         }
     },
-	enabled = true,
     event = "VeryLazy",
 	config = function ()
 		vim.o.foldcolumn = '1' -- '0' is not bad

@@ -4,7 +4,8 @@ return {
 	dependencies = {
         "kosayoda/nvim-lightbulb",
 		"hrsh7th/cmp-nvim-lsp",
-		-- { "antosha417/nvim-lsp-file-operations", config = true }, 
+        -- "Hoffs/omnisharp-extended-lsp.nvim",
+		{ "antosha417/nvim-lsp-file-operations", config = true }, 
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
@@ -71,7 +72,6 @@ return {
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>lR", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 		end
-
 
 		vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 			virtual_text = false,
