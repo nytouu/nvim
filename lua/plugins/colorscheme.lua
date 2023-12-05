@@ -1,29 +1,20 @@
 return {
 	{
-		"luisiacc/gruvbox-baby",
-		priority = 1000 ,
-		enabled = true,
-		config = function ()
-			vim.g.gruvbox_baby_function_style = "italic"
-			vim.g.gruvbox_baby_keyword_style = "italic"
-            vim.g.gruvbox_baby_background_color = "dark"
-            vim.g.gruvbox_baby_telescope_theme = 1
+        "savq/melange-nvim",
+        priority = 1000,
+        enabled = true,
+        config = function()
+			local hi = vim.api.nvim_set_hl
 
-			vim.g.gruvbox_baby_highlights = {
-				NeoTreeWinSeparator = {fg = "#171a1a", bg = "#171a1a"},
-				DiagnosticSignHint  = {fg = "#aad4e2"},
-				NeoTreeStatusLine 	= {fg = "#171a1a", bg = "#171a1a"},
-				NeoTreeStatusLineNC = {fg = "#171a1a", bg = "#171a1a"},
-				StatusLine 			= {fg = "#e9daae", bg = "#171a1a"},
-				StatusLineNC 		= {fg = "#e9daae", bg = "#171a1a"},
-				-- fg = "#e9daae", bg = "#665c54"
-				-- fg = "#e9daae", bg = "#665c54"
-			}
+			hi(0, "NeoTreeWinSeparator", {fg = "#34302c", bg = "#34302c"})
+			hi(0, "NeoTreeStatusLine", {fg = "#34302c", bg = "#34302c"})
+			hi(0, "NeoTreeStatusLineNC", {fg = "#34302c", bg = "#34302c"})
+			hi(0, "StatusLine", {fg = "#34302c", bg = "#34302c"})
+			hi(0, "StatusLineNC", {fg = "#34302c", bg = "#34302c"})
+			hi(0, "NonText", {fg = "#403a36"})
 
-			vim.cmd[[colorscheme gruvbox-baby]]
+			-- hi(0, "DiagnosticSignHint", {fg = "#7f90b1", bg = "#7f90b1"})
+			vim.cmd[[colorscheme melange]]
 		end,
 	},
-	{
-
-	}
 }
