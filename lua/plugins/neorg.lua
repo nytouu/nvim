@@ -17,6 +17,7 @@ return {
                     ["core.defaults"] = {},
 
 					["core.keybinds"] = {},
+					["core.summary"] = {},
                     ["core.concealer"] = {
                         config = {
                             icon_preset = "diamond",
@@ -32,7 +33,8 @@ return {
 					["core.dirman"] = {
                         config = {
                             workspaces = {
-                                notes = "~/notes",
+                                general = "~/notes/general",
+                                classes = "~/notes/classes",
                             },
                         },
                     },

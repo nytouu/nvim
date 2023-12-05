@@ -5,7 +5,6 @@ return {
 	version = "*",
     -- config = function ()
         -- local keymap = vim.keymap
-        --
         -- keymap.set("n", "<S-j>", "<cmd>BufferLineCycleNext<cr>")
         -- keymap.set("n", "<S-k>", "<cmd>BufferLineCyclePrev<cr>")
     -- end, 
@@ -26,7 +25,7 @@ return {
                 {
                     filetype = "neo-tree",
                     text = " ",
-                    padding = 1,
+                    padding = 0,
                 },
             },
             hover = {

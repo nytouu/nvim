@@ -1,7 +1,7 @@
 return {
 	{
 		"utilyre/sentiment.nvim",
-		enabled = false,
+		enabled = true,
 		version = "*",
 		config = function()
 			require("sentiment").setup()

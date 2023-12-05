@@ -17,7 +17,7 @@ return {
 		},
 		cmd = "ToggleTerm",
 		keys  = {
-			{ "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+			{ "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
 		}
 	}
 }

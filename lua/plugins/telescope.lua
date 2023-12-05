@@ -1,5 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
+    tag = '0.1.5',
 	cmd = "Telescope",
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
@@ -11,9 +12,9 @@ return {
 		{ "<leader>fr", "<cmd>Telescope oldfiles<CR>", desc = "Find recent file" },
 		{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find keymaps" },
 		{ "<leader>fc", "<cmd>Telescope find_files cwd=$HOME/.config/nvim/<CR>", desc = "Open config" },
+		{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Open help" },
 	},
 	config = function ()
-
 		require("telescope").setup({
 			defaults = {
 				find_command = { "rg", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
@@ -33,20 +34,20 @@ return {
 						results_width = 0.8,
 					},
 					vertical = {
-						mirror = false,
+						mirror = true,
 					},
-					width = 0.85,
+					width = 0.70,
 					height = 0.80,
-					preview_cutoff = 120,
+					-- preview_cutoff = 120,
 				},
-				-- border = {},
+				border = {},
 				-- borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
-				-- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-				borderchars = {
-					prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-					results = { " " },
-					preview = { " " },
-				},
+				borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+				-- borderchars = {
+				-- 	prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+				-- 	results = { " " },
+				-- 	preview = { " " },
+				-- },
 				color_devicons = true,
 				use_less = true,
 				set_env = { ["COLORTERM"] = "truecolor" },
@@ -118,6 +119,14 @@ return {
 					},
 				},
 			},
+            pickers = {
+                -- find_files = {
+                --     theme = "dropdown",
+                -- },
+                colorscheme = {
+                    enable_preview = true,
+                }
+            },
 		})
 	end,
 }
