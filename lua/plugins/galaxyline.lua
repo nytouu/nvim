@@ -9,9 +9,9 @@ return {
         gl.short_line_list = {'NvimTree','vista','dbui','packager','toggleterm','neo-tree'}
 
         local colors = {
-            bg = '#171a1a',
-            dark_bg = '#2d3031',
-            fg = '#ebdbb2',
+			bg = '#34302c',
+            dark_bg = '#34302c',
+            fg = '#eadfd5',
         }
 
         local buffer_not_empty = function()
@@ -41,8 +41,8 @@ return {
         }
 
         gls.left[1] = {
-            FileName = {
-                provider = { "FileName" },
+            FilePath = {
+                provider = { "FilePath" },
                 separator = " ",
                 condition = buffer_not_empty,
                 separator_highlight = { "NONE", colors.dark_bg },
@@ -89,7 +89,7 @@ return {
                 separator_highlight = { "NONE", colors.dark_bg },
                 provider = "DiagnosticError",
                 condition = checkwidth,
-                icon = "err: ",
+                icon = "e: ",
                 highlight = { colors.fg, colors.dark_bg },
             },
         }
@@ -123,7 +123,7 @@ return {
 
         gls.right[4] = {
             FileType = {
-                separator = " ",
+                separator = "   ",
                 separator_highlight = { "NONE", colors.dark_bg },
                 provider = function()
                     if not buffer_not_empty() then
@@ -140,7 +140,7 @@ return {
             LineInfo = {
                 provider = "LineColumn",
                 condition = checkwidth,
-                separator = " ",
+                separator = "   ",
                 separator_highlight = { "NONE", colors.dark_bg },
                 highlight = { colors.fg, colors.dark_bg },
             },
@@ -149,7 +149,7 @@ return {
             PerCent = {
                 provider = "LinePercent",
                 conditon = checkwidth,
-                separator = "",
+                separator = "   ",
                 separator_highlight = { "NONE", colors.dark_bg },
                 highlight = { colors.fg, colors.dark_bg, "bold" },
             },
