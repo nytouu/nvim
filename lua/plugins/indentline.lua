@@ -2,6 +2,7 @@ return {
 	"lukas-reineke/indent-blankline.nvim",
 	event = "BufRead",
 	main = "ibl",
+	enabled = true,
 	config = function ()
 		local hooks = require "ibl.hooks"
 		hooks.register(
@@ -14,7 +15,11 @@ return {
         )
         require("ibl").setup({
             indent = {
-                char = "▏",
+                -- char = "▏",
+				-- char = "·",
+				-- char = "•",
+				char = "·",
+				tab_char = "·",
                 smart_indent_cap = true,
             },
             scope = {
