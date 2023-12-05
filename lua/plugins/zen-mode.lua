@@ -1,12 +1,12 @@
 return {
 	{
 		"folke/zen-mode.nvim",
-		enabled = false,
+		enabled = true,
 		opts = {
 			window = {
 				backdrop = 1,
 				width = 120,
-				height = 0.98,
+				height = 0.90,
 				options = {
 					signcolumn = "no", -- disable signcolumn
 					number = false, -- disable number column
@@ -17,15 +17,9 @@ return {
 					-- list = false, -- disable whitespace characters
 				}
 			},
-			plugins = {
-				kitty = {
-					enabled = true,
-					font = "+4", -- font size
-				},
-			}
 		},
 		keys = {
-			{ "<leader>nz", "<cmd>ZenMode<cr>", desc = "Toggle concealer" },
+			{ "<leader>tz", "<cmd>ZenMode<cr>", desc = "Toggle zen mode" },
 		}
 	}
 }
