@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-    tag = '0.1.5',
+	tag = '0.1.5',
 	cmd = "Telescope",
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
@@ -119,14 +119,14 @@ return {
 					},
 				},
 			},
-            pickers = {
-                -- find_files = {
-                --     theme = "dropdown",
-                -- },
-                colorscheme = {
-                    enable_preview = true,
-                }
-            },
+			pickers = {
+				-- find_files = {
+				--     theme = "dropdown",
+				-- },
+				colorscheme = {
+					enable_preview = true,
+				}
+			},
 		})
 	end,
 }

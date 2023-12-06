@@ -7,7 +7,7 @@ return {
 			vim.o.timeout = true
 			vim.o.timeoutlen = 500
 		end,
-        config = function  ()
+		config = function  ()
 			require("which-key").setup({
 				plugins = {
 					marks = true,
@@ -54,61 +54,61 @@ return {
 				triggers = { "<Leader>" },
 				triggers_blacklist = {
 					-- list of mode / prefixes that should never be hooked by WhichKey
-					i = { "j", "k" },
-					v = { "j", "k" },
+				i = { "j", "k" },
+				v = { "j", "k" },
 				},
 			})
 
-            local opts = {
-                mode = "n",
-                prefix = "<leader>",
-                buffer = nil,
-                silent = true,
-                noremap = true,
-                nowait = true,
-            }
-            local mappings = {
-                F = {
-                    name = "Folds",
-                },
-                t = {
-                    name = "Toggle",
-                },
-                f = {
-                    name = "Find",
-                },
-                q = {
-                    name = "Quit",
-                },
-                w = {
-                    name = "Write",
-                },
-                b = {
-                    name = "Buffer",
-                },
-                g = {
-                    name = "Git",
-                    -- d = "Diffview"
-                },
-                l = {
-                    name = "Lsp",
-                },
-                n = {
-                    name = "Neorg",
-                },
-                s = {
-                    name = "Split",
-                },
-                L = {
-                    name = "Lazy",
-                },
-                u = {
-                    name = "Utils",
-                    s = "Substitute",
-                },
-            }
+			local opts = {
+				mode = "n",
+				prefix = "<leader>",
+				buffer = nil,
+				silent = true,
+				noremap = true,
+				nowait = true,
+			}
+			local mappings = {
+				F = {
+					name = "Folds",
+				},
+				t = {
+					name = "Toggle",
+				},
+				f = {
+					name = "Find",
+				},
+				q = {
+					name = "Quit",
+				},
+				w = {
+					name = "Write",
+				},
+				b = {
+					name = "Buffer",
+				},
+				g = {
+					name = "Git",
+					-- d = "Diffview"
+				},
+				l = {
+					name = "Lsp",
+				},
+				n = {
+					name = "Neorg",
+				},
+				s = {
+					name = "Split",
+				},
+				L = {
+					name = "Lazy",
+				},
+				u = {
+					name = "Utils",
+					s = "Substitute",
+				},
+			}
 
-            require("which-key").register(mappings, opts)
-        end
+			require("which-key").register(mappings, opts)
+		end
 	},
 }

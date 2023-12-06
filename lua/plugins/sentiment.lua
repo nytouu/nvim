@@ -4,7 +4,9 @@ return {
 		enabled = true,
 		version = "*",
 		config = function()
-			require("sentiment").setup()
+			require("sentiment").setup({
+				delay = 0,
+			})
 		end,
 		event = "VeryLazy",
 	},

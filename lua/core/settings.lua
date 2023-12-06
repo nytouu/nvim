@@ -23,8 +23,8 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
 vim.opt.list = true
--- vim.opt.listchars:append("eol:~,extends:»,precedes:«,leadmultispace:·   ,multispace:·,tab:· ,trail: ,nbsp:_")
-vim.opt.listchars:append("eol:~,extends:»,precedes:«,leadmultispace:    ,multispace: ,tab:  ,trail: ,nbsp:_")
+vim.opt.listchars:append("eol:~,extends:»,precedes:«,leadmultispace:-   ,multispace: ,tab:· ,trail:_,nbsp:_")
+-- vim.opt.listchars:append("eol:~,extends:»,precedes:«,leadmultispace:    ,multispace: ,tab:  ,trail: ,nbsp:_")
 vim.o.cmdheight = 1
 vim.o.confirm = true
 vim.o.showtabline = 2
@@ -34,7 +34,7 @@ vim.o.updatetime = 100
 vim.o.timeoutlen = 300
 vim.bo.autoindent = true
 vim.bo.smartindent = true
-vim.bo.expandtab = true
+vim.bo.expandtab = false
 vim.wo.wrap = false
 vim.wo.signcolumn = "yes"
 vim.o.conceallevel = 2

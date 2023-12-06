@@ -1,47 +1,47 @@
 return {
-    {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            { "lukas-reineke/headlines.nvim", config = true },
-            "nvim-neorg/neorg-telescope",
-        },
-        ft = "norg",
+	{
+		"nvim-neorg/neorg",
+		build = ":Neorg sync-parsers",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ "lukas-reineke/headlines.nvim", config = true },
+			"nvim-neorg/neorg-telescope",
+		},
+		ft = "norg",
 		cmd = { "Neorg" },
-        priority = 30,
-        config = function()
-            require("neorg").setup {
-                load = {
+		priority = 30,
+		config = function()
+			require("neorg").setup {
+				load = {
 					-- Loads default behaviour
-                    ["core.defaults"] = {},
+					["core.defaults"] = {},
 
 					["core.keybinds"] = {},
 					["core.summary"] = {},
-                    ["core.concealer"] = {
-                        config = {
-                            icon_preset = "diamond",
-                        }
-                    },
-                    ["core.ui.calendar"] = {},
-                    ["core.completion"] = {
+					["core.concealer"] = {
+						config = {
+							icon_preset = "diamond",
+						}
+					},
+					["core.ui.calendar"] = {},
+					["core.completion"] = {
 						config = {
 							engine = "nvim-cmp"
 						}
 					},
-                    ["core.integrations.nvim-cmp"] = {},
+					["core.integrations.nvim-cmp"] = {},
 					["core.dirman"] = {
-                        config = {
-                            workspaces = {
-                                general = "~/notes/general",
-                                classes = "~/notes/classes",
-                            },
-                        },
-                    },
-                    ["core.integrations.telescope"] = {},
-                },
-            }
-        end,
+						config = {
+							workspaces = {
+								general = "~/notes/general",
+								classes = "~/notes/classes",
+							},
+						},
+					},
+					["core.integrations.telescope"] = {},
+				},
+			}
+		end,
 		keys = {
 			{ "<leader>nC", "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
 			{ "<leader>nji", "<cmd>Neorg journal toc<cr>", desc = "Journal index" },
@@ -50,10 +50,10 @@ return {
 			{ "<leader>nm", "<cmd>Neorg inject-metadata<cr>", desc = "Inject metadata" },
 			{ "<leader>ni", "<cmd>Neorg index<cr>", desc = "Open workspace index" },
 
-            { "<leader>ntl", "<cmd>Telescope neorg insert_link<cr>", desc = "Insert link" },
-            { "<leader>ntF", "<cmd>Telescope neorg insert_file_link<cr>", desc = "Insert file link" },
-            { "<leader>ntf", "<cmd>Telescope neorg find_linkable<cr>", desc = "Find link" },
-            { "<leader>nw",  "<cmd>Telescope neorg switch_workspace<cr>", desc = "Change workspace" },
+			{ "<leader>ntl", "<cmd>Telescope neorg insert_link<cr>", desc = "Insert link" },
+			{ "<leader>ntF", "<cmd>Telescope neorg insert_file_link<cr>", desc = "Insert file link" },
+			{ "<leader>ntf", "<cmd>Telescope neorg find_linkable<cr>", desc = "Find link" },
+			{ "<leader>nw",  "<cmd>Telescope neorg switch_workspace<cr>", desc = "Change workspace" },
 		}
-    },
+	},
 }

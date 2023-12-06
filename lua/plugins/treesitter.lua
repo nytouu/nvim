@@ -17,13 +17,13 @@ return {
 			highlight = {
 				enable = true,
 			},
-            indent = {
-                enable = true,
-                -- disable = {
-                --     "python", 
-                --     "css" 
-                -- } 
-            },
+			indent = {
+				enable = true,
+				-- disable = {
+				--     "python", 
+				--     "css" 
+				-- } 
+			},
 
 			-- Integration with other plugins
 			autopairs = { -- require autopairs plugin

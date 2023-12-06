@@ -44,5 +44,8 @@
     "diagnostics.globals": [
         "vim",
         "d"
+    ],
+    "diagnostics.disable": [
+        "missing-fields"
     ]
 }
