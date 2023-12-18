@@ -5,7 +5,7 @@ return {
         "kosayoda/nvim-lightbulb",
 		"hrsh7th/cmp-nvim-lsp",
         -- "Hoffs/omnisharp-extended-lsp.nvim",
-		{ "antosha417/nvim-lsp-file-operations", config = true }, 
+		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
@@ -25,7 +25,7 @@ return {
 			opts.buffer = bufnr
 
             if client.server_capabilities.inlayHintProvider then
-                vim.lsp.inlay_hint.enable(bufnr, false)
+                vim.lsp.inlay_hint.enable(bufnr, true)
 
                 opts.desc = "Toggle inlay hints"
 
@@ -73,21 +73,6 @@ return {
 			-- keymap.set("n", "<leader>lR", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 		end
 
-		vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-			virtual_text = false,
-			signs = true,
-			underline = true,
-			update_in_insert = false,
-		})
-
-		-- Change the Diagnostic symbols in the sign column (gutter)
-		-- (not in youtube nvim video)
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
-
         require("nvim-lightbulb").setup({
             priority = 100,
             autocmd = { enabled = true },
@@ -101,6 +86,26 @@ return {
                 hl = "DiagnosticSignInfo"
             }
         })
+
+		-- Change the Diagnostic symbols in the sign column (gutter)
+		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		for type, icon in pairs(signs) do
+			local hl = "DiagnosticSign" .. type
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+		end
+
+		vim.diagnostic.config({
+			virtual_text = false,
+			signs = {
+				{ text = { [vim.diagnostic.severity.ERROR] = '' } },
+				{ text = { [vim.diagnostic.severity.WARN] = '' } },
+				{ text = { [vim.diagnostic.severity.HINT] = '' } },
+				{ text = { [vim.diagnostic.severity.INFO] = '' } },
+			},
+			underline = true,
+			update_in_insert = false,
+			severity_sort = true
+		})
 
 		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
@@ -137,6 +142,11 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["csharp_ls"].setup({
+			capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
@@ -147,9 +157,13 @@ return {
 					completion = {
 						callSnippet = "Replace"
 					},
-					-- make the language server recognize "vim" global
 					diagnostics = {
-						globals = { "vim" },
+						globals = { 
+                            "vim",
+                            "awesome",
+                            "client",
+                            "root"
+                        },
 					},
                     hint = {
                         enable = true,
@@ -161,102 +175,15 @@ return {
 						-- make language server aware of runtime files
 						library = {
 							[vim.fn.expand("$HOME/.config/nvim/lua")] = true,
+							[vim.fn.expand("$AWESOME_PATH/share/awesome/lib")] = true,
 							[vim.fn.stdpath("config") .. "/lua"] = true,
 						},
 					},
+                    telemetry = {
+                        enable = false
+                    }
 				},
 			},
-		})
-
-		lspconfig["omnisharp"].setup({
-            cmd = { "OmniSharp", "-lsp" },
-
-            enable_roslyn_analyzers = false,
-            enable_import_completion = false,
-            enable_ms_build_load_projects_on_demand = false,
-            analyze_open_documents_only = false,
-
-			capabilities = capabilities,
-			on_attach = function (client, bufnr)
-                on_attach(client, bufnr)
-
-                if client.name == "omnisharp" then
-                    client.server_capabilities.semanticTokensProvider = {
-                        full = vim.empty_dict(),
-                        legend = {
-                            tokenModifiers = { "static_symbol" },
-                            tokenTypes = {
-                                "comment",
-                                "excluded_code",
-                                "identifier",
-                                "keyword",
-                                "keyword_control",
-                                "number",
-                                "operator",
-                                "operator_overloaded",
-                                "preprocessor_keyword",
-                                "string",
-                                "whitespace",
-                                "text",
-                                "static_symbol",
-                                "preprocessor_text",
-                                "punctuation",
-                                "string_verbatim",
-                                "string_escape_character",
-                                "class_name",
-                                "delegate_name",
-                                "enum_name",
-                                "interface_name",
-                                "module_name",
-                                "struct_name",
-                                "type_parameter_name",
-                                "field_name",
-                                "enum_member_name",
-                                "constant_name",
-                                "local_name",
-                                "parameter_name",
-                                "method_name",
-                                "extension_method_name",
-                                "property_name",
-                                "event_name",
-                                "namespace_name",
-                                "label_name",
-                                "xml_doc_comment_attribute_name",
-                                "xml_doc_comment_attribute_quotes",
-                                "xml_doc_comment_attribute_value",
-                                "xml_doc_comment_cdata_section",
-                                "xml_doc_comment_comment",
-                                "xml_doc_comment_delimiter",
-                                "xml_doc_comment_entity_reference",
-                                "xml_doc_comment_name",
-                                "xml_doc_comment_processing_instruction",
-                                "xml_doc_comment_text",
-                                "xml_literal_attribute_name",
-                                "xml_literal_attribute_quotes",
-                                "xml_literal_attribute_value",
-                                "xml_literal_cdata_section",
-                                "xml_literal_comment",
-                                "xml_literal_delimiter",
-                                "xml_literal_embedded_expression",
-                                "xml_literal_entity_reference",
-                                "xml_literal_name",
-                                "xml_literal_processing_instruction",
-                                "xml_literal_text",
-                                "regex_comment",
-                                "regex_character_class",
-                                "regex_anchor",
-                                "regex_quantifier",
-                                "regex_grouping",
-                                "regex_alternation",
-                                "regex_text",
-                                "regex_self_escaped_character",
-                                "regex_other_escape",
-                            },
-                        },
-                        range = true,
-                    }
-                end
-            end
 		})
 	end,
 }

@@ -93,6 +93,9 @@ return {
 				l = {
 					name = "Lsp",
 				},
+				d = {
+					name = "Debugging",
+				},
 				n = {
 					name = "Neorg",
 				},

@@ -6,7 +6,7 @@ return {
 
 		local gl = require('galaxyline')
 		local gls = gl.section
-		gl.short_line_list = {'NvimTree','vista','dbui','packager','toggleterm','neo-tree'}
+		gl.short_line_list = { 'NvimTree', 'vista', 'dbui', 'packager', 'toggleterm', 'neo-tree', 'Trouble' }
 
 		local colors = {
 			bg = '#34302c',

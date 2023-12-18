@@ -38,8 +38,15 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "norg" },
 	callback = function()
 		vim.opt.list = false
-		vim.opt.spell = true
+		vim.opt.spell = false
 		vim.opt.spelllang = { 'en_us', 'fr' }
+	end
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "Trouble" },
+	callback = function()
+		vim.wo.cursorline = true
 	end
 })
 

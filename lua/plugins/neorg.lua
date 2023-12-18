@@ -4,7 +4,16 @@ return {
 		build = ":Neorg sync-parsers",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			{ "lukas-reineke/headlines.nvim", config = true },
+			{
+                "lukas-reineke/headlines.nvim",
+                config = true,
+                opts = {
+                    norg = {
+                        fat_headline_upper_string = "▃",
+                        fat_headline_lower_string = "⠉",
+                    },
+                }
+            },
 			"nvim-neorg/neorg-telescope",
 		},
 		ft = "norg",

@@ -17,12 +17,21 @@ return {
 	config = function ()
 		require("telescope").setup({
 			defaults = {
-				find_command = { "rg", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
-				prompt_prefix = "   ",
-				entry_prefix = "  ",
+				vimgrep_arguments = {
+					"rg",
+					"-L",
+					"--color=never",
+					"--no-heading",
+					"--with-filename",
+					"--line-number",
+					"--column",
+					"--smart-case",
+				},
+				prompt_prefix = "   ",
+				entry_prefix = "   ",
 				initial_mode = "insert",
-				selection_caret = "    ",
-				path_display = { "smart" },
+				selection_caret = "  ",
+				path_display = { "truncate" },
 				selection_strategy = "reset",
 				sorting_strategy = "descending",
 				layout_strategy = "horizontal",
@@ -30,7 +39,7 @@ return {
 				layout_config = {
 					horizontal = {
 						prompt_position = "bottom",
-						preview_width = 0.55,
+						preview_width = 0.60,
 						results_width = 0.8,
 					},
 					vertical = {
@@ -41,13 +50,7 @@ return {
 					-- preview_cutoff = 120,
 				},
 				border = {},
-				-- borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
 				borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-				-- borderchars = {
-				-- 	prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-				-- 	results = { " " },
-				-- 	preview = { " " },
-				-- },
 				color_devicons = true,
 				use_less = true,
 				set_env = { ["COLORTERM"] = "truecolor" },
@@ -64,9 +67,13 @@ return {
 					"%.sqlite3",
 					"%.ipynb",
 					"node_modules/*",
-					-- "%.jpg",
-					-- "%.jpeg",
-					-- "%.png",
+					"%.mp3",
+					"%.ogg",
+					"%.avi",
+					"%.jpg",
+					"%.so",
+					"%.jpeg",
+					"%.png",
 					"%.svg",
 					"%.otf",
 					"%.ttf",
@@ -120,9 +127,6 @@ return {
 				},
 			},
 			pickers = {
-				-- find_files = {
-				--     theme = "dropdown",
-				-- },
 				colorscheme = {
 					enable_preview = true,
 				}
