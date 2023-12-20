@@ -2,7 +2,7 @@ return {
     {
         'Bekaboo/dropbar.nvim',
         branch = "feat-winbar-background-highlight",
-        enabled = true,
+        enabled = false,
         event = "LspAttach",
         opts = {
             icons = {
