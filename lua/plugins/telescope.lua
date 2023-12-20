@@ -112,6 +112,11 @@ return {
 					"%.epub",
 					"%.flac",
 					"%.tar.gz",
+                    "%.prefab",
+                    "%.shader",
+                    "%.meta",
+                    "%.asset",
+                    "%.cginc",
 				},
 				mappings = {
 					i = {
