@@ -11,7 +11,7 @@ return {
 				color = "error",
 				alt = { "FIXME", "BUG", "FIXIT", "ISSUE" },
 			},
-			TODO = { icon = " ", color = "info" },
+			TODO = { icon = " ", color = "info", alt = { "todo" } },
 			HACK = { icon = " ", color = "warning" },
 			WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
 			PERF = { icon = "󰅒 ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
@@ -20,6 +20,10 @@ return {
 		},
         highlight = {
             comments_only = true,
+            pattern = {
+                [[.*<(KEYWORDS)\s*:]],
+                [[.*<(KEYWORDS)\s*!]]
+            }
         },
 		search = {
 			command = "rg",

@@ -17,7 +17,6 @@ return {
 			-- hi(0, "NonText", {fg = "#403a36"})
 			-- hi(0, "SpecialKey", {fg = "#403a36"})
 
-			-- hi(0, "DiagnosticSignHint", {fg = "#7f90b1", bg = "#7f90b1"})
 			vim.cmd[[colorscheme melange]]
 		end,
 	},

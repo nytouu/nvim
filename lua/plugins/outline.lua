@@ -1,7 +1,7 @@
 return {
 	{
 		"hedyhli/outline.nvim",
-		enabled = true,
+		enabled = false,
 		keys = {
 			{ "<leader>to", "<cmd>Outline<cr>", desc = "Toggle outline" },
 		},

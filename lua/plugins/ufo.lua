@@ -1,7 +1,7 @@
 return {
 	"kevinhwang91/nvim-ufo",
-	enabled = true,
-	dependencies = {
+	enabled = false,
+	dependencdes = {
 		"kevinhwang91/promise-async",
 		{
 			"luukvbaal/statuscol.nvim",
