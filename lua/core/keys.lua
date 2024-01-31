@@ -48,6 +48,11 @@ keymap("n", "<leader>tH", ":set hlsearch!<CR> ", { noremap = true, silent = true
 -- buffer
 keymap("n", "<leader>bs", ":source %<CR> ", { noremap = true, silent = true, desc = "Source file" })
 
+-- nvim
+keymap("n", "<leader>qq", ":q<CR>", { noremap = true, silent = true, desc = "Quit neovim" })
+keymap("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true, desc = "Quit all" })
+keymap("n", "<leader>qf", ":qa!<CR>", { noremap = true, silent = true, desc = "Force quit all" })
+
 -- splits
 keymap("n", "<leader>sh", ":split<CR> ", { noremap = true, silent = true, desc = "Horizontal split" })
 keymap("n", "<leader>sv", ":vsplit<CR> ", { noremap = true, silent = true, desc = "Vertical split" })
