@@ -39,8 +39,8 @@ keymap("n", "<C-d>", "<C-d>zz", { silent = true })
 keymap("n", "<C-u>", "<C-u>zz", { silent = true })
 
 -- folds
-keymap("n", "<leader>Fo", ":foldopen<CR>", {noremap = true, silent = true, desc = "Open fold"})
-keymap("n", "<leader>Fq", ":foldclose<CR>", {noremap = true, silent = true, desc = "Close fold"})
+keymap("n", "<leader>Fo", ":foldopen<CR>", { noremap = true, silent = true, desc = "Open fold" })
+keymap("n", "<leader>Fq", ":foldclose<CR>", { noremap = true, silent = true, desc = "Close fold" })
 
 -- hightlight toggle
 keymap("n", "<leader>tH", ":set hlsearch!<CR> ", { noremap = true, silent = true, desc = "Toggle search highlight" })

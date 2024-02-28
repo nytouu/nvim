@@ -1,9 +1,9 @@
-vim.api.nvim_create_autocmd('TextYankPost', {
-	group = vim.api.nvim_create_augroup('highlight_yank', {}),
-	desc = 'Hightlight selection on yank',
-	pattern = '*',
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("highlight_yank", {}),
+	desc = "Hightlight selection on yank",
+	pattern = "*",
 	callback = function()
-		vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500 }
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 500 })
 	end,
 })
 
@@ -17,21 +17,21 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
 
 		vim.opt_local.winbar = nil
-	end
+	end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"js",
 		"ts",
-		"nix"
+		"nix",
 	},
 	callback = function()
 		vim.opt.shiftwidth = 2
 		vim.opt.softtabstop = 2
 		vim.opt.tabstop = 2
 		vim.opt.listchars:append("leadmultispace:· ")
-	end
+	end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -39,26 +39,25 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.opt.list = false
 		vim.opt.spell = false
-		vim.opt.spelllang = { 'en_us', 'fr' }
-	end
+		vim.opt.spelllang = { "en_us", "fr" }
+	end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "Trouble" },
 	callback = function()
 		vim.wo.cursorline = true
-	end
+	end,
 })
 
-
 vim.api.nvim_create_autocmd("InsertEnter", {
-	callback = function ()
+	callback = function()
 		vim.wo.cursorline = true
-	end
+	end,
 })
 
 vim.api.nvim_create_autocmd("InsertLeave", {
-	callback = function ()
+	callback = function()
 		vim.wo.cursorline = false
-	end
+	end,
 })
