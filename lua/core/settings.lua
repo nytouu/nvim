@@ -51,4 +51,15 @@ vim.opt.scrolloff = 6
 vim.opt.sidescrolloff = 6
 vim.opt.hlsearch = true
 vim.opt.laststatus = 2
-vim.opt.statusline = '%2{mode()} | %f %m %r %= %{&spelllang} %y #%{bufnr()} %8(%l,%c%) %8p%%'
+vim.opt.statusline = "%2{mode()} | %f %m %r %= %{&spelllang} %y #%{bufnr()} %8(%l,%c%) %8p%%"
+
+if vim.g.neovide then
+	vim.o.guifont = "BlexMono Nerd Font:h11"
+	vim.g.neovide_padding_top = 4
+	vim.g.neovide_padding_bottom = 4
+	vim.g.neovide_padding_right = 4
+	vim.g.neovide_padding_left = 4
+	vim.g.neovide_refresh_rate = 144
+	vim.g.neovide_cursor_trail_size = 0.2
+	vim.g.neovide_cursor_animation_length = 0.08
+end
