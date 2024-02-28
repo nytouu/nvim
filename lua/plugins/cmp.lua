@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer", -- source for text in buffer
-		"hrsh7th/cmp-path", -- source for file system paths
+		-- "hrsh7th/cmp-path", -- source for file system paths
 		"L3MON4D3/LuaSnip", -- snippet engine
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
@@ -28,14 +28,23 @@ return {
 			end
 		end, {silent = true})
 
-		local has_words_before = function()
-			unpack = unpack or table.unpack
-			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-		end
-
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
+
+		-- friendly-snippets - enable standardized comments snippets
+		require("luasnip").filetype_extend("typescript", { "tsdoc" })
+		require("luasnip").filetype_extend("javascript", { "jsdoc" })
+		require("luasnip").filetype_extend("lua", { "luadoc" })
+		require("luasnip").filetype_extend("python", { "pydoc" })
+		require("luasnip").filetype_extend("rust", { "rustdoc" })
+		require("luasnip").filetype_extend("cs", { "csharpdoc" })
+		require("luasnip").filetype_extend("java", { "javadoc" })
+		require("luasnip").filetype_extend("c", { "cdoc" })
+		require("luasnip").filetype_extend("cpp", { "cppdoc" })
+		require("luasnip").filetype_extend("php", { "phpdoc" })
+		require("luasnip").filetype_extend("kotlin", { "kdoc" })
+		require("luasnip").filetype_extend("ruby", { "rdoc" })
+		require("luasnip").filetype_extend("sh", { "shelldoc" })
 
 		cmp.setup({
 			completion = {
@@ -55,12 +64,8 @@ return {
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif require("luasnip").expand_or_jumpable() then
+					if require("luasnip").expand_or_jumpable() then
 						require("luasnip").expand_or_jump()
-					elseif has_words_before() then
-						cmp.complete()
 					else
 						fallback()
 					end
@@ -81,13 +86,13 @@ return {
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = 'nvim_lsp_signature_help' },
-				{ name = "luasnip" }, -- snippets
+				{ name = "luasnip", max_item_count = 3 }, -- snippets
 				{ name = "spell" },
-				{ name = "buffer" }, -- text within current buffer
-				{ name = "path" }, -- file system paths
+				{ name = "buffer", max_item_count = 5 }, -- text within current buffer
+				-- { name = "path", max_item_count = 3 }, -- file system paths
 				-- { name = "zsh" },
 				{ name = "neorg" },
-				{ name = "crates" },
+				-- { name = "crates" },
 			}),
 			window = {
 				completion = {
@@ -106,7 +111,10 @@ return {
 
 					return kind
 				end,
-			}
+			},
+			-- experimental = {
+			-- 	ghost_text = true,
+			-- }
 		})
 		-- Customization for Pmenu
 		-- vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
