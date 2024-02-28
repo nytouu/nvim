@@ -1,6 +1,6 @@
 return {
 	"folke/todo-comments.nvim",
-	enabled = true,
+	enabled = false,
     event = { "BufEnter" },
 	opts = {
 		signs = true,

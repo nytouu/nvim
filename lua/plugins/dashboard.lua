@@ -59,6 +59,15 @@ return {
 							key_hl = 'Number',
 						},
 						{
+							icon = "󰷉  ",
+							desc = "Open Notes                              ",
+							key = "spc n n",
+							action = "Neorg workspace classes",
+							icon_hl = 'Title',
+							desc_hl = 'String',
+							key_hl = 'Number',
+						},
+						{
 							icon = "󰢻  ",
 							desc = "Neovim Config                           ",
 							key = "spc f c",

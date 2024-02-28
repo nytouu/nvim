@@ -2,13 +2,8 @@ return {
 	{
 		"j-hui/fidget.nvim",
 		enabled = true,
-		tag = "legacy",
+		tag = "v1.3.0",
 		event = "LspAttach",
-		opts = {
-			align = {
-				bottom = true,
-				right = true
-			},
-		},
-	}
+		opts = {},
+	},
 }

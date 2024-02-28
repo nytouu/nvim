@@ -1,30 +1,37 @@
 return {
 	{
 		"hedyhli/outline.nvim",
-		enabled = false,
+		enabled = true,
+		dependencies = {
+			"onsails/lspkind.nvim",
+		},
 		keys = {
 			{ "<leader>to", "<cmd>Outline<cr>", desc = "Toggle outline" },
 		},
 		opts = {
 			outline_window = {
-				width = 25,
+				width = 20,
+				winhl = "Normal:NormalFloat,WinSeparator:NormalFloat",
+				-- hide_cursor = false,
+				-- show_cursorline = true,
+			},
+			outline_items = {
+				show_symbol_details = true,
 			},
 			symbol_folding = {
 				autofold_depth = 5,
 			},
 			guides = {
-				enabled = true,
+				-- enabled = false,
+				-- Keep only guides that indicate siblings that might span multiple lines (vertical)
+				markers = {
+					middle = " ",
+					bottom = " ",
+				},
 			},
-		}
-	},
-	{
-		"simrat39/symbols-outline.nvim",
-		enabled = false,
-		keys = {
-			{ "<leader>to", "<cmd>SymbolsOutline<cr>", desc = "Toggle outline" },
+			symbols = {
+				icon_source = "lspkind",
+			},
 		},
-		config = function ()
-			require("symbols-outline").setup()
-		end
-	}
+	},
 }
