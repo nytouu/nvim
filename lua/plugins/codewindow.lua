@@ -1,6 +1,6 @@
 return {
 	"gorbit99/codewindow.nvim",
-	enabled = false,
+	enabled = true,
 	event = "LspAttach",
 	config = function()
 		local codewindow = require('codewindow')

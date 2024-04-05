@@ -95,11 +95,6 @@ return {
             d = {
                 name = "Debugging",
             },
-            n = {
-                name = "Neorg",
-                j = "Journal",
-                t = "Tags",
-            },
             s = {
                 name = "Split",
             },

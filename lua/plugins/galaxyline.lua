@@ -32,9 +32,32 @@ return {
 		gls.left[0] = {
 			ViMode = {
 				provider = function()
-					return "  " .. vim.fn.mode()
-				end,
-				separator = " |",
+                    -- auto change color according the vim mode
+                    local mode = {
+                        n = "normal",
+                        i = "insert",
+                        v = "visual",
+                        [""] = "visual block",
+                        V = "visual line",
+                        c = "command",
+                        no = "pending",
+                        s = "select",
+                        S = "select lines",
+                        [""] = "select block",
+                        ic = "insert",
+                        R = "replace",
+                        Rv = "virtual replace",
+                        cv = "ex mode",
+                        ce = "command editing",
+                        r = "replace",
+                        rm = "more",
+                        ["r?"] = "confirm",
+                        ["!"] = "shell",
+                        t = "terminal",
+                    }
+                    return "  " .. mode[vim.fn.mode()]
+                end,
+                separator = " |",
 				separator_highlight = { colors.fg, colors.dark_bg },
 				highlight = { colors.fg, colors.dark_bg },
 			},

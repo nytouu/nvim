@@ -60,6 +60,6 @@ if vim.g.neovide then
 	vim.g.neovide_padding_right = 4
 	vim.g.neovide_padding_left = 4
 	vim.g.neovide_refresh_rate = 144
-	vim.g.neovide_cursor_trail_size = 0.2
-	vim.g.neovide_cursor_animation_length = 0.08
+	vim.g.neovide_cursor_trail_size = 0.1
+	vim.g.neovide_cursor_animation_length = 0.02
 end
