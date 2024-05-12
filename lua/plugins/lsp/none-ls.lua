@@ -10,7 +10,6 @@ return {
 		require("mason-null-ls").setup({
 			ensure_installed = {
 				"stylua",
-				"csharpier",
 				"black",
 			},
 			automatic_installation = true,
@@ -19,11 +18,11 @@ return {
 
 		local null_ls = require("null-ls")
 		null_ls.setup({
-			-- sources = {
-			-- 	null_ls.builtins.formatting.clang_format.with({
-			-- 		extra_args = { "-style", "Microsoft" },
-			-- 	}),
-			-- },
+			sources = {
+				null_ls.builtins.formatting.clang_format.with({
+					extra_args = { "-style", "Microsoft" },
+				}),
+			},
 		})
 	end,
 }

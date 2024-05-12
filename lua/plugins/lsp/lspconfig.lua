@@ -3,7 +3,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "kosayoda/nvim-lightbulb",
-        "hinell/lsp-timeout.nvim",
+        -- "hinell/lsp-timeout.nvim",
         "hrsh7th/cmp-nvim-lsp",
         -- "Hoffs/omnisharp-extended-lsp.nvim",
         { "antosha417/nvim-lsp-file-operations", config = true },
@@ -37,19 +37,23 @@ return {
             opts.buffer = bufnr
 
             if client.server_capabilities.inlayHintProvider then
-                vim.lsp.inlay_hint.enable(bufnr, false)
+                vim.lsp.inlay_hint.enable(true)
 
                 opts.desc = "Toggle inlay hints"
 
                 keymap.set("n", "<leader>th", function()
-                    vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
+                    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
                 end, opts)
             end
+
+			require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
 
             -- set keybinds
             opts.desc = "Format files"
             keymap.set("n", "<leader>uf", function()
-                vim.lsp.buf.format()
+			   vim.lsp.buf.format {
+				 filter = function(client) return client.name ~= "clangd" end
+			   }
             end, opts) -- show definition, references
 
             opts.desc = "Show LSP references"
@@ -70,8 +74,11 @@ return {
             opts.desc = "See available code actions"
             keymap.set({ "n", "v" }, "<leader>la", require("actions-preview").code_actions, opts) -- see available code actions, in visual mode will apply to selection
 
-            -- opts.desc = "Rename symbol"
-            -- keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts) -- smart rename
+            opts.desc = "Rename symbol"
+            keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts) -- smart rename
+
+            opts.desc = "Show signature"
+            keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help, opts) -- show function signature
 
             opts.desc = "Show buffer diagnostics"
             keymap.set("n", "<leader>lD", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
@@ -192,7 +199,7 @@ return {
                 "lua_ls",
                 -- "pyright",
                 "clangd",
-                "rust_analyzer",
+                -- "rust_analyzer",
             },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true, -- not the same as ensure_installed
