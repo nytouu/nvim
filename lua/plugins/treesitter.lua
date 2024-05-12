@@ -1,6 +1,9 @@
 return {
     "nvim-treesitter/nvim-treesitter-textobjects",
-	dependencies = { "nvim-treesitter/nvim-treesitter" },
+	dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+        "JoosepAlviste/nvim-ts-context-commentstring"
+    },
 	event = "BufReadPre",
 	config = function()
 		local treesitter_config = require("nvim-treesitter.configs")
@@ -10,8 +13,13 @@ return {
 				"lua",
 				"c",
 				"cpp",
+                "c_sharp",
+                "glsl",
+                "gdscript",
+                "gdshader",
 				"rust",
 				"python",
+                "kotlin",
 			},
 			sync_install = false,
 
@@ -38,10 +46,6 @@ return {
 			},
 			autotag = { -- require autotag plugin
 				enable = true,
-			},
-			context_commentstring = { -- require ts-comment string plugin
-				enable = true,
-				enable_autocmd = false,
 			},
 
             textobjects = {
@@ -87,5 +91,8 @@ return {
                 },
             },
 		})
+        require('ts_context_commentstring').setup {
+            enable_autocmd = true,
+        }
 	end,
 }
