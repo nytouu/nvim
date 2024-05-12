@@ -4,14 +4,12 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer", -- source for text in buffer
-		-- "hrsh7th/cmp-path", -- source for file system paths
+		"hrsh7th/cmp-path", -- source for file system paths
 		"L3MON4D3/LuaSnip", -- snippet engine
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
-		"f3fora/cmp-spell",
-		-- "tamago324/cmp-zsh",
-		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"f3fora/cmp-spell"
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -85,11 +83,10 @@ return {
 			-- sources for autocompletion
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
-				{ name = 'nvim_lsp_signature_help' },
-				{ name = "luasnip", max_item_count = 3 }, -- snippets
+				{ name = "luasnip", max_item_count = 5 }, -- snippets
 				{ name = "spell" },
-				{ name = "buffer", max_item_count = 5 }, -- text within current buffer
-				-- { name = "path", max_item_count = 3 }, -- file system paths
+				{ name = "buffer", max_item_count = 8 }, -- text within current buffer
+				{ name = "path" }, -- file system paths
 				-- { name = "zsh" },
 				{ name = "neorg" },
 				-- { name = "crates" },
@@ -112,13 +109,10 @@ return {
 					return kind
 				end,
 			},
-			-- experimental = {
-			-- 	ghost_text = true,
-			-- }
+			experimental = {
+				ghost_text = true,
+			}
 		})
-		-- Customization for Pmenu
-		-- vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
-		-- vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#22252A" })
 
 		vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })
 		vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#82AAFF", bg = "NONE", bold = true })
