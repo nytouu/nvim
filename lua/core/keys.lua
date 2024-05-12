@@ -68,3 +68,39 @@ keymap("x", "<leader>up", '"_dP', { desc = "Paste no buffer" })
 keymap("n", "<leader>uss", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Current word on file" })
 keymap("n", "<leader>usl", [[:s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Current word on line" })
 keymap("n", "<leader>ux", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Set file as executable" })
+
+local function handle_n_N(key)
+	do
+		local function get_n_or_N(_key)
+			local n_or_N = _key
+			if n_or_N == "n" then
+				return "N"
+			elseif n_or_N == "N" then
+				return "n"
+			else
+				return nil
+			end
+		end
+
+		local function feed(_key)
+			return vim.api.nvim_feedkeys(_key, "n", true)
+		end
+
+		local search_forward = vim.v.searchforward
+		if search_forward == 0 then
+			feed(get_n_or_N(key))
+		elseif search_forward == 1 then
+			feed(key)
+		else
+		end
+	end
+	local function set_hl()
+		vim.opt.hlsearch = true
+		return nil
+	end
+
+	vim.defer_fn(set_hl, 5)
+end
+
+vim.keymap.set({ "n" }, "n", function() handle_n_N("n") end)
+vim.keymap.set({ "n" }, "N", function() handle_n_N("N") end)

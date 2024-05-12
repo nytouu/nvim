@@ -74,3 +74,40 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.wo.cursorline = false
 	end,
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		local search = vim.api.nvim_get_hl(0, { name = "Search" })
+		vim.api.nvim_set_hl(0, "CurSearch", { link = "IncSearch" })
+		vim.api.nvim_set_hl(0, "SearchCurrentN", search)
+		return vim.api.nvim_set_hl(0, "Search", { link = "SearchCurrentN" })
+	end,
+})
+
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+	pattern = "/,\\?",
+	callback = function()
+		vim.opt.hlsearch = true
+		vim.opt.incsearch = true
+		return vim.api.nvim_set_hl(0, "Search", { link = "SearchCurrentN" })
+	end,
+})
+
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+	pattern = "/,\\?",
+	callback = function()
+		vim.api.nvim_set_hl(0, "Search", {})
+		local function hl_search()
+			vim.opt.hlsearch = true
+			return nil
+		end
+		return vim.defer_fn(hl_search, 5)
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "InsertEnter", "CursorMoved" }, { callback = function ()
+    local function nohl()
+        return vim.cmd("nohlsearch")
+    end
+    return vim.schedule(nohl)
+end })
