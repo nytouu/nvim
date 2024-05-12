@@ -1,6 +1,6 @@
 return {
     "stevearc/dressing.nvim",
-    enabled = true,
+    enabled = false,
     event = "VeryLazy",
     opts = {
         input = { default_prompt = "➤ " },
