@@ -59,7 +59,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "Trouble" },
 	callback = function()
-		vim.wo.cursorline = true
+		vim.wo.cursorline = false
 	end,
 })
 
