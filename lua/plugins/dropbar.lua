@@ -1,22 +1,27 @@
 return {
     {
         'Bekaboo/dropbar.nvim',
-        branch = "feat-winbar-background-highlight",
         enabled = false,
         event = "LspAttach",
-        opts = {
-            icons = {
-                ui = {
-                    bar = {
-                        separator = '  ',
-                        extends = '…',
-                    },
-                    menu = {
-                        separator = ' ',
-                        indicator = ' ',
-                    }
-                }
-            }
-        }
+		config = function ()
+			require("dropbar").setup({
+				icons = {
+					ui = {
+						bar = {
+							separator = '  ',
+							extends = '…',
+						},
+						menu = {
+							separator = ' ',
+							indicator = ' ',
+						}
+					}
+				}
+			})
+
+			local hi = vim.api.nvim_set_hl
+			hi(0, "WinBar", {bg = "NONE"})
+			hi(0, "WinBarNC", {bg = "NONE"})
+		end,
     }
 }
