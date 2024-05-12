@@ -116,6 +116,11 @@ return {
                     "%.shader",
                     "%.meta",
                     "%.asset",
+					"%.blob",
+					"%.mat",
+					"%.fbx",
+					"%.psd",
+					"%.unity",
                     "%.cginc",
 				},
 				mappings = {
