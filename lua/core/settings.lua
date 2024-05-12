@@ -1,5 +1,3 @@
-vim.o.background = "dark"
-
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 
@@ -26,7 +24,9 @@ vim.opt.tabstop = 4
 vim.opt.list = true
 vim.opt.listchars:append("eol:~,extends:»,precedes:«,leadmultispace:·   ,multispace: ,tab:· ,trail:_,nbsp:_")
 -- vim.opt.listchars:append("eol:~,extends:»,precedes:«,leadmultispace:    ,multispace: ,tab:  ,trail: ,nbsp:_")
-vim.o.cmdheight = 1
+vim.o.cmdheight = 0
+vim.o.showcmd = true
+vim.o.inccommand = "split"
 vim.o.confirm = true
 vim.o.showtabline = 2
 vim.o.showmode = false
@@ -35,6 +35,7 @@ vim.o.updatetime = 50
 vim.o.timeoutlen = 300
 vim.bo.autoindent = true
 vim.bo.smartindent = true
+vim.opt.smarttab = true
 vim.bo.expandtab = true
 vim.wo.wrap = false
 vim.wo.signcolumn = "yes"
@@ -54,11 +55,11 @@ vim.opt.laststatus = 2
 vim.opt.statusline = "%2{mode()} | %f %m %r %= %{&spelllang} %y #%{bufnr()} %8(%l,%c%) %8p%%"
 
 if vim.g.neovide then
-	vim.o.guifont = "BlexMono Nerd Font:h11"
-	vim.g.neovide_padding_top = 4
-	vim.g.neovide_padding_bottom = 4
-	vim.g.neovide_padding_right = 4
-	vim.g.neovide_padding_left = 4
+	vim.o.guifont = "BlexMono Nerd Font Medium:h10"
+	vim.g.neovide_padding_top = 0
+	vim.g.neovide_padding_bottom = 0
+	vim.g.neovide_padding_right = 0
+	vim.g.neovide_padding_left = 0
 	vim.g.neovide_refresh_rate = 144
 	vim.g.neovide_cursor_trail_size = 0.1
 	vim.g.neovide_cursor_animation_length = 0.02
