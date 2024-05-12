@@ -101,6 +101,12 @@ return {
             L = {
                 name = "Lazy",
             },
+            c = {
+                name = "Conflicts",
+            },
+            n = {
+                name = "Neorg",
+            },
             u = {
                 name = "Utils",
                 s = "Substitute",
