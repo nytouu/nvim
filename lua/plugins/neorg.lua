@@ -8,18 +8,13 @@ return {
         "nvim-neorg/neorg",
         dependencies = {
             "luarocks.nvim",
-			{
+            {
                 "lukas-reineke/headlines.nvim",
                 config = true,
                 lazy = false,
-                opts = {
-                    norg = {
-                        fat_headline_upper_string = "▃",
-                        fat_headline_lower_string = "⠉",
-                    },
-                }
             },
 			"nvim-neorg/neorg-telescope",
+            "nfrid/due.nvim"
         },
         lazy = false,
         version = "*",
@@ -31,12 +26,14 @@ return {
 
                     ["core.keybinds"] = {},
                     ["core.summary"] = {},
+                    ["core.tangle"] = {},
+                    ["core.export"] = {},
                     ["core.concealer"] = {
                         config = {
                             icon_preset = "diamond",
                         },
                     },
-                    ["core.ui.calendar"] = {},
+                    -- ["core.ui.calendar"] = {},
                     ["core.completion"] = {
                         config = {
                             engine = "nvim-cmp",
@@ -54,9 +51,17 @@ return {
                     ["core.integrations.telescope"] = {},
                 },
             })
+            require('due_nvim').setup {
+                ft ="*.norg",
+            }
         end,
         keys = {
-            { "<leader>n", "<cmd>Neorg<cr>", desc = "Open Neorg" },
+            { "<leader>nn", "<cmd>Neorg<cr>", desc = "Open Neorg" },
+            { "<leader>nj", "<cmd>Neorg journal today<cr>", desc = "Open today's note" },
+            { "<leader>ni", "<cmd>Neorg index<cr>", desc = "Open index" },
+            { "<leader>nu", "<cmd>Neorg journal toc update<cr>", desc = "Update index" },
+            { "<leader>nm", "<cmd>Neorg inject-metadata<cr>", desc = "Inject metadata" },
+            { "<leader>nc", "<cmd>Neorg toggle-concealer<cr>", desc = "Toggle concealer" },
         }
     },
 }
