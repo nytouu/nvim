@@ -37,9 +37,22 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "norg" },
 	callback = function()
+		vim.opt.wrap = true
 		vim.opt.list = false
 		vim.opt.spell = false
 		vim.opt.spelllang = { "en_us", "fr" }
+
+		vim.cmd([[highlight Headline1 guibg=#1e2718]])
+		vim.cmd([[highlight Headline2 guibg=#21262d]])
+		vim.cmd([[highlight CodeBlock guibg=#1c1c1c]])
+		vim.cmd([[highlight Dash guibg=#D19A66 gui=bold]])
+		require("headlines").setup({
+			norg = {
+				headline_highlights = { "Headline1", "Headline2" },
+				fat_headline_upper_string = "▃",
+				fat_headline_lower_string = "⠉",
+			},
+		})
 	end,
 })
 
