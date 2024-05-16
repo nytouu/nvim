@@ -46,7 +46,10 @@ return {
                 end, opts)
             end
 
-			require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+			local status, workspace_diagnostics = pcall(require, "workspace-diagnostics")
+			if status then
+				workspace_diagnostics.populate_workspace_diagnostics(client, bufnr)
+			end
 
             -- set keybinds
             opts.desc = "Format files"

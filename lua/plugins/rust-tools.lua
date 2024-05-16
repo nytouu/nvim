@@ -6,9 +6,9 @@ return {
 			require("rust-tools").setup({
 				tools = {
 					inlay_hints = {
-						auto = true
-					}
-				}
+						auto = true,
+					},
+				},
 			})
 		end,
 		ft = { "rs", "rust", "toml" },

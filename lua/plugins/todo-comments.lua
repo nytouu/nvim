@@ -1,7 +1,7 @@
 return {
 	"folke/todo-comments.nvim",
 	enabled = true,
-    event = { "BufEnter" },
+	event = { "BufEnter" },
 	opts = {
 		signs = true,
 		sign_priority = 4,
@@ -18,13 +18,13 @@ return {
 			NOTE = { icon = "󰍨 ", color = "hint", alt = { "INFO" } },
 			TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
 		},
-        highlight = {
-            comments_only = true,
-            pattern = {
-                [[.*<(KEYWORDS)\s*:]],
-                [[.*<(KEYWORDS)\s*!]]
-            }
-        },
+		highlight = {
+			comments_only = true,
+			pattern = {
+				[[.*<(KEYWORDS)\s*:]],
+				[[.*<(KEYWORDS)\s*!]],
+			},
+		},
 		search = {
 			command = "rg",
 			args = {
@@ -33,10 +33,10 @@ return {
 				"--with-filename",
 				"--line-number",
 				"--column",
-			}
-		}
+			},
+		},
 	},
-	keys  = {
+	keys = {
 		{ "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Find todos" },
 	},
 }

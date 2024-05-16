@@ -102,5 +102,9 @@ local function handle_n_N(key)
 	vim.defer_fn(set_hl, 5)
 end
 
-vim.keymap.set({ "n" }, "n", function() handle_n_N("n") end)
-vim.keymap.set({ "n" }, "N", function() handle_n_N("N") end)
+vim.keymap.set({ "n" }, "n", function()
+	handle_n_N("n")
+end)
+vim.keymap.set({ "n" }, "N", function()
+	handle_n_N("N")
+end)

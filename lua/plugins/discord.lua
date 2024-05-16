@@ -1,7 +1,7 @@
 return {
 	{
 		"andweeb/presence.nvim",
-		enabled = true,
+		enabled = false,
 		opts = {
 			-- General options
 			auto_update = true,
@@ -19,7 +19,6 @@ return {
 			reading_text = "reading %s",
 			workspace_text = "working on %s",
 			line_number_text = "line %s out of %s",
-
 		},
 		event = "VeryLazy",
 	},

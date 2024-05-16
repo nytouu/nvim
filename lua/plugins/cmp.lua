@@ -9,22 +9,29 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
-		"f3fora/cmp-spell"
+		"f3fora/cmp-spell",
+		"jmbuhr/otter.nvim",
 	},
 	config = function()
 		local cmp = require("cmp")
 
 		local luasnip = require("luasnip")
 
-		vim.keymap.set({"i"}, "<Tab>", function() luasnip.expand() end, {silent = true})
-		vim.keymap.set({"i", "s"}, "<Tab>", function() luasnip.jump( 1) end, {silent = true})
-		vim.keymap.set({"i", "s"}, "<S-Tab>", function() luasnip.jump(-1) end, {silent = true})
+		vim.keymap.set({ "i" }, "<Tab>", function()
+			luasnip.expand()
+		end, { silent = true })
+		vim.keymap.set({ "i", "s" }, "<Tab>", function()
+			luasnip.jump(1)
+		end, { silent = true })
+		vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+			luasnip.jump(-1)
+		end, { silent = true })
 
-		vim.keymap.set({"i", "s"}, "<C-E>", function()
+		vim.keymap.set({ "i", "s" }, "<C-E>", function()
 			if luasnip.choice_active() then
 				luasnip.change_choice(1)
 			end
-		end, {silent = true})
+		end, { silent = true })
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
@@ -67,7 +74,7 @@ return {
 					else
 						fallback()
 					end
-				end, {"i", "s"}),
+				end, { "i", "s" }),
 
 				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
@@ -77,7 +84,7 @@ return {
 					else
 						fallback()
 					end
-				end, {"i", "s"})
+				end, { "i", "s" }),
 			}),
 
 			-- sources for autocompletion
@@ -111,7 +118,7 @@ return {
 			},
 			experimental = {
 				ghost_text = true,
-			}
+			},
 		})
 
 		vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })

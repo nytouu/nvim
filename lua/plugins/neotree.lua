@@ -54,7 +54,7 @@ return {
 					trailing_slash = true,
 					use_git_status_colors = true,
 				},
-			}
-		}
-	}
+			},
+		},
+	},
 }

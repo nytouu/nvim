@@ -16,8 +16,8 @@ return {
 			shell = vim.o.shell, -- change the default shell
 		},
 		cmd = "ToggleTerm",
-		keys  = {
+		keys = {
 			{ "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
-		}
-	}
+		},
+	},
 }

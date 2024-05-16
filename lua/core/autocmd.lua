@@ -105,9 +105,11 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "InsertEnter", "CursorMoved" }, { callback = function ()
-    local function nohl()
-        return vim.cmd("nohlsearch")
-    end
-    return vim.schedule(nohl)
-end })
+vim.api.nvim_create_autocmd({ "InsertEnter", "CursorMoved" }, {
+	callback = function()
+		local function nohl()
+			return vim.cmd("nohlsearch")
+		end
+		return vim.schedule(nohl)
+	end,
+})

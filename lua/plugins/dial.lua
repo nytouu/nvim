@@ -3,16 +3,16 @@ return {
 		"monaqa/dial.nvim",
 		event = "BufEnter",
 		enabled = true,
-		config = function ()
+		config = function()
 			local augend = require("dial.augend")
 
-			require("dial.config").augends:register_group{
+			require("dial.config").augends:register_group({
 				default = {
 					augend.integer.alias.decimal_int,
 					augend.integer.alias.hex,
 					augend.constant.alias.bool,
 				},
-			}
+			})
 
 			vim.keymap.set("n", "<C-a>", function()
 				require("dial.map").manipulate("increment", "normal")
@@ -38,6 +38,6 @@ return {
 			vim.keymap.set("v", "g<C-x>", function()
 				require("dial.map").manipulate("decrement", "gvisual")
 			end)
-		end
-	}
+		end,
+	},
 }

@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = '0.1.5',
+	tag = "0.1.6",
 	cmd = "Telescope",
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
@@ -14,7 +14,7 @@ return {
 		{ "<leader>fc", "<cmd>Telescope find_files cwd=$HOME/.config/nvim/<CR>", desc = "Open config" },
 		{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Open help" },
 	},
-	config = function ()
+	config = function()
 		require("telescope").setup({
 			defaults = {
 				vimgrep_arguments = {
@@ -112,16 +112,16 @@ return {
 					"%.epub",
 					"%.flac",
 					"%.tar.gz",
-                    "%.prefab",
-                    "%.shader",
-                    "%.meta",
-                    "%.asset",
+					"%.prefab",
+					"%.shader",
+					"%.meta",
+					"%.asset",
 					"%.blob",
 					"%.mat",
 					"%.fbx",
 					"%.psd",
 					"%.unity",
-                    "%.cginc",
+					"%.cginc",
 				},
 				mappings = {
 					i = {
@@ -139,7 +139,7 @@ return {
 			pickers = {
 				colorscheme = {
 					enable_preview = true,
-				}
+				},
 			},
 		})
 	end,

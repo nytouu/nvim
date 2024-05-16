@@ -1,6 +1,6 @@
 return {
 	"smjonas/inc-rename.nvim",
-	enabled = false;
+	enabled = false,
 	config = function()
 		require("inc_rename").setup({
 			input_buffer_type = "noice",

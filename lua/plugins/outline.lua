@@ -1,7 +1,7 @@
 return {
 	{
 		"hedyhli/outline.nvim",
-		enabled = true,
+		enabled = false,
 		dependencies = {
 			"onsails/lspkind.nvim",
 		},

@@ -3,16 +3,13 @@ return {
 	event = "BufRead",
 	main = "ibl",
 	enabled = false,
-	config = function ()
-		local hooks = require "ibl.hooks"
+	config = function()
+		local hooks = require("ibl.hooks")
 		-- hooks.register(
 		-- 	hooks.type.WHITESPACE,
 		-- 	hooks.builtin.hide_first_space_indent_level
 		-- )
-		hooks.register(
-			hooks.type.WHITESPACE,
-			hooks.builtin.hide_first_tab_indent_level
-		)
+		hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
 		require("ibl").setup({
 			indent = {
 				-- char = "▏",
@@ -37,13 +34,13 @@ return {
 					"NvimTree",
 					"neo-tree",
 					"dashboard",
-					"Trouble"
+					"Trouble",
 				},
 				buftypes = {
 					"terminal",
 					"nofile",
-				}
-			}
+				},
+			},
 		})
-	end
+	end,
 }

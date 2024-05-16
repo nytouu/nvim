@@ -4,6 +4,6 @@ return {
 		cmd = "Bdelete",
 		keys = {
 			{ "<leader>qb", "<cmd>Bdelete<cr>", desc = "Close buffer" },
-		}
+		},
 	},
 }

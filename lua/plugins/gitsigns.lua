@@ -7,5 +7,5 @@ return {
 		{ "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>", desc = "Previous hunk" },
 		{ "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk" },
 		{ "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset hunk" },
-	}
+	},
 }

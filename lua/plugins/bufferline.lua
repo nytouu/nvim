@@ -14,7 +14,7 @@ return {
 			separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
 			tab_size = 16,
 			show_tab_indicators = true,
-            close_command = "Bdelete! %d",       -- can be a string | function, | false see "Mouse actions"
+			close_command = "Bdelete! %d", -- can be a string | function, | false see "Mouse actions"
 			enforce_regular_tabs = false,
 			view = "multiview",
 			offsets = {
@@ -27,9 +27,9 @@ return {
 			hover = {
 				enabled = true,
 				delay = 0,
-				reveal = { 'close' }
+				reveal = { "close" },
 			},
 		},
 	},
-	event = "VeryLazy"
+	event = "VeryLazy",
 }

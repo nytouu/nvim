@@ -8,16 +8,16 @@ return {
 		gl.short_line_list = { "NvimTree", "vista", "dbui", "packager", "toggleterm", "neo-tree", "Trouble" }
 
 		local colors = {
-			bg = '#34302c',
-			dark_bg = '#34302c',
-			fg = '#eadfd5',
-            red = "#D47766",
-            green = "#85B695",
-            orange = "#EBC06D",
-            blue = "#A3A9CE",
-            magenta = "#CF9BC2",
-            aqua = "#89B3B6",
-        }
+			bg = "#34302c",
+			dark_bg = "#34302c",
+			fg = "#eadfd5",
+			red = "#D47766",
+			green = "#85B695",
+			orange = "#EBC06D",
+			blue = "#A3A9CE",
+			magenta = "#CF9BC2",
+			aqua = "#89B3B6",
+		}
 
 		local buffer_not_empty = function()
 			if vim.fn.empty(vim.fn.expand("%:t")) ~= 1 then
@@ -82,7 +82,7 @@ return {
 						["!"] = colors.orange,
 						t = colors.orange,
 					}
-                    vim.api.nvim_command("hi GalaxyViMode guibg=" .. color[vim.fn.mode()] .. " guifg=" .. colors.bg)
+					vim.api.nvim_command("hi GalaxyViMode guibg=" .. color[vim.fn.mode()] .. " guifg=" .. colors.bg)
 					return "  " .. mode[vim.fn.mode()] .. " "
 				end,
 				separator = " ",
@@ -172,21 +172,21 @@ return {
 			},
 		}
 
-        gls.right[4] = {
-            FileIcon = {
-                provider = function()
-                    local fname, ext = vim.fn.expand("%:t"), vim.fn.expand("%:e")
-                    local icon, iconhl = require("nvim-web-devicons").get_icon(fname, ext)
-                    if icon == nil then
-                        return ""
-                    end
-                    local fg = vim.fn.synIDattr(vim.fn.hlID(iconhl), "fg")
-                    vim.api.nvim_command("hi GalaxyFileIcon guibg=" .. colors.bg .. " guifg=" .. fg)
-                    return "   " .. icon
-                end,
-                condition = buffer_not_empty,
-            },
-        }
+		gls.right[4] = {
+			FileIcon = {
+				provider = function()
+					local fname, ext = vim.fn.expand("%:t"), vim.fn.expand("%:e")
+					local icon, iconhl = require("nvim-web-devicons").get_icon(fname, ext)
+					if icon == nil then
+						return ""
+					end
+					local fg = vim.fn.synIDattr(vim.fn.hlID(iconhl), "fg")
+					vim.api.nvim_command("hi GalaxyFileIcon guibg=" .. colors.bg .. " guifg=" .. fg)
+					return "   " .. icon
+				end,
+				condition = buffer_not_empty,
+			},
+		}
 
 		gls.right[5] = {
 			FileType = {

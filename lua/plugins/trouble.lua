@@ -1,5 +1,6 @@
 return {
 	"folke/trouble.nvim",
+	enabled = false,
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 		"artemave/workspace-diagnostics.nvim",
@@ -15,7 +16,7 @@ return {
 					"lib/banana.js",
 					"Cargo.toml",
 					"project.godot",
-					"*.sln"
+					"*.sln",
 				}
 			end,
 		})
