@@ -20,16 +20,6 @@ return {
 			},
 			enable_git_status = true,
 			enable_diagnostics = true,
-			--             sources = {
-			--                 "filesystem",
-			--                 "buffers",
-			--                 "git_status"
-			--             },
-			-- source_selector = {
-			-- 	winbar = true,
-			-- 	statusline = false,
-			--                 content_layout = "center",
-			-- },
 			default_component_configs = {
 				indent = {
 					indent_size = 2,

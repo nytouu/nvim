@@ -2,7 +2,7 @@ return {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		enabled = true,
+		enabled = false,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
@@ -15,6 +15,13 @@ return {
 					["vim.lsp.util.stylize_markdown"] = true,
 					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 				},
+                progress = {
+                    enabled = true,
+                    format = "lsp_progress",
+                    format_done = "lsp_progress_done",
+                    throttle = 1000 / 30, -- frequency to update lsp progress message
+                    view = "mini",
+                },
 			},
 			presets = { inc_rename = true },
 			cmdline = {
@@ -43,6 +50,7 @@ return {
 	},
 	{
 		"rcarriga/nvim-notify",
+		enabled = false,
 		config = function()
 			require("notify").setup({
 				background_colour = "NotifyBackground",

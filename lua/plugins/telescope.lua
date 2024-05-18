@@ -6,7 +6,7 @@ return {
 		{ "nvim-lua/plenary.nvim" },
 	},
 	keys = {
-		{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
+		{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find files" },
 		{ "<leader>fw", "<cmd>Telescope live_grep<CR>", desc = "Find a string" },
 		{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find buffers" },
 		{ "<leader>fr", "<cmd>Telescope oldfiles<CR>", desc = "Find recent file" },
@@ -141,6 +141,13 @@ return {
 					enable_preview = true,
 				},
 			},
+			extensions = {
+				persisted = {
+					layout_config = { width = 0.55, height = 0.55 },
+				},
+			},
 		})
+
+		require("telescope").load_extension("persisted")
 	end,
 }

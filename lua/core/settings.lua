@@ -24,7 +24,7 @@ vim.opt.tabstop = 4
 vim.opt.list = true
 vim.opt.listchars:append("eol:~,extends:»,precedes:«,leadmultispace:·   ,multispace: ,tab:· ,trail:_,nbsp:_")
 -- vim.opt.listchars:append("eol:~,extends:»,precedes:«,leadmultispace:    ,multispace: ,tab:  ,trail: ,nbsp:_")
-vim.o.cmdheight = 0
+vim.o.cmdheight = 1
 vim.o.showcmd = true
 vim.o.inccommand = "split"
 vim.o.confirm = true
@@ -54,13 +54,18 @@ vim.opt.hlsearch = true
 vim.opt.laststatus = 2
 vim.opt.statusline = "%2{mode()} | %f %m %r %= %{&spelllang} %y #%{bufnr()} %8(%l,%c%) %8p%%"
 
+vim.g.persisting = true
+vim.o.sessionoptions = "buffers,curdir,folds,tabpages,winpos,winsize"
+
 if vim.g.neovide then
-	vim.o.guifont = "BlexMono Nerd Font Medium:h10"
+	vim.o.guifont = "Liga SFMono Nerd Font:h11"
 	vim.g.neovide_padding_top = 0
 	vim.g.neovide_padding_bottom = 0
 	vim.g.neovide_padding_right = 0
 	vim.g.neovide_padding_left = 0
 	vim.g.neovide_refresh_rate = 144
 	vim.g.neovide_cursor_trail_size = 0.1
-	vim.g.neovide_cursor_animation_length = 0.02
+	vim.g.neovide_cursor_animation_length = 0.01
+	vim.opt.linespace = 0
+	vim.g.neovide_refresh_rate_idle = 5
 end

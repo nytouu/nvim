@@ -2,6 +2,7 @@ return {
 	{
 		"nvimdev/dashboard-nvim",
 		enabled = true,
+		lazy = false,
 		config = function()
 			local stats = require("lazy").stats()
 
@@ -58,10 +59,23 @@ return {
 							key_hl = "Number",
 						},
 						{
+							icon = "󰕁  ",
+							desc = "Open Recent Session                              ",
+							key = "spc f s",
+							action = "Telescope persisted",
+							icon_hl = "Title",
+							desc_hl = "String",
+							key_hl = "Number",
+						},
+						{
 							icon = "󰷉  ",
 							desc = "Open Notes                              ",
 							key = "spc n n",
-							action = "Neorg workspace classes",
+							-- action = "cd ~/Notes/classes/ & Neorg workspace classes",
+							action = function()
+								vim.cmd("cd ~/Notes/classes")
+								vim.cmd("Neorg workspace classes")
+							end,
 							icon_hl = "Title",
 							desc_hl = "String",
 							key_hl = "Number",
@@ -99,6 +113,5 @@ return {
 			hi(0, "DashboardHeader", { fg = "#ca98a3" })
 			hi(0, "DashboardFooter", { fg = "#c4995b" })
 		end,
-		event = "VimEnter",
 	},
 }

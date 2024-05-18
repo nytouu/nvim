@@ -1,6 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter-context",
-	enabled = false,
+	enabled = true,
 	keys = {
 		{ "<leader>tC", "<cmd>TSContextToggle<cr>", desc = "Toggle treesitter context" },
 	},

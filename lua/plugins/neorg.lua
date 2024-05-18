@@ -28,6 +28,11 @@ return {
 					["core.summary"] = {},
 					["core.tangle"] = {},
 					["core.export"] = {},
+					["core.presenter"] = {
+						config = {
+							zen_mode = "zen-mode",
+						},
+					},
 					["core.concealer"] = {
 						config = {
 							icon_preset = "diamond",

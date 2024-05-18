@@ -32,17 +32,17 @@ return {
 			},
 			icons = {
 				breadcrumb = "»",
-				separator = " ",
+				separator = "➜ ",
 				group = "󰇘 ",
 			},
 			window = {
 				border = "none",
 				position = "bottom",
-				margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
+				margin = { 2, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
 				padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
 			},
 			layout = {
-				height = { min = 3, max = 25 },
+				height = { min = 5, max = 25 },
 				width = { min = 20, max = 50 },
 				spacing = 5,
 				align = "center",
