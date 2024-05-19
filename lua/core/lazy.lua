@@ -14,8 +14,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "plugins" },
+	-- { import = "plugins" },
+	{ import = "plugins.core" },
+	{ import = "plugins.editor" },
+	{ import = "plugins.git" },
 	{ import = "plugins.lsp" },
+	{ import = "plugins.notes" },
+	{ import = "plugins.ui" },
 }, {
 	install = {
 		colorscheme = { "melange" },

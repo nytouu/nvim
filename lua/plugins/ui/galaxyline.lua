@@ -8,16 +8,16 @@ return {
 		gl.short_line_list = { "NvimTree", "vista", "dbui", "packager", "toggleterm", "neo-tree", "Trouble" }
 
 		local colors = {
-			bg = "#34302c",
-			dark_bg = "#34302c",
-			fg = "#eadfd5",
-			red = "#D47766",
-			green = "#85B695",
-			orange = "#EBC06D",
-			blue = "#A3A9CE",
-			magenta = "#CF9BC2",
-			aqua = "#89B3B6",
-		}
+			bg = '#101010',
+			dark_bg = '#0c0c0c',
+			fg = '#dde1e6',
+            red = "#ee5396",
+            green = "#42be65",
+            orange = "#ffab91",
+            blue = "#82cfff",
+            magenta = "#ff7eb6",
+            aqua = "#3ddbd9",
+        }
 
 		local buffer_not_empty = function()
 			if vim.fn.empty(vim.fn.expand("%:t")) ~= 1 then
@@ -82,7 +82,7 @@ return {
 						["!"] = colors.orange,
 						t = colors.orange,
 					}
-					vim.api.nvim_command("hi GalaxyViMode guibg=" .. color[vim.fn.mode()] .. " guifg=" .. colors.bg)
+					vim.api.nvim_command("hi GalaxyViMode guibg=" .. color[vim.fn.mode()] .. " guifg=" .. colors.dark_bg)
 					return "  " .. mode[vim.fn.mode()] .. " "
 				end,
 				separator = " ",
@@ -140,8 +140,7 @@ return {
 				separator_highlight = { "NONE", colors.dark_bg },
 				provider = "DiagnosticError",
 				condition = checkwidth,
-				icon = " : ",
-				highlight = { colors.red, colors.dark_bg },
+				highlight = { colors.red, colors.dark_bg, "bold" },
 			},
 		}
 
@@ -149,8 +148,7 @@ return {
 			DiagnosticWarn = {
 				provider = "DiagnosticWarn",
 				condition = checkwidth,
-				icon = " : ",
-				highlight = { colors.orange, colors.dark_bg },
+				highlight = { colors.orange, colors.dark_bg, "bold" },
 			},
 		}
 
@@ -158,8 +156,7 @@ return {
 			DiagnosticHint = {
 				provider = "DiagnosticHint",
 				condition = checkwidth,
-				icon = " : ",
-				highlight = { colors.blue, colors.dark_bg },
+				highlight = { colors.blue, colors.dark_bg, "bold" },
 			},
 		}
 
@@ -167,8 +164,7 @@ return {
 			DiagnosticInfo = {
 				provider = "DiagnosticInfo",
 				condition = checkwidth,
-				icon = " : ",
-				highlight = { colors.aqua, colors.dark_bg },
+				highlight = { colors.aqua, colors.dark_bg, "bold" },
 			},
 		}
 
@@ -181,7 +177,7 @@ return {
 						return ""
 					end
 					local fg = vim.fn.synIDattr(vim.fn.hlID(iconhl), "fg")
-					vim.api.nvim_command("hi GalaxyFileIcon guibg=" .. colors.bg .. " guifg=" .. fg)
+					vim.api.nvim_command("hi GalaxyFileIcon guibg=" .. colors.dark_bg .. " guifg=" .. fg)
 					return "   " .. icon
 				end,
 				condition = buffer_not_empty,
@@ -228,7 +224,7 @@ return {
 					return ""
 					-- return "▊ "
 				end,
-				highlight = { colors.fg, colors.bg },
+				highlight = { colors.fg, colors.dark_bg },
 			},
 		}
 	end,
