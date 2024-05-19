@@ -1,8 +1,29 @@
 return {
 	{
 		"vhyrro/luarocks.nvim",
-		priority = 1000,
-		config = true,
+		priority = 1001,
+		-- config = true,
+		opts = {
+			rocks = { "magick" },
+		},
+	},
+	{
+		"3rd/image.nvim",
+		enabled = true,
+		lazy = false,
+		dependencies = { "luarocks.nvim" },
+		config = function()
+			require("image").setup({
+				backend = "ueberzug",
+				neorg = {
+					enabled = true,
+					clear_in_insert_mode = false,
+					download_remote_images = true,
+					only_render_image_at_cursor = false,
+					filetypes = { "norg" },
+				},
+			})
+		end,
 	},
 	{
 		"nvim-neorg/neorg",
