@@ -1,6 +1,5 @@
 return {
 	"mvllow/modes.nvim",
-	tag = "v0.2.1",
 	event = "BufEnter",
 	config = function()
 		require("modes").setup({
@@ -14,7 +13,6 @@ return {
 			set_cursor = true,
 			set_cursorline = true,
 			set_number = true,
-			ignore_filetypes = { "NeoTree", "TelescopePrompt" },
 		})
 	end,
 }

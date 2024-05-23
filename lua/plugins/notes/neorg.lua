@@ -13,16 +13,18 @@ return {
 		lazy = false,
 		dependencies = { "luarocks.nvim" },
 		config = function()
-			require("image").setup({
-				backend = "ueberzug",
-				neorg = {
-					enabled = true,
-					clear_in_insert_mode = false,
-					download_remote_images = true,
-					only_render_image_at_cursor = false,
-					filetypes = { "norg" },
-				},
-			})
+			if not vim.g.neovide then
+				require("image").setup({
+					backend = "ueberzug",
+					neorg = {
+						enabled = true,
+						clear_in_insert_mode = false,
+						download_remote_images = true,
+						only_render_image_at_cursor = false,
+						filetypes = { "norg" },
+					},
+				})
+			end
 		end,
 	},
 	{
@@ -69,8 +71,8 @@ return {
 					["core.dirman"] = {
 						config = {
 							workspaces = {
-								general = "~/Notes/general",
-								classes = "~/Notes/classes",
+								general = "~/notes/general",
+								classes = "~/notes/classes",
 							},
 						},
 					},

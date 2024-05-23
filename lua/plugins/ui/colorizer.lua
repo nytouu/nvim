@@ -11,8 +11,8 @@ return {
 			RRGGBBAA = true,
 			rgb_fn = true,
 			hsl_fn = false,
-			css = false,
-			css_fn = false,
+			css = true,
+			css_fn = true,
 			names = false,
 			-- Available modes for `mode`: foreground, background,  virtualtext
 			mode = "background", -- Set the display mode.

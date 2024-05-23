@@ -12,6 +12,7 @@ return {
         "williamboman/mason.nvim",
         "aznhe21/actions-preview.nvim",
         "MunifTanjim/nui.nvim",
+        "Decodetalkers/csharpls-extended-lsp.nvim",
     },
     keys = {
         { "<leader>m", "<cmd>Mason<cr>", desc = "Open Mason" },
@@ -155,6 +156,7 @@ return {
                         callSnippet = "Replace",
                     },
                     diagnostics = {
+                        enable = true,
                         globals = {
                             "vim",
                             "awesome",
@@ -181,6 +183,16 @@ return {
                         enable = false,
                     },
                 },
+            },
+        })
+
+        -- use csharpls_extended for go to definition
+        lspconfig["csharp_ls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            handlers = {
+                ["textDocument/definition"] = require('csharpls_extended').handler,
+                ["textDocument/typeDefinition"] = require('csharpls_extended').handler,
             },
         })
 

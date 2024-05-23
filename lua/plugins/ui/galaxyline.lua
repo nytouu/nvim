@@ -8,16 +8,16 @@ return {
 		gl.short_line_list = { "NvimTree", "vista", "dbui", "packager", "toggleterm", "neo-tree", "Trouble" }
 
 		local colors = {
-			bg = '#101010',
-			dark_bg = '#0c0c0c',
-			fg = '#dde1e6',
-            red = "#ee5396",
-            green = "#42be65",
-            orange = "#ffab91",
-            blue = "#82cfff",
-            magenta = "#ff7eb6",
-            aqua = "#3ddbd9",
-        }
+			bg = "#101010",
+			dark_bg = "#0c0c0c",
+			fg = "#dde1e6",
+			red = "#ee5396",
+			green = "#42be65",
+			orange = "#ffab91",
+			blue = "#82cfff",
+			magenta = "#ff7eb6",
+			aqua = "#3ddbd9",
+		}
 
 		local buffer_not_empty = function()
 			if vim.fn.empty(vim.fn.expand("%:t")) ~= 1 then
@@ -39,26 +39,26 @@ return {
 				provider = function()
 					-- auto change color according the vim mode
 					local mode = {
-						n = "n",
+						n = "no",
 						no = "no",
-						v = "v",
+						v = "vi",
 						V = "vl",
 						[""] = "vb",
-						s = "s",
+						s = "se",
 						S = "sl",
 						[""] = "sb",
-						i = "i",
-						ic = "i",
-						R = "r",
+						i = "in",
+						ic = "in",
+						R = "re",
 						Rv = "rv",
-						c = "c",
+						c = "ex",
 						cv = "ex",
 						ce = "ce",
-						r = "r",
+						r = "re",
 						rm = "rm",
 						["r?"] = "rm",
 						["!"] = "!",
-						t = "t",
+						t = "sh",
 					}
 					local color = {
 						n = colors.green,
@@ -82,8 +82,10 @@ return {
 						["!"] = colors.orange,
 						t = colors.orange,
 					}
-					vim.api.nvim_command("hi GalaxyViMode guibg=" .. color[vim.fn.mode()] .. " guifg=" .. colors.dark_bg)
-					return "  " .. mode[vim.fn.mode()] .. " "
+					vim.api.nvim_command(
+						"hi GalaxyViMode guibg=" .. color[vim.fn.mode()] .. " guifg=" .. colors.dark_bg
+					)
+					return "   " .. mode[vim.fn.mode()] .. "  "
 				end,
 				separator = " ",
 				separator_highlight = { colors.fg, colors.dark_bg },

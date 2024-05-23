@@ -32,7 +32,6 @@ vim.o.showtabline = 2
 vim.o.showmode = false
 vim.o.termguicolors = true
 vim.o.updatetime = 50
-vim.o.timeoutlen = 300
 vim.bo.autoindent = true
 vim.bo.smartindent = true
 vim.opt.smarttab = true
@@ -59,13 +58,13 @@ vim.o.sessionoptions = "buffers,curdir,folds,tabpages,winpos,winsize"
 
 if vim.g.neovide then
 	vim.o.guifont = "Liga SFMono Nerd Font:h11"
-	vim.g.neovide_padding_top = 0
-	vim.g.neovide_padding_bottom = 0
-	vim.g.neovide_padding_right = 0
-	vim.g.neovide_padding_left = 0
+	vim.g.neovide_padding_top = 24
+	vim.g.neovide_padding_bottom = 24
+	vim.g.neovide_padding_right = 24
+	vim.g.neovide_padding_left = 24
 	vim.g.neovide_refresh_rate = 144
 	vim.g.neovide_cursor_trail_size = 0.1
 	vim.g.neovide_cursor_animation_length = 0.01
-	vim.opt.linespace = 0
+	vim.opt.linespace = 4
 	vim.g.neovide_refresh_rate_idle = 5
 end

@@ -33,7 +33,7 @@ return {
 		highlight = {
 			underline = false,
 			fg = nil,
-			bg = "#403a36",
+			bg = "#393939",
 		},
 	},
 }

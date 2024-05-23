@@ -8,11 +8,11 @@ return {
 		end
 
 		-- hl-groups can have any name
-		vim.api.nvim_set_hl(0, "SymbolUsageRounding", { fg = h("Normal").bg, italic = true })
-		vim.api.nvim_set_hl(0, "SymbolUsageContent", { bg = h("Normal").bg, fg = h("Comment").fg, italic = true })
-		vim.api.nvim_set_hl(0, "SymbolUsageRef", { fg = h("Function").fg, bg = h("Normal").bg, italic = true })
-		vim.api.nvim_set_hl(0, "SymbolUsageDef", { fg = h("Type").fg, bg = h("Normal").bg, italic = true })
-		vim.api.nvim_set_hl(0, "SymbolUsageImpl", { fg = h("@keyword").fg, bg = h("Normal").bg, italic = true })
+		vim.api.nvim_set_hl(0, "SymbolUsageRounding", { fg = "NONE", italic = true })
+		vim.api.nvim_set_hl(0, "SymbolUsageContent", { bg = "NONE", fg = h("Comment").fg, italic = true })
+		vim.api.nvim_set_hl(0, "SymbolUsageRef", { fg = h("Function").fg, bg = "NONE", italic = true })
+		vim.api.nvim_set_hl(0, "SymbolUsageDef", { fg = h("Type").fg, bg = "NONE", italic = true })
+		vim.api.nvim_set_hl(0, "SymbolUsageImpl", { fg = h("@keyword").fg, bg = "NONE", italic = true })
 
 		local function text_format(symbol)
 			local res = {}

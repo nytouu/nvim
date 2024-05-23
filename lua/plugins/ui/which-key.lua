@@ -36,25 +36,26 @@ return {
 				group = "󰇘 ",
 			},
 			window = {
-				border = "none",
+				border = { "", "▔", "", "", "", " ", "", "" },
 				position = "bottom",
 				margin = { 2, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
 				padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
 			},
 			layout = {
-				height = { min = 5, max = 25 },
+				height = { min = 4, max = 25 },
 				width = { min = 20, max = 50 },
-				spacing = 5,
+				spacing = 10,
 				align = "center",
 			},
 			ignore_missing = false,
 			hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
-			show_help = false,
+			show_help = true,
 			triggers = { "<Leader>" },
 			triggers_blacklist = {
 				-- list of mode / prefixes that should never be hooked by WhichKey
 				i = { "j", "k" },
 				v = { "j", "k" },
+				n = { "d", "y" },
 			},
 		})
 

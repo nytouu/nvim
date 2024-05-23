@@ -71,9 +71,8 @@ return {
 							icon = "󰷉  ",
 							desc = "Open Notes                              ",
 							key = "spc n n",
-							-- action = "cd ~/Notes/classes/ & Neorg workspace classes",
 							action = function()
-								vim.cmd("cd ~/Notes/classes")
+								vim.cmd("cd ~/notes/classes")
 								vim.cmd("Neorg workspace classes")
 							end,
 							icon_hl = "Title",
