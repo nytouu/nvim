@@ -10,7 +10,7 @@ return {
 			"lsp",
 		},
 		notify = {
-			clear_time = 5000,
+			clear_time = 2000,
 			min_level = vim.log.levels.INFO,
 		},
 		component_name_recall = false,

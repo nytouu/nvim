@@ -1,7 +1,7 @@
 return {
 	"xiyaowong/transparent.nvim",
 	lazy = false,
-	enabled = false,
+	enabled = true,
 	priority = 10000,
 	config = function()
 		require("transparent").setup({ -- Optional, you don't have to run setup.
@@ -31,6 +31,7 @@ return {
 				"StatusLine",
 				"StatusLineNC",
 				"EndOfBuffer",
+				"WhichKeyBorder",
 				"NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
 				"NvimTreeNormal", -- NvimTree
 			},

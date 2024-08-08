@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "dashboard", "neo-tree", "norg", "outline" },
+	pattern = { "dashboard", "neo-tree", "norg", "outline", "markdown" },
 	callback = function()
 		local ufo_status = pcall(require, "ufo")
 		if ufo_status then
@@ -35,24 +35,47 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "norg" },
+	pattern = {
+		"lua",
+	},
 	callback = function()
-		vim.opt.wrap = true
+		vim.opt.shiftwidth = 4
+		vim.opt.softtabstop = 4
+		vim.opt.tabstop = 4
+		vim.opt.listchars:append("leadmultispace:· ")
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "norg", "markdown" },
+	callback = function()
+		-- vim.opt.wrap = true
 		vim.opt.list = false
 		vim.opt.spell = false
 		vim.opt.spelllang = { "en_us", "fr" }
 
-		vim.cmd([[highlight Headline1 guibg=#1e2718]])
-		vim.cmd([[highlight Headline2 guibg=#21262d]])
-		vim.cmd([[highlight CodeBlock guibg=#1c1c1c]])
+		if vim.o.background == "dark" then
+			vim.cmd([[highlight Headline1 guibg=#1e2718]])
+			vim.cmd([[highlight Headline2 guibg=#21262d]])
+			vim.cmd([[highlight CodeBlock guibg=#1c1c1c]])
+		else
+			vim.cmd([[highlight Headline1 guibg=#e1d8e7]])
+			vim.cmd([[highlight Headline2 guibg=#ded9d2]])
+			vim.cmd([[highlight CodeBlock guibg=#e3e3e3]])
+		end
+
 		vim.cmd([[highlight Dash gui=bold]])
 
+		local opts = {
+			headline_highlights = { "Headline1", "Headline2" },
+			fat_headline_upper_string = "▃",
+			fat_headline_lower_string = "⠉",
+			bullets = { "◈ ", "◇ ", "◆ ", "⋄ ", "❖ ", "⟡ " },
+		}
+
 		require("headlines").setup({
-			norg = {
-				headline_highlights = { "Headline1", "Headline2" },
-				fat_headline_upper_string = "▃",
-				fat_headline_lower_string = "⠉",
-			},
+			norg = opts,
+			markdown = opts,
 		})
 	end,
 })
@@ -66,13 +89,17 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("InsertEnter", {
 	callback = function()
-		vim.wo.cursorline = true
+		if not vim.bo.filetype == "TelescopePrompt" then
+			vim.wo.cursorline = true
+		end
 	end,
 })
 
 vim.api.nvim_create_autocmd("InsertLeave", {
 	callback = function()
-		vim.wo.cursorline = false
+		if not vim.bo.filetype == "TelescopePrompt" then
+			vim.wo.cursorline = false
+		end
 	end,
 })
 

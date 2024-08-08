@@ -1,6 +1,6 @@
 return {
 	"NvChad/nvim-colorizer.lua",
-	-- ft = { "html", "css", "sass", "typescript", "javascript", "conf", "sh", "bash", "zsh", "lua" },
+    event = "BufReadPre",
 	keys = {
 		{ "<leader>tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle colorizer" },
 	},

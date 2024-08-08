@@ -9,14 +9,14 @@ return {
 
 		local colors = {
 			bg = "#101010",
-			dark_bg = "#0c0c0c",
-			fg = "#dde1e6",
-			red = "#ee5396",
-			green = "#42be65",
-			orange = "#ffab91",
-			blue = "#82cfff",
-			magenta = "#ff7eb6",
-			aqua = "#3ddbd9",
+			dark_bg = "#1C1C1C",
+			fg = "#FFFFFF",
+			red = "#F66151",
+			green = "#57E389",
+			orange = "#FFBE6F",
+			blue = "#62A0EA",
+			magenta = "#DC8ADD",
+			aqua = "#93DDC2",
 		}
 
 		local buffer_not_empty = function()

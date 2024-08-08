@@ -9,6 +9,8 @@ return {
 		excluded = {
 			filetypes = {
 				"TelescopePrompt",
+				"neorg",
+				"markdown",
 			},
 			buftypes = {
 				"nofile",
