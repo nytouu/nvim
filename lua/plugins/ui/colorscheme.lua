@@ -15,6 +15,8 @@ return {
 		-- hi(0, "Normal", { bg = "NONE" })
 		hi(0, "WhichKeyBorder", { fg = "#161616", bg = "#131313" })
 		hi(0, "MatchedParen", { bg = "#403a36", underline = false })
+		hi(0, "NeoTreeNormal", { bg = "#161616" })
+		hi(0, "NeoTreeNormalNC", { bg = "#161616" })
 
 		vim.o.background = "dark"
 		vim.cmd.colorscheme("adwaita")

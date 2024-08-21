@@ -1,6 +1,7 @@
 return {
 	"jakewvincent/mkdnflow.nvim",
 	ft = { "markdown" },
+	enabled = false,
 	config = function()
 		require("mkdnflow").setup({
 			modules = {

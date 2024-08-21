@@ -33,10 +33,13 @@ return {
 				"EndOfBuffer",
 				"WhichKeyBorder",
 				"NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
-				"NvimTreeNormal", -- NvimTree
 			},
 			extra_groups = {}, -- table: additional groups that should be cleared
-			exclude_groups = {}, -- table: groups you don't want to clear
+			exclude_groups = {
+                "NeoTreeNormal", -- NeoTree
+                "NeoTreeNormalNC", -- NeoTree
+                "NvimTreeNormal", -- NvimTree
+            }, -- table: groups you don't want to clear
 		})
 	end,
 }
