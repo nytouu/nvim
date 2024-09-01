@@ -1,8 +1,10 @@
 return {
 	"xiyaowong/transparent.nvim",
-	lazy = false,
+	lazy = true,
 	enabled = true,
-	priority = 10000,
+    event = "BufEnter",
+	-- priority = 10000,
+    cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },
 	config = function()
 		require("transparent").setup({ -- Optional, you don't have to run setup.
 			groups = { -- table: default groups

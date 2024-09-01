@@ -1,7 +1,7 @@
 return {
     "nvim-neorg/neorg",
 	dependencies = {
-		"luarocks.nvim",
+		"vhyrro/luarocks.nvim",
 		"lukas-reineke/headlines.nvim",
 		"nvim-neorg/neorg-telescope",
 		"nfrid/due.nvim",
