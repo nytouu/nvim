@@ -16,8 +16,8 @@ return {
 			show_tab_indicators = true,
 			close_command = "Bdelete! %d", -- can be a string | function, | false see "Mouse actions"
 			enforce_regular_tabs = false,
-            always_show_bufferline = false,
-            auto_toggle_bufferline = true,
+			always_show_bufferline = false,
+			auto_toggle_bufferline = true,
 			view = "multiview",
 			offsets = {
 				{

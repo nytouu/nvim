@@ -1,5 +1,5 @@
 return {
-    "nvim-neorg/neorg",
+	"nvim-neorg/neorg",
 	dependencies = {
 		"vhyrro/luarocks.nvim",
 		"lukas-reineke/headlines.nvim",
@@ -29,7 +29,7 @@ return {
 						icon_preset = "diamond",
 					},
 				},
-                ["core.ui.calendar"] = {},
+				["core.ui.calendar"] = {},
 				["core.completion"] = {
 					config = {
 						engine = "nvim-cmp",

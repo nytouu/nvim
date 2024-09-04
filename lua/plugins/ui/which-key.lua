@@ -32,10 +32,10 @@ return {
 			---@type wk.Spec
 			triggers = {
 				{ "<auto>", mode = "nxsot" },
-				{ "j",      mode = { "i", "v" } },
-				{ "k",      mode = { "i", "v" } },
-				{ "d",      mode = "n" },
-				{ "y",      mode = "n" },
+				{ "j", mode = { "i", "v" } },
+				{ "k", mode = { "i", "v" } },
+				{ "d", mode = "n" },
+				{ "y", mode = "n" },
 			},
 			-- Start hidden and wait for a key to be pressed before showing the popup
 			-- Only used by enabled xo mapping modes.
@@ -83,7 +83,7 @@ return {
 			},
 			layout = {
 				width = { min = 20, max = 50 }, -- min and max width of the columns
-				spacing = 10,       -- spacing between columns
+				spacing = 10, -- spacing between columns
 			},
 			keys = {
 				scroll_down = "<c-d>", -- binding to scroll down inside the popup
@@ -116,13 +116,13 @@ return {
 				},
 				desc = {
 					{ "<Plug>%(?(.*)%)?", "%1" },
-					{ "^%+",              "" },
-					{ "<[cC]md>",         "" },
-					{ "<[cC][rR]>",       "" },
-					{ "<[sS]ilent>",      "" },
-					{ "^lua%s+",          "" },
-					{ "^call%s+",         "" },
-					{ "^:%s*",            "" },
+					{ "^%+", "" },
+					{ "<[cC]md>", "" },
+					{ "<[cC][rR]>", "" },
+					{ "<[sS]ilent>", "" },
+					{ "^lua%s+", "" },
+					{ "^call%s+", "" },
+					{ "^:%s*", "" },
 				},
 			},
 			icons = {
@@ -184,21 +184,21 @@ return {
 		})
 
 		require("which-key").add({
-			{ "<leader>F",  group = "Folds",     nowait = true, remap = false },
-			{ "<leader>L",  group = "Lazy",      nowait = true, remap = false },
-			{ "<leader>b",  group = "Buffer",    nowait = true, remap = false },
-			{ "<leader>c",  group = "Conflicts", nowait = true, remap = false },
-			{ "<leader>d",  group = "Debugging", nowait = true, remap = false },
-			{ "<leader>f",  group = "Find",      nowait = true, remap = false },
-			{ "<leader>g",  group = "Git",       nowait = true, remap = false },
-			{ "<leader>l",  group = "Lsp",       nowait = true, remap = false },
-			{ "<leader>n",  group = "Neorg",     nowait = true, remap = false },
-			{ "<leader>q",  group = "Quit",      nowait = true, remap = false },
-			{ "<leader>s",  group = "Split",     nowait = true, remap = false },
-			{ "<leader>t",  group = "Toggle",    nowait = true, remap = false },
-			{ "<leader>u",  group = "Utils",     nowait = true, remap = false },
+			{ "<leader>F", group = "Folds", nowait = true, remap = false },
+			{ "<leader>L", group = "Lazy", nowait = true, remap = false },
+			{ "<leader>b", group = "Buffer", nowait = true, remap = false },
+			{ "<leader>c", group = "Conflicts", nowait = true, remap = false },
+			{ "<leader>d", group = "Debugging", nowait = true, remap = false },
+			{ "<leader>f", group = "Find", nowait = true, remap = false },
+			{ "<leader>g", group = "Git", nowait = true, remap = false },
+			{ "<leader>l", group = "Lsp", nowait = true, remap = false },
+			{ "<leader>n", group = "Neorg", nowait = true, remap = false },
+			{ "<leader>q", group = "Quit", nowait = true, remap = false },
+			{ "<leader>s", group = "Split", nowait = true, remap = false },
+			{ "<leader>t", group = "Toggle", nowait = true, remap = false },
+			{ "<leader>u", group = "Utils", nowait = true, remap = false },
 			{ "<leader>us", desc = "Substitute", nowait = true, remap = false },
-			{ "<leader>w",  group = "Write",     nowait = true, remap = false },
+			{ "<leader>w", group = "Write", nowait = true, remap = false },
 		})
 	end,
 }

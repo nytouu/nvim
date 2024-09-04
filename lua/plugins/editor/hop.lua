@@ -8,6 +8,6 @@ return {
 
 		vim.keymap.set("", "gh", function()
 			hop.hint_words()
-		end, { remap = true, desc = "Hop to word"})
+		end, { remap = true, desc = "Hop to word" })
 	end,
 }

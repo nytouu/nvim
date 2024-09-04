@@ -15,13 +15,13 @@ return {
 					["vim.lsp.util.stylize_markdown"] = true,
 					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 				},
-                progress = {
-                    enabled = false,
-                    format = "lsp_progress",
-                    format_done = "lsp_progress_done",
-                    throttle = 1000 / 30, -- frequency to update lsp progress message
-                    view = "mini",
-                },
+				progress = {
+					enabled = false,
+					format = "lsp_progress",
+					format_done = "lsp_progress_done",
+					throttle = 1000 / 30, -- frequency to update lsp progress message
+					view = "mini",
+				},
 			},
 			presets = { inc_rename = true },
 			cmdline = {

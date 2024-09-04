@@ -2,9 +2,9 @@ return {
 	"xiyaowong/transparent.nvim",
 	lazy = true,
 	enabled = true,
-    event = "BufEnter",
+	event = "BufEnter",
 	-- priority = 10000,
-    cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },
+	cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },
 	config = function()
 		require("transparent").setup({ -- Optional, you don't have to run setup.
 			groups = { -- table: default groups
@@ -38,10 +38,10 @@ return {
 			},
 			extra_groups = {}, -- table: additional groups that should be cleared
 			exclude_groups = {
-                "NeoTreeNormal", -- NeoTree
-                "NeoTreeNormalNC", -- NeoTree
-                "NvimTreeNormal", -- NvimTree
-            }, -- table: groups you don't want to clear
+				"NeoTreeNormal", -- NeoTree
+				"NeoTreeNormalNC", -- NeoTree
+				"NvimTreeNormal", -- NvimTree
+			}, -- table: groups you don't want to clear
 		})
 	end,
 }

@@ -3,13 +3,13 @@ return {
 	event = "InsertEnter",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",           -- source for text in buffer
-		"hrsh7th/cmp-path",             -- source for file system paths
+		"hrsh7th/cmp-buffer", -- source for text in buffer
+		"hrsh7th/cmp-path", -- source for file system paths
 		"hrsh7th/cmp-cmdline",
-		"L3MON4D3/LuaSnip",             -- snippet engine
-		"saadparwaiz1/cmp_luasnip",     -- for autocompletion
+		"L3MON4D3/LuaSnip", -- snippet engine
+		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
-		"onsails/lspkind.nvim",         -- vs-code like pictograms
+		"onsails/lspkind.nvim", -- vs-code like pictograms
 		"f3fora/cmp-spell",
 	},
 	config = function()
@@ -68,10 +68,10 @@ return {
 			-- sources for autocompletion
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp", priority = 10 },
-				{ name = "luasnip",  max_item_count = 5, priority = 8 },
-				{ name = "spell",    priority = 2 },
-				{ name = "buffer",   max_item_count = 8, priority = 2 },
-				{ name = "path",     priority = 3 },
+				{ name = "luasnip", max_item_count = 5, priority = 8 },
+				{ name = "spell", priority = 2 },
+				{ name = "buffer", max_item_count = 8, priority = 2 },
+				{ name = "path", priority = 3 },
 				{ name = "neorg" },
 			}),
 			sorting = {
