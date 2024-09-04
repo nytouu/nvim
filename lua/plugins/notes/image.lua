@@ -3,15 +3,6 @@ return {
 	enabled = false,
 	-- lazy = false,
 	ft = { "markdown", "norg" },
-	dependencies = {
-		"vhyrro/luarocks.nvim",
-		priority = 1001,
-		-- config = true,
-		opts = {
-			rocks = { "magick" },
-		},
-		ft = "norg",
-	},
 	config = function()
 		if not vim.g.neovide then
 			require("image").setup({
