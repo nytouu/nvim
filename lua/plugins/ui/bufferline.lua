@@ -9,6 +9,7 @@ return {
 	},
 	opts = {
 		options = {
+			themable = true,
 			diagnostics = "nvim_lsp",
 			mode = "buffers",
 			separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
