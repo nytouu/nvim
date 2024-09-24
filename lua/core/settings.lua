@@ -51,7 +51,7 @@ vim.opt.scrolloff = 6
 vim.opt.sidescrolloff = 6
 vim.opt.hlsearch = true
 vim.opt.laststatus = 2
-vim.opt.statusline = "%2{mode()} | %f %m %r %= %{&spelllang} %y #%{bufnr()} %8(%l,%c%) %8p%%"
+-- vim.opt.statusline = "%2{mode()} | %f %m %r %= %{&spelllang} %y #%{bufnr()} %8(%l,%c%) %8p%%"
 
 vim.g.persisting = true
 vim.o.sessionoptions = "buffers,curdir,folds,tabpages,winpos,winsize"
