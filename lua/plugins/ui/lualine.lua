@@ -20,7 +20,7 @@ return {
                 icons_enabled = true,
                 component_separators = { left = "", right = "" },
                 section_separators = { left = "", right = "" },
-                disabled_filetypes = {},
+                disabled_filetypes = { "ministarter" },
                 globalstatus = true,
                 refresh = {
                     statusline = 100,
@@ -60,6 +60,7 @@ return {
                 lualine_c = {
                     {
                         "filename",
+						path = 1,
                         symbols = {
                             modified = "",
                             readonly = "󰏯",
