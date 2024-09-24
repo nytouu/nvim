@@ -16,6 +16,7 @@ return {
 	},
 	keys = {
 		{ "<leader>m", "<cmd>Mason<cr>", desc = "Open Mason" },
+		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Show server info" },
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -97,9 +98,6 @@ return {
 
 			opts.desc = "Show documentation for what is under cursor"
 			keymap.set("n", "<leader>lh", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
-
-			opts.desc = "Show server info"
-			keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", opts) -- show lsp implementations
 
 			-- opts.desc = "Restart LSP"
 			-- keymap.set("n", "<leader>lR", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
