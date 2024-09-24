@@ -4,7 +4,6 @@ return {
 	config = function()
 		require("persisted").setup({
 			ignored_dirs = {
-				"~/.config",
 				"~/.local/nvim",
 				{ "/", exact = true },
 				{ "/tmp", exact = true },
