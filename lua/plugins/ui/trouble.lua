@@ -1,6 +1,6 @@
 return {
 	"folke/trouble.nvim",
-	enabled = true,
+	enabled = false,
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 		"artemave/workspace-diagnostics.nvim",
