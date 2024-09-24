@@ -1,5 +1,6 @@
 return {
 	"jakewvincent/mkdnflow.nvim",
+	dependencies = { "hrsh7th/nvim-cmp" },
 	ft = { "markdown" },
 	enabled = false,
 	config = function()
@@ -121,5 +122,7 @@ return {
 				MkdnUnfoldSection = { "n", "<leader>F" },
 			},
 		})
+		require("cmp").setup.buffer({ sources = { { name = "mkdnflow" } } })
+
 	end,
 }
