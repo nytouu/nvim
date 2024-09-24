@@ -57,7 +57,6 @@ return {
 				file_ignore_patterns = {
 					"phaser.min.js",
 					"phaser.d.ts",
-					".git/",
 					"target/",
 					"docs/",
 					"vendor/*",
