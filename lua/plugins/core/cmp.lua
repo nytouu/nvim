@@ -17,13 +17,13 @@ return {
 
         local luasnip = require("luasnip")
 
-        vim.keymap.set({ "i" }, "<Tab>", function()
+        vim.keymap.set({ "i" }, "<S-Tab>", function()
             luasnip.expand()
         end, { silent = true })
-        vim.keymap.set({ "i", "s" }, "<Tab>", function()
+        vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
             luasnip.jump(1)
         end, { silent = true })
-        vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+        vim.keymap.set({ "i", "s" }, "<C-Tab>", function()
             luasnip.jump(-1)
         end, { silent = true })
 
@@ -74,22 +74,15 @@ return {
                 { name = "path",     priority = 3 },
                 { name = "neorg" },
             }),
-            sorting = {
-                priority_weight = 1.0,
-                comparators = {
-                    cmp.config.compare.kind,
-                    cmp.config.compare.locality,
-                    cmp.config.compare.recently_used,
-                    cmp.config.compare.score,
-                    cmp.config.compare.offset,
-                    cmp.config.compare.order,
-                },
-            },
             window = {
                 completion = {
                     col_offset = -3,
                     side_padding = 0,
                 },
+				documentation = {
+					border = "solid",
+					side_padding = 4,
+				}
             },
             formatting = {
                 fields = { "kind", "abbr", "menu" },
