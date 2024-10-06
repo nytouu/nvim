@@ -7,7 +7,7 @@ return {
 	keys = {
 		{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find files" },
 		{ "<leader>fw", "<cmd>Telescope live_grep<CR>", desc = "Find a string" },
-		{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find buffers" },
+		{ "<leader>fb", "<cmd>Telescope buffers sort_lastused=true initial_mode=normal<CR>", desc = "Find buffers" },
 		{ "<leader>fr", "<cmd>Telescope oldfiles<CR>", desc = "Find recent file" },
 		{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find keymaps" },
 		{ "<leader>fc", "<cmd>Telescope find_files cwd=$HOME/.config/nvim/<CR>", desc = "Open config" },
@@ -133,6 +133,7 @@ return {
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 						["<C-o>"] = function(p_bufnr) require("telescope.actions").send_selected_to_qflist(p_bufnr) vim.cmd.cfdo("edit") end,
+						["d"] = require("telescope.actions").delete_buffer,
 					},
 				},
 			},
