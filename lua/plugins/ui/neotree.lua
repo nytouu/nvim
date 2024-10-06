@@ -1,6 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	enabled = false,
+	enabled = true,
 	-- branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -10,14 +10,12 @@ return {
 	},
 	cmd = { "Neotree" },
 	keys = {
-		{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo tree" },
+		{ "<leader>e", "<cmd>Neotree toggle float<cr>", desc = "Toggle Neo tree" },
 	},
 	event = "VeryLazy",
 	opts = {
 		close_if_last_window = true,
-		window = {
-			width = 35,
-		},
+		popup_border_style = "solid",
 		enable_git_status = true,
 		enable_diagnostics = true,
 		default_component_configs = {
