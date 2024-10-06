@@ -57,7 +57,7 @@ vim.g.persisting = true
 vim.o.sessionoptions = "buffers,curdir,folds,tabpages,winpos,winsize"
 
 if vim.g.neovide then
-	vim.o.guifont = "Liga SFMono Nerd Font:h11"
+	vim.o.guifont = "MartianMono NF:h11"
 	vim.g.neovide_padding_top = 24
 	vim.g.neovide_padding_bottom = 24
 	vim.g.neovide_padding_right = 24
@@ -67,5 +67,8 @@ if vim.g.neovide then
 	vim.g.neovide_cursor_animation_length = 0.01
 	vim.opt.linespace = 4
 	vim.g.neovide_refresh_rate_idle = 5
+	vim.g.neovide_transparency = 0.90
 	vim.o.mouse = "a"
+
+	vim.g.neovide_floating_shadow = false
 end
