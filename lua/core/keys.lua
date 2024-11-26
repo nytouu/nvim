@@ -6,6 +6,9 @@ keymap("n", "<M-l>", ">>", { silent = true })
 keymap("v", "<M-h>", "<gv", { noremap = true, silent = true })
 keymap("v", "<M-l>", ">gv", { noremap = true, silent = true })
 
+keymap("n", "<S-k>", "<cmd>bprevious<cr>", { noremap = true, silent = true, desc = "Previous buffer" })
+keymap("n", "<S-j>", "<cmd>bnext<cr>", { noremap = true, silent = true, desc = "Next buffer" })
+
 -- move lines up or down
 keymap("n", "<M-k>", ":move-2<CR>==", { silent = true })
 keymap("n", "<M-j>", ":move+<CR>==", { silent = true })
@@ -14,6 +17,8 @@ keymap("x", "<M-j>", ":move '>+1<CR>gv=gv", { noremap = true, silent = true })
 
 keymap("i", "<C-j>", '"\\<C-n>"', { noremap = true, expr = true })
 keymap("i", "<C-k>", '"\\<C-p>"', { noremap = true, expr = true })
+
+keymap("i", "<M-BS>", '"\\<C-w>"', { noremap = true, expr = true })
 
 -- window movement
 keymap("n", "<C-h>", "<C-w>h", { silent = true })
@@ -32,6 +37,9 @@ vim.cmd([[
 	tnoremap <Esc> <C-\><C-n>
 ]])
 
+-- fix mini.surround
+vim.keymap.set({ 'n', 'x' }, 's', '<Nop>')
+
 -- navigation
 keymap("n", "n", "nzzzv", { silent = true })
 keymap("n", "N", "Nzzzv", { silent = true })
@@ -45,6 +53,10 @@ keymap("n", "<leader>bs", ":source %<CR> ", { noremap = true, silent = true, des
 keymap("n", "<leader>qq", ":q<CR>", { noremap = true, silent = true, desc = "Quit neovim" })
 keymap("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true, desc = "Quit all" })
 keymap("n", "<leader>qf", ":qa!<CR>", { noremap = true, silent = true, desc = "Force quit all" })
+
+-- quickfix
+keymap("n", "<leader>Qo", ":copen<CR>", { noremap = true, silent = true, desc = "Open quickfix window" })
+keymap("n", "<leader>Qc", ":call setqflist([], 'r')<CR>", { noremap = true, silent = true, desc = "Clear quickfix list" })
 
 -- splits
 keymap("n", "<leader>sh", ":split<CR> ", { noremap = true, silent = true, desc = "Horizontal split" })

@@ -1,6 +1,6 @@
 return {
 	"MeanderingProgrammer/render-markdown.nvim",
-	enabled = false,
+	enabled = true,
 	ft = { "markdown" },
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	config = function()

@@ -7,13 +7,26 @@ return {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
 		},
+		init = function()
+			vim.keymap.set({ "n", "s" }, "<Down>", function()
+				if not require("noice.lsp").scroll(4) then
+					return "<c-f>"
+				end
+			end, { silent = true, expr = true })
+
+			vim.keymap.set({ "n", "s" }, "<Up>", function()
+				if not require("noice.lsp").scroll(-4) then
+					return "<c-b>"
+				end
+			end, { silent = true, expr = true })
+		end,
 		opts = {
 			lsp = {
 				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
 				override = {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 					["vim.lsp.util.stylize_markdown"] = true,
-					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+					-- ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 				},
 				progress = {
 					enabled = false,
@@ -21,6 +34,9 @@ return {
 					format_done = "lsp_progress_done",
 					throttle = 1000 / 30, -- frequency to update lsp progress message
 					view = "mini",
+				},
+				signature = {
+					enabled = false,
 				},
 			},
 			presets = { inc_rename = true },

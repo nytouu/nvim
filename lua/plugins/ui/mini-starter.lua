@@ -2,6 +2,7 @@ return {
 	"echasnovski/mini.starter",
 	lazy = false,
 	config = true,
+	keys = { "<leader>fd", "<cmd>lua require('mini.starter').open()<cr>", desc = "Open dashboard" },
 	opts = {
 		header = "⚡ Neovim",
 		footer = "",

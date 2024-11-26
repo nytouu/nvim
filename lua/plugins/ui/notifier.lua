@@ -1,7 +1,7 @@
 return {
 	"vigoux/notifier.nvim",
 	event = "VeryLazy",
-	enabled = true,
+	enabled = false,
 	opts = {
 		ignore_messages = {},
 		status_width = 100,

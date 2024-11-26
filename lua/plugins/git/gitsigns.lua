@@ -1,22 +1,20 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	event = { "BufReadPre", "BufNewFile" },
-	config = function()
-		require('gitsigns').setup {
-			signs                        = {
-				untracked    = { text = '┃' },
-			},
-			signs_staged                 = {
-				untracked    = { text = '┃' },
-			},
-			current_line_blame_opts      = {
-				delay = 0,
-			},
-			preview_config               = {
-				border = 'solid',
-			},
-		}
-	end,
+	opts = {
+		signs                   = {
+			untracked = { text = '┃' },
+		},
+		signs_staged            = {
+			untracked = { text = '┃' },
+		},
+		current_line_blame_opts = {
+			delay = 0,
+		},
+		preview_config          = {
+			border = 'solid',
+		},
+	},
 	keys = {
 		{ "<leader>gj", "<cmd>Gitsigns next_hunk<cr>",                 desc = "Next hunk" },
 		{ "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>",                 desc = "Previous hunk" },

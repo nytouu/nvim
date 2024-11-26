@@ -1,7 +1,7 @@
 return {
 	"xiyaowong/transparent.nvim",
 	lazy = true,
-	enabled = true,
+	enabled = false,
 	event = "BufEnter",
 	-- priority = 10000,
 	cmd = { "TransparentToggle", "TransparentEnable", "TransparentDisable" },

@@ -1,15 +1,13 @@
 return {
 	"olimorris/persisted.nvim",
 	lazy = false,
-	config = function()
-		require("persisted").setup({
-			ignored_dirs = {
-				"~/.local/nvim",
-				{ "/", exact = true },
-				{ "/tmp", exact = true },
-			},
-		})
-	end,
+	opts = {
+		ignored_dirs = {
+			"~/.local/nvim",
+			{ "/",    exact = true },
+			{ "/tmp", exact = true },
+		},
+	},
 	keys = {
 		{ "<leader>fs", "<cmd>Telescope persisted<cr>", desc = "Open recent session" },
 	},

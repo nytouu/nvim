@@ -5,6 +5,7 @@ vim.o.fileencoding = "utf-8"
 vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menuone,noselect"
 vim.o.ignorecase = true
+vim.o.smartcase = true
 vim.o.pumheight = 10
 vim.o.pumblend = 0
 vim.o.mouse = "a"
@@ -33,8 +34,10 @@ vim.o.showmode = false
 vim.o.termguicolors = true
 vim.o.updatetime = 50
 vim.bo.autoindent = true
+vim.bo.cindent = true
 vim.bo.smartindent = true
 vim.opt.smarttab = true
+vim.bo.expandtab = true
 vim.bo.expandtab = true
 vim.wo.wrap = false
 vim.wo.signcolumn = "yes"
@@ -53,6 +56,8 @@ vim.opt.hlsearch = true
 vim.opt.laststatus = 2
 -- vim.opt.statusline = "%2{mode()} | %f %m %r %= %{&spelllang} %y #%{bufnr()} %8(%l,%c%) %8p%%"
 
+vim.opt.incsearch = true
+
 vim.g.persisting = true
 vim.o.sessionoptions = "buffers,curdir,folds,tabpages,winpos,winsize"
 
@@ -70,5 +75,12 @@ if vim.g.neovide then
 	vim.g.neovide_transparency = 0.90
 	vim.o.mouse = "a"
 
-	vim.g.neovide_floating_shadow = false
+	vim.g.neovide_floating_shadow = true
+	vim.g.neovide_floating_z_height = 5
+	vim.g.neovide_light_angle_degrees = 45
+	vim.g.neovide_light_radius = 1
+	vim.g.neovide_floating_corner_radius = 12
+
+	vim.g.experimental_layer_grouping = true
+	vim.g.neovide_confirm_quit = true
 end

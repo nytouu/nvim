@@ -199,6 +199,7 @@ return {
 			{ "<leader>u", group = "Utils", nowait = true, remap = false },
 			{ "<leader>us", desc = "Substitute", nowait = true, remap = false },
 			{ "<leader>w", group = "Write", nowait = true, remap = false },
+			{ "<leader>Q", group = "Quickfix", nowait = true, remap = false },
 		})
 	end,
 }

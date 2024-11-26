@@ -76,6 +76,11 @@ vim.api.nvim_create_autocmd("FileType", {
         require("headlines").setup({
             norg = opts,
         })
+
+		local keymap = vim.api.nvim_set_keymap
+
+		keymap("n", "j", "gj", { silent = true })
+		keymap("n", "k", "gk", { silent = true })
     end,
 })
 
@@ -154,5 +159,13 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "CursorMoved" }, {
             return vim.cmd("nohlsearch")
         end
         return vim.schedule(nohl)
+    end,
+})
+
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "gd", "gdscript" },
+    callback = function()
+		vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
     end,
 })

@@ -1,6 +1,6 @@
 return {
 	"lewis6991/hover.nvim",
-	enabled = false,
+	enabled = true,
 	event = "LspAttach",
 	config = function()
 		require("hover").setup({
@@ -14,12 +14,12 @@ return {
 				-- require('hover.providers.dictionary')
 			end,
 			preview_opts = {
-				border = "none",
+				border = "solid",
 			},
 			-- Whether the contents of a currently open hover window should be moved
 			-- to a :h preview-window when pressing the hover keymap.
 			preview_window = true,
-			title = true,
+			title = false,
 			mouse_providers = {
 				"LSP",
 			},

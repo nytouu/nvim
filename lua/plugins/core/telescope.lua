@@ -18,8 +18,10 @@ return {
 			defaults = {
 				vimgrep_arguments = {
 					"rg",
+					"--hidden",
 					"-L",
 					"--color=never",
+					"--follow",
 					"--no-heading",
 					"--with-filename",
 					"--line-number",
@@ -111,7 +113,8 @@ return {
 					"%.flac",
 					"%.tar.gz",
 					"%.prefab",
-					"%.shader",
+					"%.shadergraph",
+					"%.shadersubgraph",
 					"%.meta",
 					"%.asset",
 					"%.blob",
@@ -120,19 +123,19 @@ return {
 					"%.psd",
 					"%.unity",
 					"%.cginc",
+					"lib/*",
 				},
 				mappings = {
 					i = {
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 						["<esc>"] = require("telescope.actions").close,
-						["<C-o>"] = function(p_bufnr) require("telescope.actions").send_selected_to_qflist(p_bufnr) vim.cmd.cfdo("edit") end,
+						["<C-o>"] = function(p_bufnr) require("telescope.actions").send_selected_to_qflist(p_bufnr) end,
 					},
 
 					n = {
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
-						["<C-o>"] = function(p_bufnr) require("telescope.actions").send_selected_to_qflist(p_bufnr) vim.cmd.cfdo("edit") end,
 						["q"] = require("telescope.actions").close,
 						["d"] = require("telescope.actions").delete_buffer,
 					},
@@ -142,6 +145,9 @@ return {
 				colorscheme = {
 					enable_preview = true,
 				},
+				-- find_files = {
+				-- 	find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "-L" },
+				-- }
 			},
 			extensions = {
 				persisted = {

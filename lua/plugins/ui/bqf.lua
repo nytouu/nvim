@@ -1,7 +1,7 @@
 return {
 	{
 		"kevinhwang91/nvim-bqf",
-		enabled = false,
+		enabled = true,
 		ft = "qf",
 		config = function()
 			require("bqf").setup({
@@ -17,7 +17,7 @@ return {
 	},
 	{
 		"yorickpeterse/nvim-pqf",
-		enabled = false,
+		enabled = true,
 		config = function()
 			require("pqf").setup()
 		end,

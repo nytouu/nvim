@@ -2,20 +2,17 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		-- "kosayoda/nvim-lightbulb",
-		-- "hinell/lsp-timeout.nvim",
-		"hrsh7th/cmp-nvim-lsp",
-		-- "Hoffs/omnisharp-extended-lsp.nvim",
+		"kosayoda/nvim-lightbulb",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/neodev.nvim", opts = {} },
+		{ "folke/neodev.nvim",                   opts = {} },
 		"williamboman/mason-lspconfig.nvim",
 		"williamboman/mason.nvim",
 		"aznhe21/actions-preview.nvim",
 		"MunifTanjim/nui.nvim",
-		"Decodetalkers/csharpls-extended-lsp.nvim",
+		{ "Decodetalkers/csharpls-extended-lsp.nvim", ft = "cs" },
 	},
 	keys = {
-		{ "<leader>m", "<cmd>Mason<cr>", desc = "Open Mason" },
+		{ "<leader>m",  "<cmd>Mason<cr>",   desc = "Open Mason" },
 		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Show server info" },
 	},
 	config = function()
@@ -26,13 +23,20 @@ return {
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
 
-		-- import cmp-nvim-lsp plugin
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
 		local keymap = vim.keymap -- for conciseness
 
-		-- used to enable autocompletion (assign to every lsp server config)
-		local capabilities = cmp_nvim_lsp.default_capabilities()
+		local capabilities = nil
+
+		local cmp_nvim_lsp_status = pcall(require, "cmp_nvim_lsp")
+		if cmp_nvim_lsp_status then
+			capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- capabilities = vim.lsp.protocol.make_client_capabilities()
+		end
+
+		local blink_status = pcall(require, "blink.cmp")
+		if blink_status then
+			capabilities = require('blink.cmp').get_lsp_capabilities()
+		end
 
 		local opts = { noremap = true, silent = true }
 		local on_attach = function(client, bufnr)
@@ -103,19 +107,19 @@ return {
 			-- keymap.set("n", "<leader>lR", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 		end
 
-		-- require("nvim-lightbulb").setup({
-		-- 	priority = 100,
-		-- 	autocmd = { enabled = true },
-		-- 	sign = {
-		-- 		enabled = true,
-		-- 		text = "",
-		-- 		hl = "DiagnosticSignInfo",
-		-- 	},
-		-- 	number = {
-		-- 		enabled = true,
-		-- 		hl = "DiagnosticSignInfo",
-		-- 	},
-		-- })
+		require("nvim-lightbulb").setup({
+			priority = 100,
+			autocmd = { enabled = true },
+			sign = {
+				enabled = true,
+				text = "",
+				hl = "DiagnosticSignInfo",
+			},
+			number = {
+				enabled = true,
+				hl = "DiagnosticSignInfo",
+			},
+		})
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -150,6 +154,24 @@ return {
 			on_attach = on_attach,
 			config = {
 				cmd = "clangd",
+			},
+		})
+
+		lspconfig["nixd"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["gdscript"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = {
+				"nc",
+				"localhost",
+				"6005",
+			},
+			flags = {
+				debounce_text_changes = 150,
 			},
 		})
 
@@ -218,8 +240,8 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"ts_ls",
-				"lua_ls",
+				-- "ts_ls",
+				-- "lua_ls",
 				-- "pyright",
 				-- "clangd",
 				-- "rust_analyzer",
